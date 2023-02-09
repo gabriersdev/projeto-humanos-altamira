@@ -1,0 +1,48 @@
+:root{
+  --espaco-margem: 15rem;
+  --espaco-padding-secao: 4rem;
+
+  --input: #000;
+  --input-placeholder: rgba(0, 0, 0, 0.5);
+  
+  --bckg-input: #DDD;
+  --bckg-btn-input: #DDD;
+  --bckg-btn-input-hover: rgba(0, 0, 0, 0.1);
+  --btn-input: #3D3D3D;
+
+  --borda-card: #000;
+
+  --fonte-conteudo: 1.25rem;
+  --titulos-h3: 1.6rem;
+  --icone: 1.5rem;
+}
+
+@media screen and (max-width: 1060px) {
+  :root{
+    --espaco-margem: 10rem;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  :root{
+    --espaco-margem: 5rem;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  :root{
+    --espaco-margem: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root{
+    --espaco-margem: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  :root{
+    --espaco-margem: 1rem;
+  }
+}

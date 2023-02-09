@@ -1,6 +1,8 @@
-@import url(../css/componentes/creditos.css);
+@import url(../css/variaveis.css);
 @import url(../css/normalize.css);
 @import url(../css/reset.css);
+
+@import url(../css/componentes/creditos.css);
 
 @font-face {
   font-family: 'CircularStd Book';
@@ -13,18 +15,13 @@
 }
 
 @font-face {
-  font-family: 'CircularStd Medium';
-  src: url(../fonts/circular/CircularStd-Medium.otf);
-}
-
-@font-face {
-  font-family: 'CircularStd Medium Italic';
-  src: url(../fonts/circular/CircularStd-MediumItalic.otf);
-}
-
-@font-face {
   font-family: 'CircularStd Bold';
   src: url(../fonts/circular/CircularStd-Bold.otf);
+}
+
+@font-face {
+  font-family: 'CircularStd Black';
+  src: url(../fonts/circular/CircularStd-Black.otf);
 }
 
 *{
@@ -32,4 +29,8 @@
   font-family: 'CircularStd Book', 'Inter Tight', sans-serif;
   /* font-family: 'Inter Tight', sans-serif; */
   font-size: 16px;
+}
+
+button, a{
+  cursor: pointer;
 }
