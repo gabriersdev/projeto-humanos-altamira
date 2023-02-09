@@ -1,0 +1,63 @@
+.vermais{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+  background-color: transparent;
+  width: 100%;
+  margin: 1.5rem 0;
+  border: transparent;
+  outline: none;
+}
+
+.vermais p{
+  text-transform: lowercase;
+  width: calc(8 * var(--fonte-conteudo) + 5rem);
+  margin: 0 1rem;
+  padding: 0.35rem 0;
+  border-radius: 50px;
+  color: var(--texto-mostrar-mais);
+  font-size: var(--fonte-conteudo);
+  transition: background-color ease-in-out 0.2s;
+}
+
+.vermais:focus p,
+.vermais:hover p,
+.vermais p:hover{
+  background-color: var(--bckg-texto-mostrar-mais-hover);
+  color: var(--texto-mostrar-mais-hover);
+}
+
+.vermais__bordas{
+  display: inline-block;
+  height: 5px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--bordas-mostrar-mais);
+}
+
+@media screen and (max-width: 410px) {
+  .vermais{
+    align-items: flex-start;
+    justify-content: flex-start;
+    align-content: flex-start;
+    text-align: left;
+  }
+
+  .vermais p{
+    width: auto;
+    margin: 0;
+    padding: 0.25rem 0;
+    transition: all 0.2s;
+  }
+
+  .vermais:focus p,
+  .vermais:hover p,
+  .vermais p:hover{
+    padding: 0.25rem 0.75rem;
+  }
+  
+  .vermais__bordas{
+    display: none;
+  }
+}
