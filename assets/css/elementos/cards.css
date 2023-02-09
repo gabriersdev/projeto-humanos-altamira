@@ -10,6 +10,13 @@
   grid-gap: 1rem;
 }
 
+.personagens .card__titulo,
+.creditos .card__titulo{
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 700;
+  font-size: var(--titulos-h3);
+}
+
 .personagens .card__conteudo,
 .creditos .card__conteudo{
   margin: 1rem 0;

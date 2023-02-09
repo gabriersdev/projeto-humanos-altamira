@@ -10,6 +10,7 @@
 
 @import url(../css/componentes/creditos.css);
 @import url(../css/componentes/personagens.css);
+@import url(../css/componentes/contexto.css);
 
 @font-face {
   font-family: 'CircularStd Book';

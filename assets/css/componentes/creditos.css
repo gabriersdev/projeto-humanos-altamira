@@ -26,9 +26,7 @@
 }
 
 .creditos .card__titulo{
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 700;
-  font-size: var(--titulos-h3);
+  /* Estilização no em: elementos/cards.css */
 }
 
 .creditos .card__conteudo{
