@@ -11,6 +11,7 @@
   justify-content: space-between;
 }
 
+.personagens .card__cabecalho,
 .creditos .card__cabecalho{
   margin-bottom: 0.5rem;
 }
@@ -20,6 +21,7 @@
   width: 20px;
   height: 5px;
   background-color: #000;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
 }
 
@@ -30,13 +32,11 @@
 }
 
 .creditos .card__conteudo{
-  margin: 1rem 0;
+  /* Estilização no em: elementos/cards.css */
 }
 
 .creditos .card__conteudo p{
-  line-height: 1.5;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: var(--fonte-conteudo);
+  /* Estilização no em: elementos/cards.css */
 }
 
 .creditos .card__rodape{
@@ -71,47 +71,8 @@
   --bs-tooltip-margin: 1rem;
 }
 
-@media screen and (max-width: 1850px) {
-  .creditos .creditos__cards{
-    grid-template-columns: 
-    calc(33.3% - 0.5rem)
-    calc(33.3% - 0.5rem)
-    calc(33.3% - 1rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 1520px) {
-  .creditos .creditos__cards{
-    grid-template-columns: 
-    calc(50% - 0.5rem)
-    calc(50% - 0.5rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 1060px) {
-  .creditos .creditos__cards{
-    grid-template-columns: 
-    calc(50% - 0.5rem)
-    calc(50% - 0.5rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .creditos .creditos__cards{
-    grid-template-columns: 
-    calc(100%)
-    ;
-  }
-
-  .creditos__busca{
-    width: auto;
-  }
-
-  .creditos__busca__input{
-    width: 50%;
-    min-width: 0;
-  }
-}
+/* 
+  Media Queries nos arquivos: 
+    elementos/cards.css
+    elementos/secoes.css 
+*/

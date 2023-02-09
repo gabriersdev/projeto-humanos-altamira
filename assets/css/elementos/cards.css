@@ -9,3 +9,55 @@
   ;
   grid-gap: 1rem;
 }
+
+.personagens .card__conteudo,
+.creditos .card__conteudo{
+  margin: 1rem 0;
+}
+
+.personagens .card__conteudo p,
+.creditos .card__conteudo p{
+  line-height: 1.5;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: var(--fonte-conteudo);
+}
+
+@media screen and (max-width: 1850px) {
+  .personagens__cards,
+  .creditos__cards{
+    grid-template-columns: 
+    calc(33.3% - 0.5rem)
+    calc(33.3% - 0.5rem)
+    calc(33.3% - 1rem)
+    ;
+  }
+}
+
+@media screen and (max-width: 1520px) {
+  .personagens__cards,
+  .creditos__cards{
+    grid-template-columns: 
+    calc(50% - 0.5rem)
+    calc(50% - 0.5rem)
+    ;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .personagens__cards,
+  .creditos__cards{
+    grid-template-columns: 
+    calc(50% - 0.5rem)
+    calc(50% - 0.5rem)
+    ;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .personagens__cards,
+  .creditos__cards{
+    grid-template-columns: 
+    calc(100%)
+    ;
+  }
+}

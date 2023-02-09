@@ -78,3 +78,16 @@
 .creditos__conteudo{
   margin-top: 1rem;
 }
+
+@media screen and (max-width: 540px) {
+  .personagens__busca
+  .creditos__busca{
+    width: auto;
+  }
+
+  .personagens__busca__input,
+  .creditos__busca__input{
+    width: 50%;
+    min-width: 0;
+  }
+}

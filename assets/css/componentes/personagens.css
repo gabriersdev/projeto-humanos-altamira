@@ -22,7 +22,7 @@
 }
 
 .personagens .card__cabecalho{
-  margin-bottom: 0.5rem;
+  /* Estilização no em: elementos/cards.css */
 }
 
 .personagens .card__marcador{
@@ -59,13 +59,11 @@
 }
 
 .personagens .card__conteudo{
-  margin: 1rem 0;
+  /* Estilização no em: elementos/cards.css */
 }
 
 .personagens .card__conteudo p{
-  line-height: 1.5;
-  font-family: 'Inter Tight', sans-serif;
-  font-size: var(--fonte-conteudo);
+  /* Estilização no em: elementos/cards.css */
 }
 
 .personagens .card__rodape{
@@ -81,47 +79,8 @@
   font-size: var(--icone);
 }
 
-@media screen and (max-width: 1850px) {
-  .personagens .personagens__cards{
-    grid-template-columns: 
-    calc(33.3% - 0.5rem)
-    calc(33.3% - 0.5rem)
-    calc(33.3% - 1rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 1520px) {
-  .personagens .personagens__cards{
-    grid-template-columns: 
-    calc(50% - 0.5rem)
-    calc(50% - 0.5rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 1060px) {
-  .personagens .personagens__cards{
-    grid-template-columns: 
-    calc(50% - 0.5rem)
-    calc(50% - 0.5rem)
-    ;
-  }
-}
-
-@media screen and (max-width: 540px) {
-  .personagens .personagens__cards{
-    grid-template-columns: 
-    calc(100%)
-    ;
-  }
-
-  .personagens__busca{
-    width: auto;
-  }
-
-  .personagens__busca__input{
-    width: 50%;
-    min-width: 0;
-  }
-}
+/* 
+  Media Queries nos arquivos: 
+    elementos/cards.css
+    elementos/secoes.css 
+*/
