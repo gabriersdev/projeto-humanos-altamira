@@ -1,8 +1,14 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+
 @import url(../css/variaveis.css);
 @import url(../css/normalize.css);
 @import url(../css/reset.css);
 
+@import url(../css/elementos/secoes.css);
+@import url(../css/elementos/cards.css);
+
 @import url(../css/componentes/creditos.css);
+@import url(../css/componentes/personagens.css);
 
 @font-face {
   font-family: 'CircularStd Book';

@@ -1,85 +1,6 @@
-.creditos{
-  padding: var(--espaco-padding-secao) var(--espaco-margem);
-}
+/* Demais estilizações são compartilhadas com outros elementos do site no repositório de elementos (seção e card) */
 
-.creditos__cabecalho{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 1rem 0;
-}
-
-.creditos__titulo{
-  font-family: 'CircularStd Bold';
-  font-size: 2rem;
-  margin-right: 2rem;
-}
-
-.creditos__busca{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--bckg-input);
-  padding: 0.25rem;
-  border: 3px solid transparent;
-  box-sizing: border-box;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.creditos__busca:focus,
-.creditos__busca:hover{
-  border-color: transparent;
-}
-
-.creditos__busca__input,
-.creditos__busca__botao{
-  margin: 0.35rem 0.75rem;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  outline: none;
-}
-
-.creditos__busca__input{
-  min-width: 250px;
-  color: var(--input);
-  font-size: var(--fonte-conteudo);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.creditos__busca__input::placeholder{
-  color: var(--input-placeholder);
-  outline: none;
-}
-
-.creditos__busca__botao{
-  transition: all ease-in-out 0.2s;
-  color: var(--btn-input);
-}
-
-.creditos__busca__botao i{
-  font-size: var(--icone);
-}
-
-.creditos__conteudo{
-  margin-top: 1rem;
-}
-
-.creditos__cards{
-  display: grid;
-  grid-template-columns: 
-  calc(25% - 0.5rem)
-  calc(25% - 0.5rem)
-  calc(25% - 1rem)
-  calc(25% - 1rem)
-  ;
-  grid-gap: 1rem;
-}
-
-.card{
+.creditos .card{
   border: 1px solid var(--borda-card);
   padding: 1.25rem;
   
@@ -90,11 +11,11 @@
   justify-content: space-between;
 }
 
-.card__cabecalho{
+.creditos .card__cabecalho{
   margin-bottom: 0.5rem;
 }
 
-.card__marcador{
+.creditos .card__marcador{
   display: block;
   width: 20px;
   height: 5px;
@@ -102,37 +23,56 @@
   margin-bottom: 1rem;
 }
 
-.card__titulo{
+.creditos .card__titulo{
   font-family: 'Inter Tight', sans-serif;
   font-weight: 700;
   font-size: var(--titulos-h3);
 }
 
-.card__conteudo{
+.creditos .card__conteudo{
   margin: 1rem 0;
 }
 
-.card__conteudo p{
+.creditos .card__conteudo p{
   line-height: 1.5;
   font-family: 'Inter Tight', sans-serif;
   font-size: var(--fonte-conteudo);
 }
 
-.card__rodape{
-  margin-top: 0.5rem;
+.creditos .card__rodape{
+  margin-top: auto;
   display: initial;
 }
 
-.card__link{
-  display: block;
+.creditos .card__link{
+  padding: 0;
+  display: inline;
+  outline: none;
+  font-size: var(--icone);
+  font-style: normal;
 }
 
-.card__link i{
-  font-size: var(--icone);
+.card__link:focus,
+.card__link:hover{
+  color: var(--link-card-hover);
+}
+
+.creditos .card__link::after{
+  content: "\F5EF";
+  display: inline-block;
+  font-family: "bootstrap-icons";
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bckg-tooltip-link) !important;
+  --bs-tooltip-opacity: 1;
+  --bs-tooltip-margin: 1rem;
 }
 
 @media screen and (max-width: 1850px) {
-  .creditos__cards{
+  .creditos .creditos__cards{
     grid-template-columns: 
     calc(33.3% - 0.5rem)
     calc(33.3% - 0.5rem)
@@ -142,7 +82,7 @@
 }
 
 @media screen and (max-width: 1520px) {
-  .creditos__cards{
+  .creditos .creditos__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
@@ -151,7 +91,7 @@
 }
 
 @media screen and (max-width: 1060px) {
-  .creditos__cards{
+  .creditos .creditos__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
@@ -160,7 +100,7 @@
 }
 
 @media screen and (max-width: 540px) {
-  .creditos__cards{
+  .creditos .creditos__cards{
     grid-template-columns: 
     calc(100%)
     ;

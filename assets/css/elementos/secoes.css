@@ -1,0 +1,80 @@
+.personagens,
+.creditos{
+  padding: var(--espaco-padding-secao) var(--espaco-margem);
+}
+
+.personagens__cabecalho,
+.creditos__cabecalho{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+}
+
+.personagens__titulo,
+.creditos__titulo{
+  font-family: 'CircularStd Bold';
+  font-size: 2rem;
+  margin-right: 2rem;
+}
+
+.personagens__busca,
+.creditos__busca{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bckg-input);
+  padding: 0.25rem;
+  border: 3px solid transparent;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+
+.creditos__busca:focus,
+.creditos__busca:hover{
+  border-color: transparent;
+}
+
+.personagens__busca__input,
+.personagens__busca__botao,
+.creditos__busca__input,
+.creditos__busca__botao{
+  margin: 0.35rem 0.75rem;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.personagens__busca__input,
+.creditos__busca__input{
+  min-width: 250px;
+  color: var(--input);
+  font-size: var(--fonte-conteudo);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.personagens__busca__input::placeholder,
+.creditos__busca__input::placeholder{
+  color: var(--input-placeholder);
+  outline: none;
+}
+
+.creditos__busca__botao{
+  transition: all ease-in-out 0.2s;
+  color: var(--btn-input);
+}
+
+.personagens__busca__botao i,
+.creditos__busca__botao i{
+  font-size: var(--icone);
+}
+
+.personagens__conteudo,
+.creditos__conteudo{
+  margin-top: 1rem;
+}
