@@ -9,6 +9,7 @@
   });
 
   document.querySelectorAll('input').forEach(input => {
+
     input.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
 
       input.setCustomValidity('');

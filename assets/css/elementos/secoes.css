@@ -1,12 +1,14 @@
 .personagens,
 .creditos,
-.contexto{
+.contexto,
+.sobre{
   padding: var(--espaco-padding-secao) var(--espaco-margem);
 }
 
 .personagens__cabecalho,
 .creditos__cabecalho,
-.contexto__cabecalho{
+.contexto__cabecalho,
+.sobre__cabecalho{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +18,8 @@
 
 .personagens__titulo,
 .creditos__titulo,
-.contexto__titulo{
+.contexto__titulo,
+.sobre__titulo{
   font-family: 'CircularStd Bold';
   font-size: 2rem;
   margin-right: 2rem;
@@ -78,7 +81,8 @@
 }
 
 .personagens__conteudo,
-.creditos__conteudo{
+.creditos__conteudo,
+.sobre__conteudo{
   margin-top: 1rem;
 }
 

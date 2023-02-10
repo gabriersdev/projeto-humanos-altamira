@@ -23,9 +23,16 @@
   --texto-mostrar-mais: rgba(0, 0, 0, 0.6);
   --texto-mostrar-mais-hover: rgba(0, 0, 0, 0.7);
   --bckg-texto-mostrar-mais-hover: rgba(0, 0, 0, 0.1); 
-  
+
   --texto-periodo-contexto: #3D3D3D;
+
+  --bckg-sobre-descricao: rgba(0, 0, 0, 0.2);
+  --texto-sobre-descricao: #F6F6F6;
+
+  --bckg-sobre-tarja: #000;
+  --txt-sobre-tarja: #FFF;
   
+
   --fonte-conteudo: 1.25rem;
   --titulos-h3: 1.6rem;
   --icone: 1.5rem;

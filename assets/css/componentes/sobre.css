@@ -1,0 +1,62 @@
+.sobre{
+  /* Estilização no em: elementos/secoes.css */
+  min-height: 50vh;
+  background: url(../../img/banner-secao-sobre.png) center / cover no-repeat;
+}
+
+.sobre__cabecalho{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.sobre__titulo{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.sobre__conteudo{
+  /* Estilização no em: elementos/secoes.css */
+  display: flex;
+  align-items: center;
+  align-content: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.sobre__imagem{
+  max-width: 100%;
+  border-radius: 15px;
+  margin-right: 1rem;
+}
+
+.sobre__descricao{
+  width: 70%;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: var(--bckg-sobre-descricao);
+}
+
+.sobre__descricao li,
+.sobre__descricao a,
+.sobre__descricao > *{
+  font-size: var(--fonte-conteudo);
+  color: var(--texto-sobre-descricao);
+}
+
+.sobre__descricao ul li{
+  list-style-type: square;
+  margin-left: 1rem;
+}
+
+ul.no-type li{
+  list-style-type: none;
+}
+
+a.link-visivel{
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 1595px) {
+  .sobre__descricao{
+    width: 100%;
+  }
+}
