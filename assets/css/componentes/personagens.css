@@ -15,19 +15,20 @@
 }
 
 .personagens .card:focus,
-.personagens .card:hover{
-  box-shadow:  0px 0px 0px 3px var(--box-shadow-card-personagens);
-  -webkit-box-shadow: 0px 0px 0px 3px var(--box-shadow-card-personagens);
-  -moz-box-shadow: 0px 0px 0px 3px var(--box-shadow-card-personagens);
-}
-
-.personagens .card__cabecalho{
+.personagens .card:hover,
+.extras .card:focus,
+.extras .card:hover{
   /* Estilização no em: elementos/cards.css */
 }
 
-.personagens .card__marcador{
-  display: block;
-  margin-bottom: 1rem;
+.personagens .card__cabecalho,
+.extras .card__cabecalho{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.personagens .card__marcador
+.extras .card__marcador{
+  /* Estilização no em: elementos/cards.css */
 }
 
 .personagens .card__marcador i{
@@ -51,9 +52,9 @@
   text-rendering: auto;
 }
 
-.personagens .card__titulo{
+.personagens .card__titulo,
+.extras .card__titulo{
   /* Estilização no em: elementos/cards.css */
-  color: var(--titulo-card-personagem);
 }
 
 .personagens .card__conteudo{

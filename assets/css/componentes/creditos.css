@@ -5,15 +5,14 @@
   padding: 1.25rem;
   
   border-radius: 0;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.personagens .card__cabecalho,
 .creditos .card__cabecalho{
-  margin-bottom: 0.5rem;
+  /* Estilização no em: elementos/cards.css */
 }
 
 .creditos .card__marcador{
@@ -70,7 +69,7 @@
 }
 
 /* 
-  Media Queries nos arquivos: 
-    elementos/cards.css
-    elementos/secoes.css 
+Media Queries nos arquivos: 
+elementos/cards.css
+elementos/secoes.css 
 */

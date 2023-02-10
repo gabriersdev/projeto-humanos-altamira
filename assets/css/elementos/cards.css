@@ -1,5 +1,6 @@
 .personagens__cards,
-.creditos__cards{
+.creditos__cards,
+.extras__cards{
   display: grid;
   grid-template-columns: 
   calc(25% - 0.5rem)
@@ -10,20 +11,64 @@
   grid-gap: 1rem;
 }
 
+.personagens .card,
+.extras .card{
+  border: 1px solid var(--borda-card-personagens);
+  padding: 1.25rem;
+  
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  outline: none;
+  transition: box-shadow ease-in-out 0.2s ;
+}
+
+.personagens .card:focus,
+.personagens .card:hover,
+.extras .card:focus,
+.extras .card:hover{
+  box-shadow:  0px 0px 0px 3px var(--box-shadow-card-personagens);
+  -webkit-box-shadow: 0px 0px 0px 3px var(--box-shadow-card-personagens);
+  -moz-box-shadow: 0px 0px 0px 3px var(--box-shadow-card-personagens);
+}
+
+.personagens .card__cabecalho,
+.creditos .card__cabecalho,
+.extras .card__cabecalho{
+  margin-bottom: 0.5rem;
+}
+
+.personagens .card__marcador
+.extras .card__marcador{
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .personagens .card__titulo,
-.creditos .card__titulo{
+.creditos .card__titulo,
+.extras .card__titulo{
   font-family: 'Inter Tight', sans-serif;
   font-weight: 700;
   font-size: var(--titulos-h3);
 }
 
+.personagens .card__titulo,
+.extras .card__titulo{
+  color: var(--titulo-card-personagem);
+}
+
 .personagens .card__conteudo,
-.creditos .card__conteudo{
+.creditos .card__conteudo,
+.extras .card__conteudo{
   margin: 1rem 0;
 }
 
 .personagens .card__conteudo p,
-.creditos .card__conteudo p{
+.creditos .card__conteudo p,
+.extras .card__conteudo p{
   line-height: 1.5;
   font-family: 'Inter Tight', sans-serif;
   font-size: var(--fonte-conteudo);
@@ -31,7 +76,8 @@
 
 @media screen and (max-width: 1850px) {
   .personagens__cards,
-  .creditos__cards{
+  .creditos__cards,
+  .extras__cards{
     grid-template-columns: 
     calc(33.3% - 0.5rem)
     calc(33.3% - 0.5rem)
@@ -42,7 +88,8 @@
 
 @media screen and (max-width: 1520px) {
   .personagens__cards,
-  .creditos__cards{
+  .creditos__cards,
+  .extras__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
@@ -52,7 +99,8 @@
 
 @media screen and (max-width: 1060px) {
   .personagens__cards,
-  .creditos__cards{
+  .creditos__cards,
+  .extras__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
@@ -62,7 +110,8 @@
 
 @media screen and (max-width: 540px) {
   .personagens__cards,
-  .creditos__cards{
+  .creditos__cards,
+  .extras__cards{
     grid-template-columns: 
     calc(100%)
     ;

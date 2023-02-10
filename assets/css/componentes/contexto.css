@@ -1,5 +1,6 @@
 .contexto{
   /* Estilização no em: elementos/cards.css */
+  margin-bottom: var(--espaco-padding-secao);
 }
 
 .contexto__titulo{

@@ -31,9 +31,10 @@
 
   --bckg-sobre-tarja: #000;
   --txt-sobre-tarja: #FFF;
-  
+
 
   --fonte-conteudo: 1.25rem;
+  --titulos-h2: 2rem;
   --titulos-h3: 1.6rem;
   --icone: 1.5rem;
 }

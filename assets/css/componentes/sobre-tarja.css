@@ -15,7 +15,7 @@
 .sobre-tarja__iframe{
   width: 700px;
   max-width: 100%;
-  margin-right: 2rem;
+  margin-right: 1rem;
   min-height: 275px;
 }
 
@@ -27,6 +27,7 @@
 }
 
 .sobre-tarja__titulo{
+  font-size: var(--titulos-h2);
   font-family: 'CircularStd Bold';
   flex-grow: 2;
 }
@@ -38,6 +39,7 @@
 
 .sobre-tarja__link:hover{
   padding: 0 0.75rem;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sobre-tarja__link, 
@@ -49,11 +51,6 @@
 
 .sobre-tarja__link:nth-child(2){
   margin-bottom: 0.5rem;
-}
-
-.sobre-tarja__link:nth-child(2):hover,
-.sobre-tarja__link:nth-child(3):hover{
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .sobre-tarja__link:nth-child(2)::before{

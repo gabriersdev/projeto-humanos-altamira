@@ -1,0 +1,67 @@
+.extras{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.extras__cabecalho{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.extras__titulo{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.extras__conteudo{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.extras__cards{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.extras .card{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.extras .card__cabecalho{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.extras .card__marcador{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.extras .card__marcador{
+  font-size: var(--icone);
+  font-style: normal;
+}
+
+.extras .card-video .card__marcador::after{
+  content: "\F62B";
+  color: #E9271A;
+}
+
+.extras .card-musica .card__marcador::after{
+  content: "\F30E";
+  color: #155EEA;
+}
+
+.extras .card-podcast .card__marcador::after{
+  content: "\F48D";
+  color: #32CD32;
+}
+
+.extras .card__marcador::after{
+  display: inline-block;
+  font-family: "bootstrap-icons";
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.extras .card__titulo{
+  /* Estilização no em: elementos/cards.css */
+}
+
+.extras .card__conteudo{
+  /* Estilização no em: elementos/cards.css */
+}
+

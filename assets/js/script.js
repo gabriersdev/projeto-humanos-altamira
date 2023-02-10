@@ -22,5 +22,20 @@
     })
   });
 
-
+  window.onload = () => {
+    const links = document.querySelectorAll('[data-link]');
+    links.forEach(link => {
+      switch(link.dataset.link){
+        case "site-oficial":
+          link.href = 'https://www.projetohumanos.com.br';
+          break;
+        case "comunidade-reddit":
+          link.href = 'https://www.reddit.com/r/ProjetoHumanos/';
+          break;
+        case "ivan-mizanzuk":
+          link.href = 'https://mizanzuk.com';
+          break;
+      }
+    })
+  }
 })();
