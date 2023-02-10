@@ -23,8 +23,13 @@
   });
 
   window.onload = () => {
-    const links = document.querySelectorAll('[data-link]');
-    links.forEach(link => {
+    const dataAtual = new Date();
+
+    document.querySelectorAll("[data-ano-atual]").forEach(area => {
+      area.textContent = `${dataAtual.getFullYear()}`;
+    })
+
+    document.querySelectorAll('[data-link]').forEach(link => {
       switch(link.dataset.link){
         case "site-oficial":
           link.href = 'https://www.projetohumanos.com.br';

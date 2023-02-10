@@ -1,6 +1,7 @@
 :root{
   --espaco-margem: 15rem;
   --espaco-padding-secao: 4rem;
+  --espaco-padding-rodape-tarja: 3rem;
 
   --input: #000;
   --input-placeholder: rgba(0, 0, 0, 0.5);
@@ -30,8 +31,15 @@
   --texto-sobre-descricao: #F6F6F6;
 
   --bckg-sobre-tarja: #000;
-  --txt-sobre-tarja: #FFF;
+  --txt-sobre-tarja: #F6F6F6;
+  
+  --borda-rodape: #3D3D3D;
+  --txt-rodape: #3D3D3D;
 
+  --bckg-link-rodape-tarja: #474BFF;
+  --borda-rodape-tarja: #474BFF;
+  --titulo-rodape-tarja: #4D4D4D;
+  --txt-rodape-tarja: #F6F6F6;
 
   --fonte-conteudo: 1.25rem;
   --titulos-h2: 2rem;
@@ -60,11 +68,13 @@
 @media screen and (max-width: 600px) {
   :root{
     --espaco-margem: 1.5rem;
+    --espaco-padding-rodape-tarja: 1.5rem;
   }
 }
 
 @media screen and (max-width: 540px) {
   :root{
     --espaco-margem: 1rem;
+    --espaco-padding-rodape-tarja: 1rem;
   }
 }

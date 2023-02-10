@@ -1,0 +1,16 @@
+.rodape{
+  border-top: 1px dashed var(--borda-rodape);
+  padding: 2rem var(--espaco-margem);
+}
+
+.rodape__texto{
+  text-align: center;
+  color: var(--txt-rodape);
+  font-size: var(--fonte-conteudo);
+}
+
+@media screen and (max-width: 540px) {
+  .rodape-tarja{
+    padding: 1rem var(--espaco-margem);
+  }
+}
