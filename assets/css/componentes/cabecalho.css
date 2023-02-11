@@ -1,11 +1,52 @@
 .cabecalho{
   min-height: 100vh;
-
   display: grid;
   grid-template-columns: 20% 80%;
-
   color: #F6F6F6;
   background: url(../../img/banner-cabecalho.png) center / cover no-repeat;
+  position: relative;
+}
+
+.selecao-tema{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.selecao-tema__botao{
+  background-color: transparent;
+  border: transparent;
+  margin-right: 0.25rem;
+}
+
+.selecao-tema__botao i{
+  color: #3D3D3D;
+  transition: all 0.2s;
+}
+
+.selecao-tema__botao:hover i{
+  background-color: #3D3D3D;
+  color: #F6F6F6;
+}
+
+.selecao-tema__botao.ativo i{
+  color: #F6F6F6;
+}
+
+.selecao-tema__botao.ativo:hover i{
+  background-color: #F6F6F6;
+  color: #3D3D3D;
+}
+
+.selecao-tema__botao:last-child{
+  margin-right: 0;
+}
+
+.selecao-tema__botao i{
+  font-size: var(--icone);
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
 .menu{
