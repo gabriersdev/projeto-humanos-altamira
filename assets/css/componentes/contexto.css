@@ -5,6 +5,7 @@
 
 .contexto__titulo{
   /* Estilização no em: elementos/cards.css */
+  margin-right: 0;
 }
 
 .contexto__cabecalho{

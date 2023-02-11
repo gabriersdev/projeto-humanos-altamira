@@ -2,7 +2,8 @@
 .creditos,
 .contexto,
 .sobre,
-.extras{
+.extras,
+.recomendacao{
   padding: var(--espaco-padding-secao) var(--espaco-margem);
 }
 
@@ -10,7 +11,8 @@
 .creditos__cabecalho,
 .contexto__cabecalho,
 .sobre__cabecalho,
-.extras__cabecalho{
+.extras__cabecalho,
+.recomendacao__cabecalho{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,7 +24,8 @@
 .creditos__titulo,
 .contexto__titulo,
 .sobre__titulo,
-.extras__titulo{
+.extras__titulo,
+.recomendacao__titulo{
   font-family: 'CircularStd Bold';
   font-size: var(--titulos-h2);
   margin-right: 2rem;
@@ -86,7 +89,8 @@
 .personagens__conteudo,
 .creditos__conteudo,
 .sobre__conteudo,
-.extras__conteudo{
+.extras__conteudo,
+.recomendacao__conteudo{
   margin-top: 1rem;
 }
 

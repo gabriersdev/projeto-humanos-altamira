@@ -8,6 +8,7 @@
 
 .extras__titulo{
   /* Estilização no em: elementos/secoes.css */
+  margin-right: 0;
 }
 
 .extras__conteudo{

@@ -10,6 +10,7 @@
 
 .sobre__titulo{
   /* Estilização no em: elementos/secoes.css */
+  margin-right: 0;
 }
 
 .sobre__conteudo{
