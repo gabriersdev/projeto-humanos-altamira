@@ -48,14 +48,6 @@
   margin-left: 1rem;
 }
 
-ul.no-type li{
-  list-style-type: none;
-}
-
-a.link-visivel{
-  text-decoration: underline;
-}
-
 @media screen and (max-width: 1595px) {
   .sobre__descricao{
     width: 100%;

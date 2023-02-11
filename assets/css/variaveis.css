@@ -37,6 +37,8 @@
   --txt-rodape: #3D3D3D;
 
   --bckg-link-rodape-tarja: #474BFF;
+  --box-shadow-link-rodape-tarja: rgb(71, 75, 255, 0.3);
+
   --borda-rodape-tarja: #474BFF;
   --titulo-rodape-tarja: #4D4D4D;
   --txt-rodape-tarja: #F6F6F6;
@@ -44,6 +46,7 @@
   --fonte-conteudo: 1.25rem;
   --titulos-h2: 2rem;
   --titulos-h3: 1.6rem;
+  --titulo-h1: 3.25rem;
   --icone: 1.5rem;
 }
 

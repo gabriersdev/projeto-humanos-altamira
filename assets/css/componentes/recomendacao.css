@@ -46,6 +46,8 @@
 
 .plataformas{
   margin: 1rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .plataforma__link{
@@ -53,12 +55,17 @@
   outline: none;
 }
 
-.plataforma__link:last-child{
-  margin-right: 0;
+.plataforma__link img{
+  max-width: 115px;
 }
 
-.embed-spotify{
+.embed-spotify,
+.embed-deezer{
+  outline: none;
+}
 
+.plataforma__link:last-child{
+  margin-right: 0;
 }
 
 @media screen and (max-width: 500px)  {
@@ -74,7 +81,6 @@
 
   .plataformas{
     width: 100%;
-    display: flex;
     justify-content: space-between;  
   }
 

@@ -18,6 +18,8 @@
 @import url(../css/componentes/rodape-tarja.css);
 @import url(../css/componentes/recomendacao.css);
 
+@import url(../css/componentes/cabecalho.css);
+
 @font-face {
   font-family: 'CircularStd Book';
   src: url(../fonts/circular/CircularStd-Book.otf);
@@ -43,6 +45,20 @@
   font-family: 'CircularStd Book', 'Inter Tight', sans-serif;
 }
 
+body{
+  background-color: #F6F6F6;
+}
+
 button, a{
   cursor: pointer;
+}
+
+ul.no-type li{
+  list-style-type: none;
+}
+
+a.link-visivel{
+  text-decoration: underline;
+  cursor: pointer;
+  outline: none;
 }

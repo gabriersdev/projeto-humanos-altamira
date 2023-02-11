@@ -1,0 +1,128 @@
+.cabecalho{
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+  color: #F6F6F6;
+  background: url(../../img/banner-cabecalho.png) center / cover no-repeat;
+}
+
+.menu{
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a{
+  outline: none;
+}
+
+.menu__item{
+  font-size: var(--fonte-conteudo);
+  margin: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  transition: background-color ease-in-out 0.2s;
+}
+
+.menu__item:hover,
+a:hover .menu__item,
+a:focus .menu__item{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.cabecalho__principal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.cabecalho__titulo{
+  font-size: var(--titulo-h1);
+  font-family: 'CircularStd Light';
+}
+
+.cabecalho__titulo:first-child{
+  font-family: 'CircularStd Bold';
+}
+
+.cabecalho__descricao{
+  margin-top: 2rem;
+  font-family: 'CircularStd Light';
+  font-size: var(--fonte-conteudo);
+  max-width: 50%;
+}
+
+@media screen and (max-width: 1085px) {
+  .cabecalho{
+    grid-template-columns: 25% 75%;
+  }
+
+  .cabecalho__descricao{
+    max-width: 60%;
+  }
+}
+
+@media screen and (max-width: 785px) {
+  .cabecalho{
+    grid-template-columns: 30% 70%;
+  }
+
+  .cabecalho__descricao{
+    max-width: 80%;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .cabecalho{
+    grid-template-columns: 35% 65%;
+  }
+
+  .cabecalho__descricao{
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .cabecalho{
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 0 2rem;
+  }
+
+  .cabecalho__principal{
+    padding: 0;
+    padding-bottom: 2rem;
+  }
+
+  .menu{
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem 0;
+  }
+
+  .menu ul{
+    padding: 0;
+    margin: 0;
+  }
+
+  .menu__item{
+    margin: 0 2rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .cabecalho{
+    padding: 0 1rem;
+  }
+
+  .menu__item{
+    margin: 0 1rem;
+  }
+}
