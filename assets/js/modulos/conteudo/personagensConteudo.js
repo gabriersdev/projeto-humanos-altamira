@@ -1,4 +1,4 @@
-const personagensConteudo = [
+export const personagensConteudo = [
   {
     nome: 'A. Soares',
     descricao: 'PM que teria apresentado Carlos Alberto à Zaila Gomes',
@@ -2380,7 +2380,3 @@ const personagensConteudo = [
   
   
 ]
-
-export{
-  personagensConteudo
-}

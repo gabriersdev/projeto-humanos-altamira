@@ -8,6 +8,23 @@ const carregarPersonagens = (quantidade) => {
   personagensCards.innerHTML = '';
   const cards = new Array();
   
+  personagens.sort((a, b) => comparaNomes(a, b));
+
+  function comparaNomes(a, b){
+    const primeiro = a.nome.toLowerCase();
+    const segundo = b.nome.toLowerCase();
+
+    if(primeiro < segundo){
+      return -1;
+    }
+
+    if(primeiro > segundo){
+      return 1;
+    }
+
+    return 0;
+  }
+
   personagens.forEach((personagem, index) => {
     if(index < quantidade){
       cards.push(criarCard(personagem.nome, personagem.descricao, personagem.link).trim());
