@@ -19,7 +19,7 @@
   background-color: var(--bckg-link-rodape-tarja);
   font-size: var(--fonte-conteudo);
   color: var(--txt-rodape-tarja);
-  border-radius: 50px;
+  border-radius: 10px;
   outline: none;
   transition: box-shadow ease-in-out 0.2s;
 }

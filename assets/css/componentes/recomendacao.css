@@ -90,9 +90,14 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  .recomendacao__conteudo__titulo{
+    margin-right: 0;
+  }
+}
+
 @media screen and (max-width: 460px) {
   .plataformas{
     flex-direction: column;
-
   }
 }

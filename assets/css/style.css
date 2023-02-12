@@ -19,6 +19,9 @@
 @import url(../css/componentes/recomendacao.css);
 
 @import url(../css/componentes/cabecalho.css);
+@import url(../css/componentes/episodios.css);
+
+@import url(../css/componentes/ultimos-episodios.css);
 
 @font-face {
   font-family: 'CircularStd Book';

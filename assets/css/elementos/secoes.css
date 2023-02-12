@@ -3,7 +3,8 @@
 .contexto,
 .sobre,
 .extras,
-.recomendacao{
+.recomendacao,
+.episodios{
   padding: var(--espaco-padding-secao) var(--espaco-margem);
 }
 
@@ -12,7 +13,8 @@
 .contexto__cabecalho,
 .sobre__cabecalho,
 .extras__cabecalho,
-.recomendacao__cabecalho{
+.recomendacao__cabecalho,
+.episodios__cabecalho{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,14 +27,16 @@
 .contexto__titulo,
 .sobre__titulo,
 .extras__titulo,
-.recomendacao__titulo{
+.recomendacao__titulo,
+.episodios__titulo{
   font-family: 'CircularStd Bold';
   font-size: var(--titulos-h2);
   margin-right: 2rem;
 }
 
 .personagens__busca,
-.creditos__busca{
+.creditos__busca,
+.episodios__busca{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -46,14 +50,21 @@
 
 
 .creditos__busca:focus,
-.creditos__busca:hover{
+.creditos__busca:hover,
+
+.episodios__busca:focus,
+.episodios__busca:hover{
   border-color: transparent;
 }
 
 .personagens__busca__input,
 .personagens__busca__botao,
+
 .creditos__busca__input,
-.creditos__busca__botao{
+.creditos__busca__botao,
+
+.episodios__busca__input,
+.episodios__busca__botao{
   margin: 0.35rem 0.75rem;
   padding: 0;
   border: none;
@@ -62,7 +73,8 @@
 }
 
 .personagens__busca__input,
-.creditos__busca__input{
+.creditos__busca__input,
+.episodios__busca__input{
   min-width: 250px;
   color: var(--input);
   font-size: var(--fonte-conteudo);
@@ -71,7 +83,8 @@
 }
 
 .personagens__busca__input::placeholder,
-.creditos__busca__input::placeholder{
+.creditos__busca__input::placeholder,
+.episodios__busca__input::placeholder{
   color: var(--input-placeholder);
   outline: none;
 }
@@ -90,18 +103,21 @@
 .creditos__conteudo,
 .sobre__conteudo,
 .extras__conteudo,
-.recomendacao__conteudo{
+.recomendacao__conteudo,
+.episodios__conteudo{
   margin-top: 1rem;
 }
 
 @media screen and (max-width: 540px) {
   .personagens__busca
-  .creditos__busca{
+  .creditos__busca,
+  .episodios__busca{
     width: auto;
   }
 
   .personagens__busca__input,
-  .creditos__busca__input{
+  .creditos__busca__input,
+  .episodios__busca__input{
     width: 50%;
     min-width: 0;
   }

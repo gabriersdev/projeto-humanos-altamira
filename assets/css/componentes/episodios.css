@@ -1,0 +1,172 @@
+.episodios{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__cabecalho{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__titulo{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__busca{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__busca__input{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__busca__botao{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__conteudo{
+  /* Estilização no em: elementos/secoes.css */
+}
+
+.episodios__cards{
+  /* Estilização no em: elementos/secoes.css */
+  display: grid;
+  grid-template-columns: 
+  calc(25% - 0.5rem)
+  calc(25% - 0.5rem)
+  calc(25% - 1rem)
+  calc(25% - 1rem)
+  ;
+  grid-gap: 1rem;
+}
+
+.episodios .card{
+  /* Estilização no em: elementos/secoes.css */
+  display: inline;
+  background: url(../../img/episodios-thumbs/default.png) top / cover no-repeat;
+  color: #F6F6F6;
+  min-width: 100%;
+  min-height: 10%;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: var(--fonte-conteudo);
+  cursor: pointer;
+}
+
+.episodios .card__cabecalho p{
+  margin: 1rem;
+}
+
+.episodios .card__conteudo{
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0.5rem;
+  width: calc(100% - 1.25rem);
+}
+
+.episodios .card__titulo{
+  font-family: 'CircularStd Bold', sans-serif;
+  font-size: var(--titulos-h3);
+  margin-bottom: 1rem;
+}
+
+.episodios .card__conteudo p{
+  font-family: 'CircularStd Light', 'CircularStd Book', sans-serif;
+}
+
+.episodios div.card__rodape{
+  margin: 1rem;
+  width: calc(100% - 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.episodios .identificacao-ep{
+  display: flex;
+  flex-direction: column;
+}
+
+.episodios .identificacao-ep__nome{
+  text-transform: capitalize;
+}
+
+.episodios .identificacao-ep__numero{
+  font-size: 2.5rem;
+}
+
+.episodios .card__cabecalho p,
+.episodios .identificacao-ep__nome,
+.episodios .identificacao-ep__numero{
+  font-family: 'Inter Tight', 'Circular', sans-serif;
+}
+
+.episodios .card__cabecalho p,
+.episodios.card__titulo,
+.episodios .identificacao-ep__nome,
+.episodios .identificacao-ep__numero{
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.episodios .controles{
+  
+}
+
+.episodios .controle__ouvir,
+.episodios .controle__saiba-mais{
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.75rem;
+  font-size: var(--icone);
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+  outline: none;
+}
+
+.episodios .controle__ouvir:hover,
+.episodios .controle__ouvir:focus,
+.episodios .controle__saiba-mais:hover,
+.episodios .controle__saiba-mais:focus{
+  background-color: #F6F6F6;
+  color: #000;
+}
+
+@media screen and (max-width: 1815px) {
+  .episodios__cards{
+    grid-template-columns: 
+    calc(33.3% - 0.5rem)
+    calc(33.3% - 0.5rem)
+    calc(33.3% - 1rem)
+    ;
+  }
+}
+
+
+@media screen and (max-width: 1442px) {
+  .episodios__cards{
+    grid-template-columns: 
+    calc(50% - 0.5rem)
+    calc(50% - 0.5rem)
+    ;
+  }
+}
+
+@media screen and (max-width: 696px) {
+  .episodios .card__titulo{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .episodios .card__conteudo p{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .episodios__cards{
+    grid-template-columns: 
+    calc(100%)
+    ;
+  }
+}

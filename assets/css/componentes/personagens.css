@@ -52,8 +52,7 @@
   text-rendering: auto;
 }
 
-.personagens .card__titulo,
-.extras .card__titulo{
+.personagens .card__titulo{
   /* Estilização no em: elementos/cards.css */
 }
 
@@ -63,19 +62,6 @@
 
 .personagens .card__conteudo p{
   /* Estilização no em: elementos/cards.css */
-}
-
-.personagens .card__rodape{
-  margin-top: 0.5rem;
-  display: initial;
-}
-
-.personagens .card__link{
-  display: block;
-}
-
-.personagens .card__link i{
-  font-size: var(--icone);
 }
 
 /* 
