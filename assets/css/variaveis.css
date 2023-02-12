@@ -62,6 +62,14 @@
   }
 }
 
+@media screen and (max-width: 767px) {
+  :root{
+    --titulos-h2: 1.8rem;
+    --titulos-h3: 1.4rem;
+    --titulo-h1: 3rem;
+  }
+}
+
 @media screen and (max-width: 730px) {
   :root{
     --espaco-margem: 3rem;
@@ -79,5 +87,14 @@
   :root{
     --espaco-margem: 1rem;
     --espaco-padding-rodape-tarja: 1rem;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  :root{
+    --fonte-conteudo: 1.25rem;
+    --titulos-h2: 1.5rem;
+    --titulos-h3: 1.5rem;
+    --titulo-h1: 2.5rem;
   }
 }

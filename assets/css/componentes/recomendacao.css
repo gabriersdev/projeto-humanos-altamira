@@ -59,8 +59,8 @@
   max-width: 115px;
 }
 
-.embed-spotify,
-.embed-deezer{
+[data-embed='spotify'],
+[data-embed='deezer']{
   outline: none;
 }
 
@@ -99,5 +99,6 @@
 @media screen and (max-width: 460px) {
   .plataformas{
     flex-direction: column;
+    align-items: flex-start;
   }
 }

@@ -42,5 +42,31 @@
           break;
       }
     })
+
+    const sortearEmbed = () => {
+      const sorteio = Math.floor(Math.random() * 2);
+      const embeds = document.querySelectorAll('[data-embed]');
+      const recomendacao = document.querySelector('.recomendacao__conteudo');
+
+      if(sorteio == 0){
+        
+        if(embeds[0] !== null){
+          embeds[0].style.display = 'block';
+          embeds[1].style.display = 'none';
+          recomendacao.classList.value = 'recomendacao__conteudo';
+        }
+
+      }else{
+
+        if(embeds[1] !== null){
+          embeds[1].style.display = 'block';
+          embeds[0].style.display = 'none';
+          recomendacao.classList.value = 'recomendacao__conteudo embed-deezer';
+        }
+
+      }
+    }
+
+    sortearEmbed();
   }
 })();
