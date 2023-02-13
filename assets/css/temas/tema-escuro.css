@@ -68,7 +68,7 @@
   --text-shadow-card-episodios: var(--preto-50);
   --bckg-controle-episodios: var(--branco-25);
   --bckg-controle-episodios-hover: var(--branco);
-  --txt-controle-episodios-hover: var(--branco);
+  --txt-controle-episodios-hover: var(--preto);
 
   --btn-ultimos-episodios: var(--branco);
   
