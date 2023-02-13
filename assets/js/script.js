@@ -155,14 +155,16 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
     const trocarTema = (tema) => {
       const head = document.querySelector('head');
       const arquivoTema = head.querySelector('[data-import="arquivo-tema"]');
-      
+
       switch(tema){
         case 'claro':
           arquivoTema.href = './assets/css/temas/tema-claro.css';
+          document.querySelector('[data-tema="claro"]').classList.toggle('ativo');
         break;
 
         case 'escuro':
           arquivoTema.href = './assets/css/temas/tema-escuro.css';
+          document.querySelector('[data-tema="escuro"]').classList.toggle('ativo');
         break;
       }
     }

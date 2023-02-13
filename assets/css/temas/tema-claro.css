@@ -1,41 +1,88 @@
 :root{
-  --input: #000;
-  --input-placeholder: rgba(0, 0, 0, 0.5);
+  --preto: #000;
+  --preto-10: rgba(0, 0, 0, 0.1);
+  --preto-20: rgba(0, 0, 0, 0.2);
+  --preto-50: rgba(0, 0, 0, 0.5);
+  --preto-60: rgba(0, 0, 0, 0.6);
+  --preto-70: rgba(0, 0, 0, 0.7);
+  --branco: #F6F6F6; 
+  --branco-20: rgba(255, 255, 255, 0.2);
+  --branco-25: rgba(255, 255, 255, 0.25);
+  --cinza-forte: #3D3D3D;
+  --cinza-fortissimo: #4D4D4D;
+  --cinza-claro: #DDD;
+  --roxo: #474BFF;
+  --roxo-30: rgb(71, 75, 255, 0.3);
+  --azul: #155EEA;
   
-  --bckg-input: #DDD;
-  --bckg-btn-input: #DDD;
-  --bckg-btn-input-hover: rgba(0, 0, 0, 0.1);
-  --btn-input: #3D3D3D;
-
-  --borda-card: #000;
-
-  --link-card-hover: #000;
-  --bckg-tooltip-link: #155EEA;
-
-  --titulo-card-personagem: #3D3D3D;
-  --borda-card-personagens: rgba(0, 0, 0, 0.2);
-  --box-shadow-card-personagens: rgba(0, 0, 0, 0.2);
-
-  --bordas-mostrar-mais: rgba(0, 0, 0, 0.2);
-  --texto-mostrar-mais: rgba(0, 0, 0, 0.6);
-  --texto-mostrar-mais-hover: rgba(0, 0, 0, 0.7);
-  --bckg-texto-mostrar-mais-hover: rgba(0, 0, 0, 0.1); 
-
-  --texto-periodo-contexto: #3D3D3D;
-
-  --bckg-sobre-descricao: rgba(0, 0, 0, 0.2);
-  --texto-sobre-descricao: #F6F6F6;
-
-  --bckg-sobre-tarja: #000;
-  --txt-sobre-tarja: #F6F6F6;
+  --txt-cabecalho: var(--branco);
+  --icone-btn-tema: var(--cinza-forte);
+  --icone-btn-tema-hover: var(--branco);
+  --bckg-btn-tema: var(--cinza-forte);
+  --cor-btn-tema-ativo: var(--branco);
+  --bckg-btn-tema-ativo-hover: var(--branco);
+  --cor-btn-tema-ativo-hover: var(--cinza-forte);
+  --bckg-icone-btn-tema: var(--preto-50);
+  --bckg-item-menu-hover: var(--preto-20);
   
-  --borda-rodape: #3D3D3D;
-  --txt-rodape: #3D3D3D;
-
-  --bckg-link-rodape-tarja: #474BFF;
-  --box-shadow-link-rodape-tarja: rgb(71, 75, 255, 0.3);
-
-  --borda-rodape-tarja: #474BFF;
-  --titulo-rodape-tarja: #4D4D4D;
-  --txt-rodape-tarja: #F6F6F6;
+  --input: var(--preto);
+  --input-placeholder: var(--preto-50);
+  
+  --bckg-input: var(--cinza-claro);
+  --bckg-btn-input: var(--cinza-claro);
+  --bckg-btn-input-hover: var(--preto-10);
+  --btn-input: var(--cinza-forte);
+  
+  --borda-card: var(--preto);
+  
+  --link-card-hover: var(--preto);
+  --bckg-tooltip-link: var(--azul);
+  
+  --titulo-card-personagem: var(--cinza-forte);
+  --borda-card-personagens: var(--preto-20);
+  --box-shadow-card-personagens: var(--preto-20);
+  
+  --bordas-mostrar-mais: var(--preto-20);
+  --texto-mostrar-mais: var(--preto-60); 
+  --texto-mostrar-mais-hover: var(--preto-70); 
+  --bckg-texto-mostrar-mais-hover: var(--preto-10); 
+  
+  --texto-periodo-contexto: var(--cinza-forte);
+  
+  --bckg-sobre-descricao: var(--preto-20);
+  --texto-sobre-descricao: var(--branco);
+  
+  --bckg-sobre-tarja: var(--preto);
+  --bckg-sobre-tarja-hover: var(--branco-20);
+  --txt-sobre-tarja: var(--branco);
+  
+  --btn-reddit: #E93F1A;
+  
+  --txt-card-episodios: var(--branco);
+  --bckg-card-conteudo-episodios: var(--preto-20);
+  --text-shadow-card-episodios: var(--preto-50);
+  --bckg-controle-episodios: var(--branco-25);
+  --bckg-controle-episodios-hover: var(--branco);
+  --txt-controle-episodios-hover: var(--preto);
+  
+  --icon-card-video: #E9271A;
+  --icon-card-musica: #155EEA;
+  --icon-card-podcast: #32CD32;
+  
+  --borda-contexto-periodo: var(--preto);
+  --bckg-marcador-contexto: var(--preto);
+  
+  --bckg-marcador-card-creditos: var(--preto);
+  
+  --borda-rodape: var(--cinza-forte);
+  --txt-rodape: var(--cinza-forte);
+  
+  --btn-ultimos-episodios: var(--preto);
+  
+  --bckg-link-rodape-tarja: var(--roxo);
+  --box-shadow-link-rodape-tarja: var(--roxo-30);
+  
+  --borda-rodape-tarja: var(--roxo);
+  --titulo-rodape-tarja: var(--cinza-fortissimo);
+  --txt-rodape-tarja: var(--branco);
 }

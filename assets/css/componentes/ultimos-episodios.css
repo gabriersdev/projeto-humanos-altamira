@@ -7,7 +7,7 @@
   outline: none;
   padding: 0.25rem 0;
   border-radius: 50px;
-  color: #000;
+  color: var(--btn-ultimos-episodios);
   font-size: var(--fonte-conteudo);
   transition: all ease-in-out 0.2s;
   text-transform: lowercase;
@@ -18,4 +18,21 @@
   padding: 0.25rem 1rem;
   background-color: var(--bckg-texto-mostrar-mais-hover);
   color: var(--texto-mostrar-mais-hover);
+}
+
+@media screen and (max-width: 345px) {
+  .ultimos-episodios__cabecalho{
+    flex-direction: column;
+  }
+
+  .ultimos-episodios__titulo{
+    margin-right: 0;
+  }
+
+  .ultimos-episodios__botao{
+    margin-top: 0.5rem;
+    padding: 0.25rem 1rem;
+    background-color: var(--bckg-texto-mostrar-mais-hover);
+    color: var(--texto-mostrar-mais-hover);
+  }
 }

@@ -38,17 +38,17 @@
 
 .extras .card-video .card__marcador::after{
   content: "\F62B";
-  color: #E9271A;
+  color: var(--icon-card-video);
 }
 
 .extras .card-musica .card__marcador::after{
   content: "\F30E";
-  color: #155EEA;
+  color: var(--icon-card-musica);
 }
 
 .extras .card-podcast .card__marcador::after{
   content: "\F48D";
-  color: #32CD32;
+  color: var(--icon-card-podcast);
 }
 
 .extras .card__marcador::after{

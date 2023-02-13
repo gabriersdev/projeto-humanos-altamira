@@ -47,7 +47,7 @@
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #F6F6F6;
+  color: var(--txt-card-episodios);
   min-width: 100%;
   min-height: 10%;
   padding: 0.25rem;
@@ -65,7 +65,7 @@
 
 .episodios .card__conteudo,
 .ultimos-episodios .card__conteudo{
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--bckg-card-conteudo-episodios);
   backdrop-filter: blur(10px);
   border-radius: 5px;
   padding: 1rem;
@@ -133,7 +133,7 @@
 .ultimos-episodios .identificacao-ep__numero,
 .ultimos-episodios .controle__ouvir,
 .ultimos-episodios .controle__saiba-mais{
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 0px 5px var(--text-shadow-card-episodios);
 }
 
 .episodios .controles,
@@ -145,13 +145,14 @@
 .episodios .controle__saiba-mais,
 .ultimos-episodios .controle__ouvir,
 .ultimos-episodios .controle__saiba-mais{
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--bckg-controle-episodios);
   backdrop-filter: blur(50px);
   padding: 0.75rem;
   font-size: var(--icone);
   border-radius: 5px;
   transition: all ease-in-out 0.2s;
   outline: none;
+  text-shadow: none;
 }
 
 .episodios .controle__ouvir:hover,
@@ -163,8 +164,8 @@
 .ultimos-episodios .controle__ouvir:focus,
 .ultimos-episodios .controle__saiba-mais:hover,
 .ultimos-episodios .controle__saiba-mais:focus{
-  background-color: #F6F6F6;
-  color: #000;
+  background-color: var(--bckg-controle-episodios-hover);
+  color: var(--txt-controle-episodios-hover);
 }
 
 @media screen and (max-width: 1815px) {

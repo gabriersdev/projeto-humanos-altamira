@@ -53,13 +53,12 @@
   .vermais p{
     width: auto;
     margin: 0;
-    transition: all 0.2s;
   }
 
   .vermais:focus p,
   .vermais:hover p,
   .vermais p:hover{
-    padding: 0.25rem 0.75rem;
+    padding: 0.25rem 1rem;
   }
   
   .vermais__bordas{

@@ -41,7 +41,7 @@
 .sobre-tarja__link:hover,
 .sobre-tarja__link:focus{
   padding: 0 0.75rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--bckg-sobre-tarja-hover);
 }
 
 .sobre-tarja__link, 
@@ -61,7 +61,7 @@
 
 .sobre-tarja__link:nth-child(3)::before{
   content: "\F650";
-  color: #E93F1A;
+  color: var(--btn-reddit);
 }
 
 .sobre-tarja__link:nth-child(2)::before, 

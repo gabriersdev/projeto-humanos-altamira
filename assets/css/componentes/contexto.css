@@ -18,7 +18,7 @@
   position: relative;
   padding-bottom: 2.25rem;
   padding-left: 1.5rem;
-  border-left: 1px solid black;
+  border-left: 1px solid var(--borda-contexto-periodo);
 }
 
 .contexto__periodo:first-child{
@@ -37,7 +37,7 @@
   width: 15px;
   height: 15px;
   display: block;
-  background-color: #000;
+  background-color: var(--bckg-marcador-contexto);
 }
 
 .contexto__periodo__titulo{
