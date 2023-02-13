@@ -41,7 +41,10 @@
 .episodios .card{
   /* Estilização no em: elementos/secoes.css */
   display: inline;
-  background: url(../../img/episodios-thumbs/default.png) top / cover no-repeat;
+  background-image: url(../../img/episodios-thumbs/default.png);
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: #F6F6F6;
   min-width: 100%;
   min-height: 10%;
@@ -106,7 +109,9 @@
 .episodios .card__cabecalho p,
 .episodios.card__titulo,
 .episodios .identificacao-ep__nome,
-.episodios .identificacao-ep__numero{
+.episodios .identificacao-ep__numero,
+.episodios .controle__ouvir,
+.episodios .controle__saiba-mais{
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
@@ -117,6 +122,7 @@
 .episodios .controle__ouvir,
 .episodios .controle__saiba-mais{
   background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(50px);
   padding: 0.75rem;
   font-size: var(--icone);
   border-radius: 5px;

@@ -13,6 +13,13 @@ function comparaNomes(a, b){
   return 0;
 }
 
+function comparaNumero(a, b){
+  const primeiro = (a.nome.split(' - '))[0];
+  const segundo = (b.nome.split(' - '))[0];
+
+  return [primeiro, segundo].sort();
+}
+
 const isEmpty = (valor) => {
   if(typeof valor == 'string'){
     return valor == undefined || valor == null || valor.length <= 0;
@@ -21,7 +28,18 @@ const isEmpty = (valor) => {
   }
 }
 
+function zeroEsquerda(quantidadeZeros, valor){
+  let zeros;
+  
+  for(let i = 0; i < quantidadeZeros; i++){
+    zeros == null ? zeros = "0" : zeros = zeros + "0";
+  }
+  return (zeros + valor).slice(-quantidadeZeros);
+}
+
 export{
   comparaNomes,
-  isEmpty
+  comparaNumero,
+  isEmpty,
+  zeroEsquerda
 }

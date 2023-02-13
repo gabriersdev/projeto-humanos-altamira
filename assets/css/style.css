@@ -54,6 +54,7 @@ body{
 
 button, a{
   cursor: pointer;
+  font-family: inherit;
 }
 
 ul.no-type li{

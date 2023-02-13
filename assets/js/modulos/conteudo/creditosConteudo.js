@@ -176,7 +176,7 @@ export const creditosConteudo = [
   {
     nome: 'Anielle Casagrande',
     descricao: 'Responsável por manter o site <a href="https://projetohumanos.com.br">projetohumanos.com.br</a>',
-    contato: 'http://www.docequotidiano.com.br/',
+    contato: 'https://www.docequotidiano.com.br/',
   }
   
 ]

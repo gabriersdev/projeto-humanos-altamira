@@ -1,6 +1,6 @@
 import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
+import { carregarEpisodios, maximoEpisodios } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personagensView.js";
-carregarCreditos();
 
 (() => {
   
@@ -77,6 +77,8 @@ carregarCreditos();
     
     const qtdeCardsInicial = 6;
     carregarPersonagens(qtdeCardsInicial);
+    carregarCreditos(qtdeCardsInicial);
+    carregarEpisodios(qtdeCardsInicial);
     
     const btnsVerMais = document.querySelectorAll('[data-ver-mais]');
     btnsVerMais.forEach(botao => {
@@ -104,8 +106,19 @@ carregarCreditos();
         case 'episódios':
           let vezClickEpisodio = 2;
           botao.addEventListener('click', () => {
-            //carregarEpisodios(qtdeCardsInicial * vezClickEpisodio);
-            vezClickEpisodio++;
+            
+            const carregarCardsEpisodios = (6 * vezClickEpisodio);
+
+            if(carregarCardsEpisodios < maximoEpisodios()){
+              carregarEpisodios(carregarCardsEpisodios);
+              vezClickEpisodio++;
+            }else if(carregarCardsEpisodios == maximoEpisodios()){
+              carregarEpisodios(carregarCardsEpisodios);
+              botao.remove();
+            }else{
+              carregarEpisodios(maximoPersonagens());
+              botao.remove();
+            }
           })
         break;
 

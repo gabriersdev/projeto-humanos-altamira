@@ -34,7 +34,7 @@ const criarCard = ({nome, descricao, contato}) => {
     labelIcon = 'Twitter';
   }else{
     classeIcon = 'contato-outro'
-    labelIcon = 'Site';
+    labelIcon = `Site ${pegarNomeDominio(contato)}`;
   }
 
   return `
@@ -51,6 +51,23 @@ const criarCard = ({nome, descricao, contato}) => {
   </div>
   </div>
   `;
+}
+
+const pegarNomeDominio = (url) => {
+  const urlOutro = new URL(url).host.toString().split('.');
+  let pontoCom = '';
+  
+  if(urlOutro.indexOf('com') >= 0){
+    pontoCom = urlOutro.indexOf('com');
+  }else if(urlOutro.indexOf('com/') >= 0){
+    pontoCom = urlOutro.indexOf('com/');
+  }else{
+    pontoCom = null;
+  }
+  
+  const nomeDominio = urlOutro[pontoCom - 1];
+
+  return nomeDominio.charAt(0).toUpperCase() + nomeDominio.substring(1, nomeDominio.length);
 }
 
 const maximoCreditos = () => {
