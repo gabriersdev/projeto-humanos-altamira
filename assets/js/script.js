@@ -206,7 +206,6 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
 
     const adicionarEventoEpisodios = () => {
       document.querySelectorAll('[data-redirecionar]').forEach(linkRedirecionar => {
-        console.log('chamou');
         linkRedirecionar.addEventListener('click', () => {
           if(!isEmpty(linkRedirecionar.dataset.redirecionar)){
             // alert(linkRedirecionar.dataset.redirecionar);

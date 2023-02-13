@@ -26,10 +26,12 @@
 
     <nav class="menu">
       <ul>
-        <a href=""><li class="menu__item">Sobre</li></a>
-        <a href=""><li class="menu__item">Últimos episódios</li></a>
-        <a href=""><li class="menu__item">Extras</li></a>
-        <a href=""><li class="menu__item">Personagens</li></a>
+        <a href="#ultimos-episodios"><li class="menu__item">Último episódios</li></a>
+        <a href="#personagens"><li class="menu__item">Personagens</li></a>
+        <a href="#sobre"><li class="menu__item">Sobre</li></a>
+        <a href="#creditos"><li class="menu__item">Créditos</li></a>
+        <a href="#recomendacao"><li class="menu__item">Ouça</li></a>
+        <a href="#extras"><li class="menu__item">Extras</li></a>
       </ul>
     </nav>
 
@@ -44,7 +46,7 @@
 
   <main>
     <section class="ultimos-episodios">
-      <div class="ultimos-episodios__cabecalho">
+      <div class="ultimos-episodios__cabecalho" id="ultimos-episodios">
         <h2 class="ultimos-episodios__titulo">Últimos episódios</h2>
         <a href="" data-ver-mais="todos-episódios" class="ultimos-episodios__botao">Ver todos</a>
       </div>
@@ -125,8 +127,8 @@
       </div>
     </section>
 
-    <section class="episodios" id="todos-episodios">
-      <div class="episodios__cabecalho">
+    <section class="episodios">
+      <div class="episodios__cabecalho" id="todos-episodios">
         <h2 class="episodios__titulo">Todos os episódios</h2>
         <form class="episodios__busca">
           <input type="text" class="episodios__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
@@ -218,7 +220,7 @@
     </section>
 
     <section class="personagens">
-      <div class="personagens__cabecalho">
+      <div class="personagens__cabecalho" id="personagens">
         <h2 class="personagens__titulo">Personagens</h2>
         <form class="personagens__busca">
           <input type="text" class="personagens__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
@@ -299,7 +301,7 @@
 
     <section>
       <section class="sobre">
-        <div class="sobre__cabecalho">
+        <div class="sobre__cabecalho" id="sobre">
           <h2 class="sobre__titulo">Sobre</h2>
         </div>
         <div class="sobre__conteudo">
@@ -340,7 +342,7 @@
     </section>
 
     <section class="creditos">
-      <div class="creditos__cabecalho">
+      <div class="creditos__cabecalho" id="creditos">
         <h2 class="creditos__titulo">Créditos</h2>
         <form class="creditos__busca">
           <input type="text" class="creditos__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
@@ -406,7 +408,7 @@
     </section>
   
     <section class="extras">
-      <div class="extras__cabecalho">
+      <div class="extras__cabecalho" id="extras">
         <h2 class="extras__titulo">Extras</h2>
       </div>
   
