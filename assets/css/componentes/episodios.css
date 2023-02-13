@@ -197,7 +197,7 @@
   
   .episodios .card__conteudo p,
   .ultimos-episodios .card__conteudo p{
-    display: none;
+    display: block;
   }
 }
 

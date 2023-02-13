@@ -65,9 +65,12 @@ const pegarNomeDominio = (url) => {
     pontoCom = null;
   }
   
-  const nomeDominio = urlOutro[pontoCom - 1];
-
-  return nomeDominio.charAt(0).toUpperCase() + nomeDominio.substring(1, nomeDominio.length);
+  if(pontoCom !== null){
+    const nomeDominio = urlOutro[pontoCom - 1];
+    return nomeDominio.charAt(0).toUpperCase() + nomeDominio.substring(1, nomeDominio.length).toLowerCase();
+  } else {
+    return null;
+  }
 }
 
 const maximoCreditos = () => {

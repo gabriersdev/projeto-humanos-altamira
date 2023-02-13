@@ -1,3 +1,4 @@
+import { isEmpty } from "./modulos/utilitarios/utilitarios.js";
 import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
 import { carregarEpisodios, maximoEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personagensView.js";
@@ -145,5 +146,45 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
       }
     })
     
+    const verificarTema = () => {
+      if(!isEmpty(localStorage.getItem('tema'))){
+        trocarTema(localStorage.getItem('tema'));
+      }
+    }
+
+    const trocarTema = (tema) => {
+      const head = document.querySelector('head');
+      const arquivoTema = head.querySelector('[data-import="arquivo-tema"]');
+      
+      switch(tema){
+        case 'claro':
+          arquivoTema.href = './assets/css/temas/tema-claro.css';
+        break;
+
+        case 'escuro':
+          arquivoTema.href = './assets/css/temas/tema-escuro.css';
+        break;
+      }
+    }
+
+    verificarTema();
+
+    const btnTemas = document.querySelectorAll('[data-tema]');
+    btnTemas.forEach(botao => {
+
+      botao.addEventListener('click', () => {
+        switch(botao.dataset.tema){
+          case 'claro':
+            localStorage.setItem('tema', 'claro');
+            trocarTema('claro');
+          break;
+
+          case 'escuro':
+            localStorage.setItem('tema', 'escuro');
+            trocarTema('escuro');
+          break;
+        }
+      })
+    })
   }
 })();

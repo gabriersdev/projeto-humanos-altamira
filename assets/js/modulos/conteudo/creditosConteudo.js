@@ -6,7 +6,7 @@ export const creditosConteudo = [
   },
 
   {
-    nome: 'Globoplay',
+    nome: 'GloboPlay',
     descricao: 'A temporada 5: Altamira teve a distribuição licenciada pelo GloboPlay',
     contato: 'https://globoplay.globo.com/',
   },
@@ -145,7 +145,7 @@ export const creditosConteudo = [
 
   {
     nome: 'Elisa Cruz',
-    descricao: 'Responsável por catalogar os autos do processo e ajudar a navegar por eles com tranquilidade',
+    descricao: 'Responsável por catalogar os autos dos processos e ajudar a navegar por eles com tranquilidade',
     contato: 'https://twitter.com/ElisaCCruz',
   },
   

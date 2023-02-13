@@ -1,0 +1,41 @@
+:root{
+  --input: #000;
+  --input-placeholder: rgba(0, 0, 0, 0.5);
+  
+  --bckg-input: #DDD;
+  --bckg-btn-input: #DDD;
+  --bckg-btn-input-hover: rgba(0, 0, 0, 0.1);
+  --btn-input: #3D3D3D;
+
+  --borda-card: #000;
+
+  --link-card-hover: #000;
+  --bckg-tooltip-link: #155EEA;
+
+  --titulo-card-personagem: #3D3D3D;
+  --borda-card-personagens: rgba(0, 0, 0, 0.2);
+  --box-shadow-card-personagens: rgba(0, 0, 0, 0.2);
+
+  --bordas-mostrar-mais: rgba(0, 0, 0, 0.2);
+  --texto-mostrar-mais: rgba(0, 0, 0, 0.6);
+  --texto-mostrar-mais-hover: rgba(0, 0, 0, 0.7);
+  --bckg-texto-mostrar-mais-hover: rgba(0, 0, 0, 0.1); 
+
+  --texto-periodo-contexto: #3D3D3D;
+
+  --bckg-sobre-descricao: rgba(0, 0, 0, 0.2);
+  --texto-sobre-descricao: #F6F6F6;
+
+  --bckg-sobre-tarja: #000;
+  --txt-sobre-tarja: #F6F6F6;
+  
+  --borda-rodape: #3D3D3D;
+  --txt-rodape: #3D3D3D;
+
+  --bckg-link-rodape-tarja: #474BFF;
+  --box-shadow-link-rodape-tarja: rgb(71, 75, 255, 0.3);
+
+  --borda-rodape-tarja: #474BFF;
+  --titulo-rodape-tarja: #4D4D4D;
+  --txt-rodape-tarja: #F6F6F6;
+}
