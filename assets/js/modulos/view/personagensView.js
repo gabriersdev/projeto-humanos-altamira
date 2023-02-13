@@ -1,42 +1,23 @@
 import { personagensController } from "../controller/personagensController.js";
+import { comparaNomes } from "../utilitarios/utilitarios.js";
 
 const personagens = personagensController();
 
 const carregarPersonagens = (quantidade) => {
-  quantidade == undefined ? quantidade = 340 : '';
+  quantidade == undefined ? quantidade = 6 : '';
   const personagensCards = document.querySelector('.personagens__cards');
   personagensCards.innerHTML = '';
-  const cards = new Array();
   
   personagens.sort((a, b) => comparaNomes(a, b));
 
-  function comparaNomes(a, b){
-    const primeiro = a.nome.toLowerCase();
-    const segundo = b.nome.toLowerCase();
-
-    if(primeiro < segundo){
-      return -1;
-    }
-
-    if(primeiro > segundo){
-      return 1;
-    }
-
-    return 0;
-  }
-
   personagens.forEach((personagem, index) => {
     if(index < quantidade){
-      cards.push(criarCard(personagem.nome, personagem.descricao, personagem.link).trim());
+      personagensCards.innerHTML += criarCard(personagem).trim();
     }
   });
-
-  cards.forEach(card => {
-    personagensCards.innerHTML += card;
-  })
 }
 
-const criarCard = (nome, descricao, link) => {
+const criarCard = ({nome, descricao, link}) => {
 
   if(descricao.length > 90){
     descricao = descricao.substr(0, 90);

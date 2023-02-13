@@ -1,4 +1,6 @@
-import { carregarPersonagens } from "./modulos/view/personagensView.js";
+import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
+import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personagensView.js";
+carregarCreditos();
 
 (() => {
   
@@ -82,8 +84,20 @@ import { carregarPersonagens } from "./modulos/view/personagensView.js";
         case 'personagens':
           let vezClickPersonagem = 2;
           botao.addEventListener('click', () => {
-            carregarPersonagens(qtdeCardsInicial * vezClickPersonagem);
-            vezClickPersonagem++;
+            
+            const carregarCardsPersonagens = (6 * vezClickPersonagem);
+
+            if(carregarCardsPersonagens < maximoPersonagens()){
+              carregarPersonagens(carregarCardsPersonagens);
+              vezClickPersonagem++;
+            }else if(carregarCardsPersonagens == maximoPersonagens()){
+              carregarPersonagens(carregarCardsPersonagens);
+              botao.remove();
+            }else{
+              carregarPersonagens(maximoPersonagens());
+              botao.remove();
+            }
+
           })
         break;
 
@@ -92,6 +106,26 @@ import { carregarPersonagens } from "./modulos/view/personagensView.js";
           botao.addEventListener('click', () => {
             //carregarEpisodios(qtdeCardsInicial * vezClickEpisodio);
             vezClickEpisodio++;
+          })
+        break;
+
+        case 'créditos':
+          let vezClickCreditos = 2;
+          botao.addEventListener('click', () => {
+            
+            const carregarCardsCreditos = (6 * vezClickCreditos);
+
+            if(carregarCardsCreditos < maximoCreditos()){
+              carregarCreditos(carregarCardsCreditos);
+              vezClickCreditos++;
+            }else if(carregarCardsCreditos == maximoCreditos()){
+              carregarCreditos(carregarCardsCreditos);
+              botao.remove();
+            }else{
+              carregarCreditos(maximoPersonagens());
+              botao.remove();
+            }
+
           })
         break;
       }

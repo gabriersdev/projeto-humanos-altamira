@@ -1,4 +1,4 @@
-export class CreditoModel{
+export class CreditosModel{
   constructor(nome, descricao, contato){
     this.nome = nome,
     this.descricao = descricao,

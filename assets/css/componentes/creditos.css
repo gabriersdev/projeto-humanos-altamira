@@ -47,6 +47,9 @@
   outline: none;
   font-size: var(--icone);
   font-style: normal;
+  display: inline-block;
+  font-family: "bootstrap-icons";
+  text-rendering: auto;
 }
 
 .card__link:focus,
@@ -54,12 +57,16 @@
   color: var(--link-card-hover);
 }
 
-.creditos .card__link::after{
+.creditos .contato-twitter .card__link::after{
   content: "\F5EF";
-  display: inline-block;
-  font-family: "bootstrap-icons";
-  font-size: inherit;
-  text-rendering: auto;
+}
+
+.creditos .contato-outro .card__link::after{
+  content: "\F3EF";
+}
+
+.creditos .contato-vazio .card__link::after{
+  content: "";
 }
 
 .custom-tooltip {
