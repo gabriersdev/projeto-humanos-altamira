@@ -5,7 +5,7 @@ const creditosController = () => {
   const creditos = new Array();
   
   creditosConteudo.forEach(credito => {
-    const creditoModel = new CreditosModel(credito.nome, credito.descricao, credito.contato);
+    const creditoModel = new CreditosModel(credito.nome.trim(), credito.descricao.trim(), credito.contato.trim());
     creditos.push(creditoModel);
   })
 

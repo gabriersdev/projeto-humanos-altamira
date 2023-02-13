@@ -11,9 +11,9 @@ const episodiosController = () => {
     let numero = parseInt((episodio.nome.split(' - '))[0]);
 
     if(episodio.img !== undefined){
-      episodioModel = new EpisodiosModel(episodio.nome, episodio.descricao, episodio.link, `./assets/img/episodios-thumbs/${episodio.img}`)
+      episodioModel = new EpisodiosModel(episodio.nome.trim(), episodio.descricao.trim(), episodio.link.trim(), `./assets/img/episodios-thumbs/${episodio.img.trim()}`)
     }else{
-      episodioModel = new EpisodiosModel(episodio.nome, episodio.descricao, episodio.link, `./assets/img/episodios-thumbs/episodio-${zeroEsquerda(2, numero)}.png`);
+      episodioModel = new EpisodiosModel(episodio.nome.trim(), episodio.descricao.trim(), episodio.link.trim(), `./assets/img/episodios-thumbs/episodio-${zeroEsquerda(2, numero)}.png`);
     }
 
     episodios.push(episodioModel);

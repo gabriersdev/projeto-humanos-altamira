@@ -5,7 +5,7 @@ const personagensController = () => {
   const personagens = new Array();
 
   personagensConteudo.forEach(personagem => {
-    const personagemModel = new PersonagemModel(personagem.nome, personagem.descricao, personagem.link);
+    const personagemModel = new PersonagemModel(personagem.nome.trim(), personagem.descricao.trim(), personagem.link.trim());
     personagens.push(personagemModel);
   })
 
