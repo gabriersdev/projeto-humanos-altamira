@@ -49,7 +49,8 @@
 }
 
 body{
-  background-color: #F6F6F6;
+  background-color: var(--bckg);
+  color: var(--txt);
 }
 
 button, a{

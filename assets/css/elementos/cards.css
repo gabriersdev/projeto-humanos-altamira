@@ -13,9 +13,9 @@
 
 .personagens .card,
 .extras .card,
-.episodios .card,
-.ultimos-episodios .card{
+.episodios .card{
   border: 1px solid var(--borda-card-personagens);
+  background-color: var(--bckg-card-padrao);
   padding: 1.25rem;
   
   border-radius: 5px;

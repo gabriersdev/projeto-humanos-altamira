@@ -5,9 +5,11 @@
   --preto-50: rgba(0, 0, 0, 0.5);
   --preto-60: rgba(0, 0, 0, 0.6);
   --preto-70: rgba(0, 0, 0, 0.7);
+  --branco-absoluto: #FFF;
   --branco: #F6F6F6; 
   --branco-20: rgba(255, 255, 255, 0.2);
   --branco-25: rgba(255, 255, 255, 0.25);
+  --cinza-escuro: #191919;
   --cinza-forte: #3D3D3D;
   --cinza-fortissimo: #4D4D4D;
   --cinza-claro: #DDD;
@@ -17,8 +19,11 @@
   --vermelho: #E93F1A;
   --verde: #32CD32;
   
+  --bckg: var(--cinza-escuro);
+  --txt: var(--branco);
+
   --txt-cabecalho: var(--branco);
-  --icone-btn-tema: var(--cinza-forte);
+  --icone-btn-tema: var(--branco-25);
   --icone-btn-tema-hover: var(--branco);
   --bckg-btn-tema: var(--cinza-forte);
   --cor-btn-tema-ativo: var(--branco);
@@ -27,29 +32,28 @@
   --bckg-icone-btn-tema: var(--preto-50);
   --bckg-item-menu-hover: var(--preto-20);
   
-  --input: var(--preto);
-  --input-placeholder: var(--preto-50);
+  --input: var(--branco);
+  --input-placeholder: var(--cinza-claro);
   
-  --bckg-input: var(--cinza-claro);
-  --bckg-btn-input: var(--cinza-claro);
-  --bckg-btn-input-hover: var(--preto-10);
-  --btn-input: var(--cinza-forte);
+  --bckg-input: var(--cinza-forte);
+  --bckg-btn-input: var(--branco);
+  --bckg-btn-input-hover: var(--branco);
+  --btn-input: var(--branco);
   
-  --borda-card: var(--preto);
+  --borda-card: var(--branco-20);
+  --bckg-card-padrao: var(--preto);
   
-  --link-card-hover: var(--preto);
+  --link-card-hover: var(--branco);
   --bckg-tooltip-link: var(--azul);
   
-  --titulo-card-personagem: var(--cinza-forte);
-  --borda-card-personagens: var(--preto-20);
-  --box-shadow-card-personagens: var(--preto-20);
+  --titulo-card-personagem: var(--branco);
+  --borda-card-personagens: var(--branco-20);
+  --box-shadow-card-personagens: var(--branco-20);
   
-  --bordas-mostrar-mais: var(--preto-20);
-  --texto-mostrar-mais: var(--preto-60); 
-  --texto-mostrar-mais-hover: var(--preto-70); 
-  --bckg-texto-mostrar-mais-hover: var(--preto-10); 
-  
-  --texto-periodo-contexto: var(--cinza-forte);
+  --bordas-mostrar-mais: var(--cinza-claro);
+  --texto-mostrar-mais: var(--cinza-claro); 
+  --texto-mostrar-mais-hover: var(--branco); 
+  --bckg-texto-mostrar-mais-hover: var(--branco-20); 
   
   --bckg-sobre-descricao: var(--preto-20);
   --texto-sobre-descricao: var(--branco);
@@ -64,25 +68,27 @@
   --text-shadow-card-episodios: var(--preto-50);
   --bckg-controle-episodios: var(--branco-25);
   --bckg-controle-episodios-hover: var(--branco);
-  --txt-controle-episodios-hover: var(--preto);
+  --txt-controle-episodios-hover: var(--branco);
 
-  --btn-ultimos-episodios: var(--preto);
+  --btn-ultimos-episodios: var(--branco);
   
   --icon-card-video: var(--vermelho);
   --icon-card-musica: var(--azul);
   --icon-card-podcast: var(--verde);
   
-  --borda-contexto-periodo: var(--preto);
-  --bckg-marcador-contexto: var(--preto);
+  --texto-periodo-contexto: var(--branco);
+  --borda-contexto-periodo: var(--branco);
+  --bckg-marcador-contexto: var(--branco);
   
-  --bckg-marcador-card-creditos: var(--preto);
+  --bckg-marcador-card-creditos: var(--branco);
   
-  --borda-rodape: var(--cinza-forte);
-  --txt-rodape: var(--cinza-forte);
+  --borda-rodape: var(--branco);
+  --txt-rodape: var(--branco);
   
+  --bckg-rodape-tarja: var(--preto);
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);
   --borda-rodape-tarja: var(--roxo);
-  --titulo-rodape-tarja: var(--cinza-fortissimo);
+  --titulo-rodape-tarja: var(--branco);
   --txt-rodape-tarja: var(--branco);
 }

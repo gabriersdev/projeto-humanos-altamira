@@ -94,12 +94,12 @@
 
 .creditos__busca__botao{
   transition: all ease-in-out 0.2s;
-  color: var(--btn-input);
 }
 
 .personagens__busca__botao i,
 .creditos__busca__botao i{
   font-size: var(--icone);
+  color: var(--btn-input);
 }
 
 .personagens__conteudo,

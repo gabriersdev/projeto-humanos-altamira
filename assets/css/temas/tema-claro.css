@@ -5,6 +5,7 @@
   --preto-50: rgba(0, 0, 0, 0.5);
   --preto-60: rgba(0, 0, 0, 0.6);
   --preto-70: rgba(0, 0, 0, 0.7);
+  --branco-absoluto: #FFF;
   --branco: #F6F6F6; 
   --branco-20: rgba(255, 255, 255, 0.2);
   --branco-25: rgba(255, 255, 255, 0.25);
@@ -17,6 +18,9 @@
   --vermelho: #E93F1A;
   --verde: #32CD32;
   
+  --bckg: var(--branco);
+  --txt: var(--preto);
+
   --txt-cabecalho: var(--branco);
   --icone-btn-tema: var(--cinza-forte);
   --icone-btn-tema-hover: var(--branco);
@@ -36,6 +40,7 @@
   --btn-input: var(--cinza-forte);
   
   --borda-card: var(--preto);
+  --bckg-card-padrao: var(--branco-absoluto);
   
   --link-card-hover: var(--preto);
   --bckg-tooltip-link: var(--azul);
@@ -48,8 +53,6 @@
   --texto-mostrar-mais: var(--preto-60); 
   --texto-mostrar-mais-hover: var(--preto-70); 
   --bckg-texto-mostrar-mais-hover: var(--preto-10); 
-  
-  --texto-periodo-contexto: var(--cinza-forte);
   
   --bckg-sobre-descricao: var(--preto-20);
   --texto-sobre-descricao: var(--branco);
@@ -72,6 +75,7 @@
   --icon-card-musica: var(--azul);
   --icon-card-podcast: var(--verde);
   
+  --texto-periodo-contexto: var(--cinza-forte);
   --borda-contexto-periodo: var(--preto);
   --bckg-marcador-contexto: var(--preto);
   
@@ -80,6 +84,7 @@
   --borda-rodape: var(--cinza-forte);
   --txt-rodape: var(--cinza-forte);
   
+  --bckg-rodape-tarja: var(--branco);
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);
   --borda-rodape-tarja: var(--roxo);

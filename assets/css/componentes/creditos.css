@@ -1,6 +1,7 @@
 /* Demais estilizações são compartilhadas com outros elementos do site no repositório de elementos (seção e card) */
 
 .creditos .card{
+  background-color: var(--bckg-card-padrao);
   border: 1px solid var(--borda-card);
   padding: 1.25rem;
   

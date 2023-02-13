@@ -1,4 +1,5 @@
 .rodape-tarja{
+  background-color: var(--bckg-rodape-tarja);
   padding: 2rem var(--espaco-padding-rodape-tarja);
   border-top: 1px solid var(--borda-rodape-tarja);
   display: flex;
