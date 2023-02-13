@@ -143,6 +143,14 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
 
           })
         break;
+
+        case 'todos-episódios':
+          botao.addEventListener('click', (evento) => {
+            evento.preventDefault();
+            document.querySelector('section.episodios').style.display = 'block';
+            window.location.href = '#todos-episodios';
+          })
+          break;
       }
     })
     

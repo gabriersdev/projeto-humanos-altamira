@@ -1,5 +1,6 @@
 .episodios{
   /* Estilização no em: elementos/secoes.css */
+  display: none;
 }
 
 .episodios__cabecalho{
