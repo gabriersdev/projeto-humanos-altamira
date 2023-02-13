@@ -27,7 +27,7 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
     })
   });
   
-  window.onload = () => {
+  window.onload = async () => {
     const dataAtual = new Date();
     
     document.querySelectorAll("[data-ano-atual]").forEach(area => {
@@ -49,7 +49,7 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
         link.href = 'https://gabrieszin.github.io/portfolio/#formulario';
       }
     })
-    
+
     const sortearEmbed = () => {
       const sorteio = Math.floor(Math.random() * 2);
       const embeds = document.querySelectorAll('[data-embed]');
@@ -121,6 +121,8 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
               carregarEpisodios(maximoPersonagens());
               botao.remove();
             }
+
+            adicionarEventoEpisodios();
           })
         break;
 
@@ -201,5 +203,20 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
         }
       })
     })
+
+    const adicionarEventoEpisodios = () => {
+      document.querySelectorAll('[data-redirecionar]').forEach(linkRedirecionar => {
+        console.log('chamou');
+        linkRedirecionar.addEventListener('click', () => {
+          if(!isEmpty(linkRedirecionar.dataset.redirecionar)){
+            // alert(linkRedirecionar.dataset.redirecionar);
+            window.location.href = linkRedirecionar.dataset.redirecionar;
+          }
+        })
+      })
+    }
+    
+    await adicionarEventoEpisodios();
+
   }
 })();
