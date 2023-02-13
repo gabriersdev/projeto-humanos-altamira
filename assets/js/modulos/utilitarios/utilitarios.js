@@ -1,23 +1,47 @@
 function comparaNomes(a, b){
   const primeiro = a.nome.toLowerCase();
   const segundo = b.nome.toLowerCase();
-
+  
   if(primeiro < segundo){
     return -1;
   }
-
+  
   if(primeiro > segundo){
     return 1;
   }
-
+  
   return 0;
 }
 
 function comparaNumero(a, b){
-  const primeiro = (a.nome.split(' - '))[0];
-  const segundo = (b.nome.split(' - '))[0];
+  
+  const primeiro = parseInt((a.nome.split(' - '))[0]);
+  const segundo = parseInt((b.nome.split(' - '))[0]);
+  
+  if(primeiro < segundo){
+    return -1;
+  }
+  
+  if(primeiro > segundo){
+    return 1;
+  }
+  
+  return 0;
+}
 
-  return [primeiro, segundo].sort();
+function comparaNumeroDescrescente(a, b){
+  const primeiro = parseInt((a.nome.split(' - '))[0]);
+  const segundo = parseInt((b.nome.split(' - '))[0]);
+  
+  if(primeiro > segundo){
+    return -1;
+  }
+  
+  if(primeiro < segundo){
+    return 1;
+  }
+  
+  return 0;
 }
 
 const isEmpty = (valor) => {
@@ -40,6 +64,7 @@ function zeroEsquerda(quantidadeZeros, valor){
 export{
   comparaNomes,
   comparaNumero,
+  comparaNumeroDescrescente,
   isEmpty,
   zeroEsquerda
 }

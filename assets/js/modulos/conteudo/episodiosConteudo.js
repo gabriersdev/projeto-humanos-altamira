@@ -1,4 +1,5 @@
 export const episodiosConteudos = [
+  
   {
     nome: '1 - Os Meninos de Altamira',
     descricao: 'Como tudo começou',
@@ -208,11 +209,11 @@ export const episodiosConteudos = [
     link: 'https://www.projetohumanos.com.br/altamira/30-o-ex-bate-pau/'
   },
 
-
   {
     nome: '31 - O Sobrevivente',
     descricao: 'Vandicley fala',
     link: 'https://www.projetohumanos.com.br/altamira/31-o-sobrevivente/',
     img: 'default.png'
   },
+
 ]

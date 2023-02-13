@@ -4,7 +4,8 @@
 .sobre,
 .extras,
 .recomendacao,
-.episodios{
+.episodios,
+.ultimos-episodios{
   padding: var(--espaco-padding-secao) var(--espaco-margem);
 }
 
@@ -14,7 +15,8 @@
 .sobre__cabecalho,
 .extras__cabecalho,
 .recomendacao__cabecalho,
-.episodios__cabecalho{
+.episodios__cabecalho,
+.ultimos-episodios__cabecalho{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,7 +30,8 @@
 .sobre__titulo,
 .extras__titulo,
 .recomendacao__titulo,
-.episodios__titulo{
+.episodios__titulo,
+.ultimos-episodios__titulo{
   font-family: 'CircularStd Bold';
   font-size: var(--titulos-h2);
   margin-right: 2rem;
@@ -104,7 +107,8 @@
 .sobre__conteudo,
 .extras__conteudo,
 .recomendacao__conteudo,
-.episodios__conteudo{
+.episodios__conteudo,
+.ultimos-episodios__conteudo{
   margin-top: 1rem;
 }
 

@@ -26,7 +26,8 @@
   /* Estilização no em: elementos/secoes.css */
 }
 
-.episodios__cards{
+.episodios__cards,
+.ultimos-episodios__cards{
   /* Estilização no em: elementos/secoes.css */
   display: grid;
   grid-template-columns: 
@@ -38,7 +39,8 @@
   grid-gap: 1rem;
 }
 
-.episodios .card{
+.episodios .card,
+.ultimos-episodios .card{
   /* Estilização no em: elementos/secoes.css */
   display: inline;
   background-image: url(../../img/episodios-thumbs/default.png);
@@ -56,11 +58,13 @@
   cursor: pointer;
 }
 
-.episodios .card__cabecalho p{
+.episodios .card__cabecalho p,
+.ultimos-episodios .card__cabecalho p{
   margin: 1rem;
 }
 
-.episodios .card__conteudo{
+.episodios .card__conteudo,
+.ultimos-episodios .card__conteudo{
   background-color: rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 5px;
@@ -69,17 +73,20 @@
   width: calc(100% - 1.25rem);
 }
 
-.episodios .card__titulo{
+.episodios .card__titulo,
+.ultimos-episodios .card__titulo{
   font-family: 'CircularStd Bold', sans-serif;
   font-size: var(--titulos-h3);
   margin-bottom: 1rem;
 }
 
-.episodios .card__conteudo p{
+.episodios .card__conteudo p,
+.ultimos-episodios .card__conteudo p{
   font-family: 'CircularStd Light', 'CircularStd Book', sans-serif;
 }
 
-.episodios div.card__rodape{
+.episodios div.card__rodape,
+.ultimos-episodios div.card__rodape{
   margin: 1rem;
   width: calc(100% - 2rem);
   display: flex;
@@ -87,40 +94,57 @@
   align-items: center;
 }
 
-.episodios .identificacao-ep{
+.episodios .identificacao-ep,
+.ultimos-episodios .identificacao-ep{
   display: flex;
   flex-direction: column;
 }
 
-.episodios .identificacao-ep__nome{
+.episodios .identificacao-ep__nome,
+.ultimos-episodios .identificacao-ep__nome{
   text-transform: capitalize;
 }
 
-.episodios .identificacao-ep__numero{
+.episodios .identificacao-ep__numero,
+.ultimos-episodios .identificacao-ep__numero{
   font-size: 2.5rem;
 }
 
 .episodios .card__cabecalho p,
 .episodios .identificacao-ep__nome,
-.episodios .identificacao-ep__numero{
+.episodios .identificacao-ep__numero,
+
+.ultimos-episodios .card__cabecalho p,
+.ultimos-episodios .identificacao-ep__nome,
+.ultimos-episodios .identificacao-ep__numero{
   font-family: 'Inter Tight', 'Circular', sans-serif;
 }
 
 .episodios .card__cabecalho p,
-.episodios.card__titulo,
+.episodios .card__titulo,
 .episodios .identificacao-ep__nome,
 .episodios .identificacao-ep__numero,
 .episodios .controle__ouvir,
-.episodios .controle__saiba-mais{
+.episodios .controle__saiba-mais,
+
+.ultimos-episodios .card__cabecalho p,
+.ultimos-episodios .card__titulo,
+.ultimos-episodios .identificacao-ep__nome,
+.ultimos-episodios .identificacao-ep__numero,
+.ultimos-episodios .controle__ouvir,
+.ultimos-episodios .controle__saiba-mais{
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 }
 
-.episodios .controles{
+.episodios .controles,
+.ultimos-episodios .controles{
   
 }
 
 .episodios .controle__ouvir,
-.episodios .controle__saiba-mais{
+.episodios .controle__saiba-mais,
+.ultimos-episodios .controle__ouvir,
+.ultimos-episodios .controle__saiba-mais{
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(50px);
   padding: 0.75rem;
@@ -133,13 +157,19 @@
 .episodios .controle__ouvir:hover,
 .episodios .controle__ouvir:focus,
 .episodios .controle__saiba-mais:hover,
-.episodios .controle__saiba-mais:focus{
+.episodios .controle__saiba-mais:focus,
+
+.ultimos-episodios .controle__ouvir:hover,
+.ultimos-episodios .controle__ouvir:focus,
+.ultimos-episodios .controle__saiba-mais:hover,
+.ultimos-episodios .controle__saiba-mais:focus{
   background-color: #F6F6F6;
   color: #000;
 }
 
 @media screen and (max-width: 1815px) {
-  .episodios__cards{
+  .episodios__cards,
+  .ultimos-episodios__cards{
     grid-template-columns: 
     calc(33.3% - 0.5rem)
     calc(33.3% - 0.5rem)
@@ -150,7 +180,8 @@
 
 
 @media screen and (max-width: 1442px) {
-  .episodios__cards{
+  .episodios__cards,
+  .ultimos-episodios__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
@@ -164,13 +195,15 @@
     padding: 0;
   }
   
-  .episodios .card__conteudo p{
+  .episodios .card__conteudo p,
+  .ultimos-episodios .card__conteudo p{
     display: none;
   }
 }
 
 @media screen and (max-width: 525px) {
-  .episodios__cards{
+  .episodios__cards,
+  .ultimos-episodios__cards{
     grid-template-columns: 
     calc(100%)
     ;
@@ -178,7 +211,8 @@
 }
 
 @media screen and (max-width: 412px) {
-  .episodios .identificacao-ep{
+  .episodios .identificacao-ep,
+  .ultimos-episodios .identificacao-ep{
     display: none;
   }
 }

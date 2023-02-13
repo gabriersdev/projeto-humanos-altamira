@@ -1,5 +1,5 @@
 import { episodiosController } from "../controller/episodiosController.js";
-import { comparaNumero, isEmpty } from "../utilitarios/utilitarios.js";
+import { comparaNumero, comparaNumeroDescrescente } from "../utilitarios/utilitarios.js";
 
 const episodios = episodiosController();
 
@@ -17,6 +17,19 @@ const carregarEpisodios = (quantidade) => {
   })
 }
 
+const carregarUltimosEpisodios = (quantidade) => {
+  const ultimosEpisodiosCards = document.querySelector('.ultimos-episodios__cards');
+  ultimosEpisodiosCards.innerHTML = '';
+
+  const ultimosEpisodios = episodios.splice(episodios.length - quantidade, episodios.length);
+
+  ultimosEpisodios.sort((a, b) => comparaNumeroDescrescente(a, b));
+
+  ultimosEpisodios.splice(0, quantidade).forEach(episodio => {
+    ultimosEpisodiosCards.innerHTML += criarCard(episodio).trim();
+  })
+}
+
 const criarCard = ({nome, descricao, link, img}) => {
   
   if(descricao.length > 55){
@@ -24,8 +37,12 @@ const criarCard = ({nome, descricao, link, img}) => {
     descricao += "...";
   }
 
+  let titulo = nome.split(' - ');
+  titulo = titulo[1];
+
   let numero = nome.split(' - ');
   numero = numero[0];
+
   return `
   <div class="card" data-redirecionar='${link}' style='background-image:url(${img})'>
   <div class="card__cabecalho">
@@ -33,7 +50,7 @@ const criarCard = ({nome, descricao, link, img}) => {
   </div>
   
   <div class="card__conteudo">
-  <h3 class="card__titulo">${nome}</h3>
+  <h3 class="card__titulo">${titulo}</h3>
   <p>${descricao}</p>
   </div>
   
@@ -45,7 +62,7 @@ const criarCard = ({nome, descricao, link, img}) => {
   
   <div class="controles">
   <a href="#recomendacao" data-toggle="tooltip" data-placement="right" title="Ouvir" class="controle__ouvir"><i class="bi bi-headphones"></i></a>
-  <a href="${link} data-toggle="tooltip" data-placement="right" title="Documentação do episódio" class="controle__saiba-mais"><i class="bi bi-body-text"></i></a>
+  <a href="${link}" data-toggle="tooltip" data-placement="right" title="Documentação do episódio" class="controle__saiba-mais"><i class="bi bi-body-text"></i></a>
   </div>
   </div>
   </div>
@@ -59,5 +76,6 @@ const maximoEpisodios = () => {
 
 export{
   carregarEpisodios,
+  carregarUltimosEpisodios,
   maximoEpisodios
 }

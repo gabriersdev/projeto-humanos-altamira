@@ -1,5 +1,5 @@
 import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
-import { carregarEpisodios, maximoEpisodios } from "./modulos/view/episodiosView.js";
+import { carregarEpisodios, maximoEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personagensView.js";
 
 (() => {
@@ -79,6 +79,7 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
     carregarPersonagens(qtdeCardsInicial);
     carregarCreditos(qtdeCardsInicial);
     carregarEpisodios(qtdeCardsInicial);
+    carregarUltimosEpisodios(5);
     
     const btnsVerMais = document.querySelectorAll('[data-ver-mais]');
     btnsVerMais.forEach(botao => {
