@@ -14,6 +14,8 @@
   --roxo: #474BFF;
   --roxo-30: rgb(71, 75, 255, 0.3);
   --azul: #155EEA;
+  --vermelho: #E93F1A;
+  --verde: #32CD32;
   
   --txt-cabecalho: var(--branco);
   --icone-btn-tema: var(--cinza-forte);
@@ -55,8 +57,7 @@
   --bckg-sobre-tarja: var(--preto);
   --bckg-sobre-tarja-hover: var(--branco-20);
   --txt-sobre-tarja: var(--branco);
-  
-  --btn-reddit: #E93F1A;
+  --btn-reddit: var(--vermelho);
   
   --txt-card-episodios: var(--branco);
   --bckg-card-conteudo-episodios: var(--preto-20);
@@ -64,10 +65,12 @@
   --bckg-controle-episodios: var(--branco-25);
   --bckg-controle-episodios-hover: var(--branco);
   --txt-controle-episodios-hover: var(--preto);
+
+  --btn-ultimos-episodios: var(--preto);
   
-  --icon-card-video: #E9271A;
-  --icon-card-musica: #155EEA;
-  --icon-card-podcast: #32CD32;
+  --icon-card-video: var(--vermelho);
+  --icon-card-musica: var(--azul);
+  --icon-card-podcast: var(--verde);
   
   --borda-contexto-periodo: var(--preto);
   --bckg-marcador-contexto: var(--preto);
@@ -77,11 +80,8 @@
   --borda-rodape: var(--cinza-forte);
   --txt-rodape: var(--cinza-forte);
   
-  --btn-ultimos-episodios: var(--preto);
-  
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);
-  
   --borda-rodape-tarja: var(--roxo);
   --titulo-rodape-tarja: var(--cinza-fortissimo);
   --txt-rodape-tarja: var(--branco);
