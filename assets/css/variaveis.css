@@ -1,4 +1,24 @@
 :root{
+  --preto: #000;
+  --preto-10: rgba(0, 0, 0, 0.1);
+  --preto-20: rgba(0, 0, 0, 0.2);
+  --preto-50: rgba(0, 0, 0, 0.5);
+  --preto-60: rgba(0, 0, 0, 0.6);
+  --preto-70: rgba(0, 0, 0, 0.7);
+  --branco-absoluto: #FFF;
+  --branco: #F6F6F6; 
+  --branco-20: rgba(255, 255, 255, 0.2);
+  --branco-25: rgba(255, 255, 255, 0.25);
+  --cinza-escuro: #191919;
+  --cinza-forte: #3D3D3D;
+  --cinza-fortissimo: #4D4D4D;
+  --cinza-claro: #DDD;
+  --roxo: #474BFF;
+  --roxo-30: rgb(71, 75, 255, 0.3);
+  --azul: #155EEA;
+  --vermelho: #E93F1A;
+  --verde: #32CD32;
+
   --espaco-margem: 15rem;
   --espaco-padding-secao: 4rem;
   --espaco-padding-rodape-tarja: 3rem;
