@@ -19,6 +19,9 @@
   --txt-btn-modal: var(--branco);
   --txt-btn-site-oficial: var(--roxo);
 
+  --bckg-btn-subir: var(--branco-20);
+  --borda-btn-subir: transparent;
+
   --input: var(--branco);
   --input-placeholder: var(--cinza-claro);
   

@@ -19,6 +19,9 @@
   --txt-btn-modal: var(--cinza-forte);
   --txt-btn-site-oficial: var(--roxo);
 
+  --bckg-btn-subir: var(--cinza-claro);
+  --borda-btn-subir: var(--cinza-claro);
+
   --input: var(--preto);
   --input-placeholder: var(--preto-50);
   

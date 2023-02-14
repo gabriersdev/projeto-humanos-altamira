@@ -52,6 +52,7 @@
 body{
   background-color: var(--bckg);
   color: var(--txt);
+  position: relative;
 }
 
 button, a{
@@ -77,4 +78,16 @@ a.link-visivel{
   text-decoration: underline;
   cursor: pointer;
   outline: none;
+}
+
+.botao-subir{
+  position: fixed;
+  background-color: var(--bckg-btn-subir);
+  border: 1px solid var(--borda-btn-subir);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  bottom: 1rem;
+  right: 0.5rem;
 }
