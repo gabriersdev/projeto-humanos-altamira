@@ -20,6 +20,36 @@
   color: var(--texto-mostrar-mais-hover);
 }
 
+.ultimos-episodios__cards{
+  display: flex;
+  background-color: transparent !important;
+
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  
+  overflow: auto;
+  white-space: nowrap;
+  
+  scrollbar-width: thin;
+  scrollbar-color: #858585 transparent;
+}
+
+.ultimos-episodios__cards::-webkit-scrollbar {
+  width: 5px;
+}
+
+.ultimos-episodios__cards::-webkit-scrollbar-track {
+  background: var(--bckg-scroll);
+}
+
+.ultimos-episodios__cards::-webkit-scrollbar-thumb {
+  background-color: var(--bckg-linha-scroll);
+  border-radius: 50px;
+  border: 5px solid var(--borda-linha-scroll);
+}
+
+
 @media screen and (max-width: 345px) {
   .ultimos-episodios__cabecalho{
     flex-direction: column;

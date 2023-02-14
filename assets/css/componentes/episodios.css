@@ -42,14 +42,14 @@
 
 .episodios .card,
 .ultimos-episodios .card{
-  /* Estilização no em: elementos/secoes.css */
+  /* Estilização no em: elementos/card.css */
   display: inline;
   background-image: url(../../img/episodios-thumbs/default.png);
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--txt-card-episodios);
-  min-width: 100%;
+  min-width: 25%;
   min-height: 10%;
   padding: 0.25rem;
   display: flex;
@@ -172,24 +172,30 @@
 }
 
 @media screen and (max-width: 1815px) {
-  .episodios__cards,
-  .ultimos-episodios__cards{
+  .episodios__cards{
     grid-template-columns: 
     calc(33.3% - 0.5rem)
     calc(33.3% - 0.5rem)
     calc(33.3% - 1rem)
     ;
   }
+
+  .ultimos-episodios .card{
+    min-width: 33.3%;
+  }
 }
 
 
 @media screen and (max-width: 1442px) {
-  .episodios__cards,
-  .ultimos-episodios__cards{
+  .episodios__cards{
     grid-template-columns: 
     calc(50% - 0.5rem)
     calc(50% - 0.5rem)
     ;
+  }
+
+  .ultimos-episodios .card{
+    min-width: 50%;
   }
 }
 
@@ -206,11 +212,14 @@
 }
 
 @media screen and (max-width: 525px) {
-  .episodios__cards,
-  .ultimos-episodios__cards{
+  .episodios__cards{
     grid-template-columns: 
     calc(100%)
     ;
+  }
+
+  .ultimos-episodios .card{
+    min-width: calc(100% - 2rem);
   }
 }
 

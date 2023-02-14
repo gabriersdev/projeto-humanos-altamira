@@ -71,6 +71,9 @@
   --txt-controle-episodios-hover: var(--branco);
 
   --btn-ultimos-episodios: var(--branco);
+  --bckg-scroll: var(--cinza-forte);
+  --bckg-linha-scroll: var(--branco);
+  --borda-linha-scroll: var(--cinza-forte);
   
   --icon-card-video: var(--vermelho);
   --icon-card-musica: var(--azul);
