@@ -121,6 +121,12 @@ a:focus .menu__item{
   }
 }
 
+@media screen and (max-height: 750px) {
+  .cabecalho__principal{
+    margin-top: 5rem;
+  }
+}
+
 @media screen and (max-width: 660px) {
   .cabecalho{
     grid-template-columns: 35% 65%;
