@@ -1,13 +1,18 @@
 button[data-modal-fecha]{
   text-align: right;
   border: none;
-  background-color: #DDD;
+  background-color: var(--bckg-btn-modal);
   padding: 0.65rem 0.7rem;
   border-radius: 50%;
+  transition: box-shadow ease-in-out 0.2s;
+  color: var(--txt-btn-modal);
 }
 
 .modal{
-  color: #000;
+  color: var(--txt-modal);
+}
+
+.modal-content{
   background-color: var(--bckg-modal);
 }
 
@@ -22,12 +27,12 @@ button[data-modal-fecha]{
   justify-content: center;
   padding: 3rem 1rem;
   margin: 0;
-  color: #3D3D3D;
 }
 
 .modal__titulo{
   font-family: 'CircularStd Bold', 'CircularStd Book', sans-serif;
   font-size: var(--titulos-h3);
+  color: var(--txt-modal) !important;
 }
 
 .modal-footer{
@@ -37,10 +42,14 @@ button[data-modal-fecha]{
 }
 
 .modal-footer button{
-  padding: 0.55rem 1.25rem;
+  padding: 0.75rem 1.25rem 0.65rem 1.25rem;
+  line-height: 0.75;
   border-radius: 50px;
   border: none;
   font-size: var(--fonte-conteudo);
+  background-color: var(--bckg-btn-modal);
+  color: var(--txt-btn-modal);
+  transition: box-shadow ease-in-out 0.2s;
 }
 
 button[data-modal-fecha]:focus,
@@ -53,5 +62,5 @@ button[data-modal-fecha]:hover,
 }
 
 .modal-footer button[data-confirmacao-navegacao="site-oficial"]{
-  color: #474BFF;
+  color: var(--txt-btn-site-oficial);
 }

@@ -12,6 +12,13 @@
   --bckg-icone-btn-tema: var(--preto-50);
   --bckg-item-menu-hover: var(--preto-20);
   
+  --bckg-modal: var(--preto);
+  --txt-modal: var(--branco);
+  --bckg-btn-modal: var(--cinza-escuro);
+  --box-shadow-botao-modal: var(--branco-20);
+  --txt-btn-modal: var(--branco);
+  --txt-btn-site-oficial: var(--roxo);
+
   --input: var(--branco);
   --input-placeholder: var(--cinza-claro);
   
