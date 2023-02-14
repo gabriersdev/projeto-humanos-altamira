@@ -36,12 +36,20 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
       })
     })
   }
-
+  
   controleFechamentoModal();
-
+  
   window.onload = async () => {
     const dataAtual = new Date();
-    $('#modal-confirmacao-navegacao').modal('show');
+    
+    const verificarConfirmacaoNavegacao = () => {
+      if(isEmpty(localStorage.getItem('confirmacao-navegacao'))){
+        $('#modal-confirmacao-navegacao').modal('show');
+      }
+    }
+
+    verificarConfirmacaoNavegacao();
+
     document.querySelectorAll("[data-ano-atual]").forEach(area => {
       area.textContent = `${dataAtual.getFullYear()}`;
     })
@@ -176,6 +184,8 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
   const verificarTema = () => {
     if(!isEmpty(localStorage.getItem('tema'))){
       trocarTema(localStorage.getItem('tema'));
+    }else{
+      trocarTema('escuro');
     }
   }
   
@@ -233,5 +243,22 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
   }
   
   adicionarEventoEpisodios();
+  
+  const escutaConfirmacaoNavegacao = () => {
+    document.querySelectorAll('[data-confirmacao-navegacao]').forEach(botao => {
+      botao.addEventListener('click', (evento) => {
+        switch(evento.target.dataset.confirmacaoNavegacao){
+          case "site-oficial":
+          window.location.href = 'https://www.projetohumanos.com.br';
+          break;
+          case "continuar":
+            localStorage.setItem('confirmacao-navegacao', true);
+            $('#modal-confirmacao-navegacao').modal('hide');
+        }
+      })
+    })
+  }
+  escutaConfirmacaoNavegacao();
+
   
 })();

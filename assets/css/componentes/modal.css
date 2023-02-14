@@ -1,5 +1,57 @@
 button[data-modal-fecha]{
   text-align: right;
   border: none;
-  background-color: transparent;
+  background-color: #DDD;
+  padding: 0.65rem 0.7rem;
+  border-radius: 50%;
+}
+
+.modal{
+  color: #000;
+  background-color: var(--bckg-modal);
+}
+
+.modal-header,
+.modal-footer{
+  border: none;
+}
+
+.modal-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  margin: 0;
+  color: #3D3D3D;
+}
+
+.modal__titulo{
+  font-family: 'CircularStd Bold', 'CircularStd Book', sans-serif;
+  font-size: var(--titulos-h3);
+}
+
+.modal-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-footer button{
+  padding: 0.55rem 1.25rem;
+  border-radius: 50px;
+  border: none;
+  font-size: var(--fonte-conteudo);
+}
+
+button[data-modal-fecha]:focus,
+button[data-modal-fecha]:hover,
+.modal-footer button:focus,
+.modal-footer button:hover{
+  box-shadow:  0px 0px 0px 3px var(--box-shadow-botao-modal);
+  -webkit-box-shadow: 0px 0px 0px 3px var(--box-shadow-botao-modal);
+  -moz-box-shadow: 0px 0px 0px 3px var(--box-shadow-botao-modal);
+}
+
+.modal-footer button[data-confirmacao-navegacao="site-oficial"]{
+  color: #474BFF;
 }
