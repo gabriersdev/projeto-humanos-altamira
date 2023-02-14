@@ -35,6 +35,13 @@
   scrollbar-color: #858585 transparent;
 }
 
+.ultimos-episodios .card__conteudo h3,
+.ultimos-episodios .card__conteudo p{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 .ultimos-episodios__cards::-webkit-scrollbar {
   width: 5px;
 }
