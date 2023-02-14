@@ -12,6 +12,8 @@
   --bckg-icone-btn-tema: var(--preto-50);
   --bckg-item-menu-hover: var(--preto-20);
   
+  --text-shadow-cabecalho: var(--preto-50);
+
   --bckg-modal: var(--preto);
   --txt-modal: var(--branco);
   --bckg-btn-modal: var(--cinza-escuro);
