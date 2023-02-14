@@ -44,7 +44,7 @@ const criarCard = ({nome, descricao, link, img, wiki}) => {
   numero = numero[0];
 
   return `
-  <div class="card" data-redirecionar='${link}' style='background-image:url(${img})'>
+  <div class="card" style='background-image:url(${img})'>
   <div class="card__cabecalho">
   <p>Altamira</p>  
   </div>
@@ -61,7 +61,7 @@ const criarCard = ({nome, descricao, link, img, wiki}) => {
   </div>
   
   <div class="controles">
-  <a href="#recomendacao" data-toggle="tooltip" data-placement="right" title="Ouvir" class="controle__ouvir"><i class="bi bi-headphones"></i></a>
+  <a href="#recomendacao" data-redirecionar='${link}' data-toggle="tooltip" data-placement="right" title="Ouvir" class="controle__ouvir"><i class="bi bi-headphones"></i></a>
   <a href="${wiki}" data-toggle="tooltip" data-placement="right" title="Documentação do episódio" class="controle__saiba-mais"><i class="bi bi-body-text"></i></a>
   </div>
   </div>

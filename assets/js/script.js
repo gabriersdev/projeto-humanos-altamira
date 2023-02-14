@@ -233,10 +233,11 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
   
   const adicionarEventoEpisodios = () => {
     document.querySelectorAll('[data-redirecionar]').forEach(linkRedirecionar => {
-      linkRedirecionar.addEventListener('click', () => {
+      linkRedirecionar.addEventListener('click', (evento) => {
         if(!isEmpty(linkRedirecionar.dataset.redirecionar)){
-          // alert(linkRedirecionar.dataset.redirecionar);
-          window.location.href = linkRedirecionar.dataset.redirecionar;
+          evento.preventDefault();
+          const link = linkRedirecionar.dataset.redirecionar.trim();
+          window.location.href = link;
         }
       })
     })

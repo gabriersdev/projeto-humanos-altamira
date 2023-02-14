@@ -58,7 +58,6 @@
   font-size: var(--fonte-conteudo);
   transition: box-shadow ease-in-out 0.2s ;
   border: none;
-  cursor: pointer;
 }
 
 .episodios .card__cabecalho p,
@@ -156,6 +155,7 @@
   transition: all ease-in-out 0.2s;
   outline: none;
   text-shadow: none;
+  cursor: alias;
 }
 
 .episodios .controle__ouvir:hover,
