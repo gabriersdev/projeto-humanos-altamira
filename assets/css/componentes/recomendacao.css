@@ -1,4 +1,5 @@
 .recomendacao{
+  background-color: var(--bckg-recomendacao);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
