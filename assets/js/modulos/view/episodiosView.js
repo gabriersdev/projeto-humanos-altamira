@@ -62,7 +62,7 @@ const criarCard = ({nome, descricao, link, img, wiki}) => {
   
   <div class="controles">
   <a href="#recomendacao" data-toggle="tooltip" data-placement="right" title="Ouvir" class="controle__ouvir"><i class="bi bi-headphones"></i></a>
-  <a href="${link}" data-toggle="tooltip" data-placement="right" title="Documentação do episódio" class="controle__saiba-mais"><i class="bi bi-body-text"></i></a>
+  <a href="${wiki}" data-toggle="tooltip" data-placement="right" title="Documentação do episódio" class="controle__saiba-mais"><i class="bi bi-body-text"></i></a>
   </div>
   </div>
   </div>
