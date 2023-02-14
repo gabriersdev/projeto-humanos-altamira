@@ -27,9 +27,21 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
     })
   });
   
+  const controleFechamentoModal = () => {
+    const modais = document.querySelectorAll('.modal');
+    modais.forEach(modal => {
+      const btnFecha = modal.querySelector('[data-modal-fecha]');
+      btnFecha.addEventListener('click', () => {
+        $('#' + modal.id).modal('hide');
+      })
+    })
+  }
+
+  controleFechamentoModal();
+
   window.onload = async () => {
     const dataAtual = new Date();
-    
+    $('#modal-confirmacao-navegacao').modal('show');
     document.querySelectorAll("[data-ano-atual]").forEach(area => {
       area.textContent = `${dataAtual.getFullYear()}`;
     })

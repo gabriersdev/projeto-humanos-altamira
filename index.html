@@ -18,6 +18,28 @@
 </head>
 <body>
 
+  <div class="modal fade" id="modal-confirmacao-navegacao" tabindex="-1" aria-labelledby="modal-confirmacao-navegacao-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content modal-estilo">
+        <div class="modal-header">
+          <h5 class="modal-title" id=""></h5>
+          <button data-modal-fecha><i class='bi bi-x-lg'></i></button>
+        </div>
+        <div class="modal-body">
+          <div class="" data-feedback="imagem"></div>
+          <div>
+            <h3 class="" data-feedback="titulo">
+              
+            </h3><br>
+            <h3 class="" data-feedback="descricao">
+              
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header class="cabecalho">
     <div class="selecao-tema">
       <button class="selecao-tema__botao" data-tema="claro" data-toggle="tooltip" data-placement="bottom" title="Modo Claro"><i class="bi bi-brightness-low-fill"></i></button>
@@ -83,7 +105,7 @@
       <div class="personagens__cabecalho" id="personagens">
         <h2 class="personagens__titulo">Personagens</h2>
         <form class="personagens__busca">
-          <input type="text" class="personagens__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+          <input list="lista-personagens" type="text" class="personagens__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
           <button type="submit" class="personagens__busca__botao">
             <i class="bi bi-search"></i>
           </button>
