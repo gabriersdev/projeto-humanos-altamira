@@ -30,7 +30,7 @@ const carregarUltimosEpisodios = (quantidade) => {
   })
 }
 
-const criarCard = ({nome, descricao, link, img}) => {
+const criarCard = ({nome, descricao, link, img, wiki}) => {
   
   if(descricao.length > 55){
     descricao = descricao.substr(0, 55);

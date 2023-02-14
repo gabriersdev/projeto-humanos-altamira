@@ -21,4 +21,12 @@ export class EpisodiosModel{
   getImg(){
     return this.img;
   }
+
+  setWiki(wiki){
+    this.wiki = wiki;
+  }
+
+  getWiki(){
+    return this.wiki;
+  }
 }
