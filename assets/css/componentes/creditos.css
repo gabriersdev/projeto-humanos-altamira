@@ -70,12 +70,6 @@
   content: "";
 }
 
-.custom-tooltip {
-  --bs-tooltip-bg: var(--bckg-tooltip-link) !important;
-  --bs-tooltip-opacity: 1;
-  --bs-tooltip-margin: 1rem;
-}
-
 /* 
 Media Queries nos arquivos: 
 elementos/cards.css
