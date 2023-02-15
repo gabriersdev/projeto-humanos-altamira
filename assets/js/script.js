@@ -1,22 +1,22 @@
 import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra } from "./modulos/controller/personagensController.js";
 import { isEmpty } from "./modulos/utilitarios/utilitarios.js";
-import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
-import { carregarEpisodios, maximoEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
-import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personagensView.js";
+import { carregarCreditos } from "./modulos/view/creditosView.js";
+import { carregarEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
+import { carregarPersonagens } from "./modulos/view/personagensView.js";
 
 import {
   atualizarDatas, 
   verificarConfirmacaoNavegacao, 
-  controleFechamentoModal, 
-  escutaClickRecarregar, 
+  controleFechamentoModal,
   atualizarLinks,
   sortearEmbed,
   verificarTema,
-  trocarTema,
   escutaClickBotaoTema,
   adicionarEventoEpisodios,
   escutaConfirmacaoNavegacao,
+  escutaClickVerMais,
   escutarClickLista,
+  exibirFeedbackNenhumResultado,
   limparItensLista,
   limparArrayFiltro
 } from "./modulos/funcoes/funcoes.js"
@@ -38,97 +38,27 @@ import {
   carregarEpisodios(qtdeCardsInicial);
   carregarUltimosEpisodios(5);
   
-  const escutaClickVerMais = () => {
-    document.querySelectorAll('[data-ver-mais]').forEach(botao => {
-      switch(botao.dataset.verMais){
-        case 'personagens':
-        let vezClickPersonagem = 2;
-        botao.addEventListener('click', () => {
-          
-          const carregarCardsPersonagens = (6 * vezClickPersonagem);
-          
-          if(carregarCardsPersonagens < maximoPersonagens()){
-            carregarPersonagens(carregarCardsPersonagens);
-            vezClickPersonagem++;
-          }else if(carregarCardsPersonagens == maximoPersonagens()){
-            carregarPersonagens(carregarCardsPersonagens);
-            botao.remove();
-          }else{
-            carregarPersonagens(maximoPersonagens());
-            botao.remove();
-          }
-          
-        })
-        break;
-        
-        case 'episódios':
-        let vezClickEpisodio = 2;
-        botao.addEventListener('click', () => {
-          
-          const carregarCardsEpisodios = (6 * vezClickEpisodio);
-          
-          if(carregarCardsEpisodios < maximoEpisodios()){
-            carregarEpisodios(carregarCardsEpisodios);
-            vezClickEpisodio++;
-          }else if(carregarCardsEpisodios == maximoEpisodios()){
-            carregarEpisodios(carregarCardsEpisodios);
-            botao.remove();
-          }else{
-            carregarEpisodios(maximoPersonagens());
-            botao.remove();
-          }
-
-          adicionarEventoEpisodios();
-        })
-        break;
-        
-        case 'créditos':
-        let vezClickCreditos = 2;
-        botao.addEventListener('click', () => {
-          
-          const carregarCardsCreditos = (6 * vezClickCreditos);
-          
-          if(carregarCardsCreditos < maximoCreditos()){
-            carregarCreditos(carregarCardsCreditos);
-            vezClickCreditos++;
-          }else if(carregarCardsCreditos == maximoCreditos()){
-            carregarCreditos(carregarCardsCreditos);
-            botao.remove();
-          }else{
-            carregarCreditos(maximoPersonagens());
-            botao.remove();
-          }
-          
-        })
-        break;
-        
-        case 'todos-episódios':
-        botao.addEventListener('click', (evento) => {
-          evento.preventDefault();
-          document.querySelector('section.episodios').style.display = 'block';
-          window.location.href = '#todos-episodios';
-        })
-        break;
-      }
-    })
-  }
   escutaClickVerMais();
   
   const pesquisa = () => {
     document.querySelectorAll('input').forEach(input => {
       
       const filtroPersonagens = new Array();
-      const personagens = document.querySelector('section.personagens');
       
       input.parentElement.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
+        const secaoInput = (input.className.split('__'))[0];
         input.setCustomValidity('');
         evento.preventDefault();  
         
         if(input.validity.valueMissing){
-          $(input).tooltip('show');
+          // $(input).tooltip('show');
           input.focus();
         }else{
-          //Pesquisa através do botão
+          if(!isEmpty(filtroPersonagens)){
+            carregarResultadosPesquisa(secaoInput, filtroPersonagens)
+          }else{
+            exibirFeedbackNenhumResultado();
+          }
         }
       })
       
@@ -160,10 +90,6 @@ import {
               lista.appendChild(item);
             })
             escutarClickLista(lista, input);
-          }else{
-            const conteudo = personagens.querySelector('.personagens__conteudo');
-            conteudo.innerHTML = `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
-            escutaClickRecarregar();
           }
           
           break;
@@ -175,11 +101,27 @@ import {
   pesquisa();  
   
   window.onload = async () => {
-    const dataAtual = new Date();
     verificarConfirmacaoNavegacao();
     atualizarDatas();
   }
   
+  function carregarResultadosPesquisa(secao, lista){
+    const section = document.querySelector(`.${secao}`);
+    
+    const btnVerMais = section.querySelector('button.vermais');
+    btnVerMais.querySelector('p').textContent = 'Ver + resultados';
+    btnVerMais.dataset.verMaisResultados = '';
+
+    section.querySelector('h2').textContent = 'Resultados para a Busca'
+    
+    switch(secao){
+      case "personagens":
+        carregarPersonagens(6, lista);
+      break;
+    }
+
+  }
+
   verificarTema();
   atualizarLinks();  
   sortearEmbed();
