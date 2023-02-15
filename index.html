@@ -125,7 +125,11 @@
       <div class="personagens__cabecalho" id="personagens">
         <h2 class="personagens__titulo">Personagens</h2>
         <form class="personagens__busca">
-          <input list="lista-personagens" type="text" class="personagens__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+          <div class="autocomplete">
+            <input type="text" class="personagens__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+            <ul class="autocomplete__lista">
+            </ul>
+          </div>
           <button type="submit" class="personagens__busca__botao">
             <i class="bi bi-search"></i>
           </button>

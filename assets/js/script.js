@@ -1,3 +1,4 @@
+import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra } from "./modulos/controller/personagensController.js";
 import { isEmpty } from "./modulos/utilitarios/utilitarios.js";
 import { carregarCreditos, maximoCreditos } from "./modulos/view/creditosView.js";
 import { carregarEpisodios, maximoEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
@@ -14,19 +15,81 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
   });
   
   document.querySelectorAll('input').forEach(input => {
-    
-    input.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
-      
+    input.parentElement.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
       input.setCustomValidity('');
-      evento.preventDefault();
-      
+      evento.preventDefault();  
+
       if(input.validity.valueMissing){
         $(input).tooltip('show');
         input.focus();
+      }else{
+        //Pesquisa através do botão
+      }
+    })
+
+    const filtroPersonagens = new Array();
+
+    input.addEventListener('input', (evento) => {
+      const valor = input.value.toLowerCase();
+      const lista = input.parentElement.querySelector('ul.autocomplete__lista');
+
+      switch(input.className){
+        case 'personagens__busca__input':
+
+          if(!isEmpty(valor)){
+            limparArrayFiltro(filtroPersonagens);
+    
+            const buscas = buscarNoNomePorPalavra(valor).concat(buscarNaDescricaoPorPalavra(valor).concat(buscarNoNome(valor).concat(buscarNaDescricao(valor))))
+            buscas.forEach(busca => {
+              if(!filtroPersonagens.includes(busca)){
+                filtroPersonagens.push(busca);
+              }
+            }) 
+          }
+          
+          limparItensLista(lista);
+
+          if(!isEmpty(filtroPersonagens)){
+            filtroPersonagens.slice(0, 5).forEach(personagem => {
+              const item = document.createElement('li');
+              const botao = document.createElement('button');
+              botao.textContent = personagem.nome;
+              item.appendChild(botao);
+              lista.appendChild(item);
+            })
+
+            escutarClickLista(lista, input);
+          }
+
+          break;
       }
     })
   });
   
+  function escutarClickLista(lista, input){
+    document.onclick = (evento) => {
+      evento.preventDefault();
+      
+      if(evento.target.tagName.toLowerCase() == 'button' && evento.target.parentElement.parentElement == lista && evento.target.textContent.trim().length > 0){
+        input.value = evento.target.textContent.trim();
+      }else{
+        limparItensLista(lista)
+      }
+    }
+  }
+
+  function limparItensLista(lista){
+    lista.querySelectorAll('li').forEach(item => {
+      item.remove();
+    })
+  }
+
+  function limparArrayFiltro(array){
+    while(array.length > 0){
+      array.pop();
+    }
+  }
+
   const controleFechamentoModal = () => {
     const modais = document.querySelectorAll('.modal');
     modais.forEach(modal => {
@@ -261,5 +324,4 @@ import { carregarPersonagens, maximoPersonagens } from "./modulos/view/personage
   }
   escutaConfirmacaoNavegacao();
 
-  
 })();

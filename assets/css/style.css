@@ -23,6 +23,7 @@
 
 @import url(../css/componentes/ultimos-episodios.css);
 @import url(../css/componentes/modal.css);
+@import url(../css/componentes/autocomplete.css);
 
 @font-face {
   font-family: 'CircularStd Book';

@@ -33,5 +33,9 @@ function buscarNaDescricaoPorPalavra(string){
 }
 
 export {
-  personagensController
+  personagensController,
+  buscarNoNome,
+  buscarNoNomePorPalavra,
+  buscarNaDescricao,
+  buscarNaDescricaoPorPalavra
 };
