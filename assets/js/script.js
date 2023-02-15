@@ -39,8 +39,7 @@ import {
   carregarUltimosEpisodios(5);
   
   const escutaClickVerMais = () => {
-    const btnsVerMais = document.querySelectorAll('[data-ver-mais]');
-    btnsVerMais.forEach(botao => {
+    document.querySelectorAll('[data-ver-mais]').forEach(botao => {
       switch(botao.dataset.verMais){
         case 'personagens':
         let vezClickPersonagem = 2;
@@ -78,7 +77,7 @@ import {
             carregarEpisodios(maximoPersonagens());
             botao.remove();
           }
-          
+
           adicionarEventoEpisodios();
         })
         break;
@@ -114,13 +113,13 @@ import {
     })
   }
   escutaClickVerMais();
-
+  
   const pesquisa = () => {
     document.querySelectorAll('input').forEach(input => {
-
+      
       const filtroPersonagens = new Array();
       const personagens = document.querySelector('section.personagens');
-
+      
       input.parentElement.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
         input.setCustomValidity('');
         evento.preventDefault();  
@@ -132,7 +131,7 @@ import {
           //Pesquisa através do botão
         }
       })
-
+      
       input.addEventListener('input', () => {
         const valor = input.value.toLowerCase();
         const lista = input.parentElement.querySelector('ul.autocomplete__lista');
@@ -172,7 +171,7 @@ import {
       })
     });
   }
-
+  
   pesquisa();  
   
   window.onload = async () => {

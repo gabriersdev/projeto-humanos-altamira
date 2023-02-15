@@ -21,7 +21,7 @@ const carregarUltimosEpisodios = (quantidade) => {
   const ultimosEpisodiosCards = document.querySelector('.ultimos-episodios__cards');
   ultimosEpisodiosCards.innerHTML = '';
 
-  const ultimosEpisodios = episodios.splice(episodios.length - quantidade, episodios.length);
+  const ultimosEpisodios = episodiosController().splice(episodiosController().length - quantidade, episodiosController().length);
 
   ultimosEpisodios.sort((a, b) => comparaNumeroDescrescente(a, b));
 
