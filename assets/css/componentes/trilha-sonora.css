@@ -1,0 +1,71 @@
+.trilha-sonora{
+
+}
+
+.trilha-sonora__trilha{
+
+}
+
+.player{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.player__imagem{
+
+}
+
+.player__conteudo{
+  display: flex;
+  flex-direction: column;
+}
+
+.player__titulo{
+
+}
+
+.player__autor{
+
+}
+
+.player__controles{
+  display: flex;
+  justify-content: space-between;
+}
+
+.playter__controles__principal{
+
+}
+
+.playter__controles__principal #voltar{
+
+}
+
+.playter__controles__principal #play{
+
+}
+
+.playter__controles__principal #proximo{
+
+}
+
+.playter__controles__principal #som{
+
+}
+
+.player__reproducao{
+  
+}
+
+.trilha-sonora__playlist{
+
+}
+
+.trilha-sonora__playlist ul{
+
+}
+
+.trilha-sonora__playlist ul li{
+
+}

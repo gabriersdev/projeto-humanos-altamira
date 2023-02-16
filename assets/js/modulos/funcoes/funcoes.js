@@ -2,13 +2,7 @@ import { isEmpty } from "../utilitarios/utilitarios.js";
 import { carregarPersonagens, maximoPersonagens } from "../view/personagensView.js";
 import { carregarEpisodios, maximoEpisodios } from "../view/episodiosView.js";
 import { carregarCreditos, maximoCreditos } from "../view/creditosView.js";
-
-const atualizarDatas = () => {
-  const dataAtual = new Date();
-  document.querySelectorAll("[data-ano-atual]").forEach(area => {
-    area.textContent = `${dataAtual.getFullYear()}`;
-  })
-} 
+import { escutaClickBotaoTema } from "./tema.js";
 
 const verificarConfirmacaoNavegacao = () => {
   if(isEmpty(localStorage.getItem('confirmacao-navegacao'))){
@@ -161,54 +155,6 @@ const sortearEmbed = () => {
   }
 }
 
-const verificarTema = () => {
-  if(!isEmpty(localStorage.getItem('tema'))){
-    trocarTema(localStorage.getItem('tema'));
-  }else{
-    trocarTema('escuro');
-  }
-}
-
-const trocarTema = (tema) => {
-  const head = document.querySelector('head');
-  const arquivoTema = head.querySelector('[data-import="arquivo-tema"]');
-  
-  const btnClaro = document.querySelector('[data-tema="claro"]');
-  const btnEscuro = document.querySelector('[data-tema="escuro"]')
-  
-  switch(tema){
-    case 'claro':
-    arquivoTema.href = './assets/css/temas/tema-claro.css';
-    btnClaro.classList.add('ativo');
-    btnEscuro.classList.remove('ativo');
-    break;
-    
-    case 'escuro':
-    arquivoTema.href = './assets/css/temas/tema-escuro.css';
-    btnEscuro.classList.add('ativo');
-    btnClaro.classList.remove('ativo');
-    break;
-  }
-}
-
-const escutaClickBotaoTema = () => {
-  document.querySelectorAll('[data-tema]').forEach(botao => {
-    botao.addEventListener('click', () => {
-      switch(botao.dataset.tema){
-        case 'claro':
-        localStorage.setItem('tema', 'claro');
-        trocarTema('claro');
-        break;
-        
-        case 'escuro':
-        localStorage.setItem('tema', 'escuro');
-        trocarTema('escuro');
-        break;
-      }
-    })
-  })
-}
-
 const adicionarEventoEpisodios = () => {
   document.querySelectorAll('[data-redirecionar]').forEach(linkRedirecionar => {
     linkRedirecionar.addEventListener('click', (evento) => {
@@ -272,14 +218,11 @@ function limparArrayFiltro(array){
 }
 
 export{
-  atualizarDatas, 
   verificarConfirmacaoNavegacao, 
   controleFechamentoModal, 
   escutaClickRecarregar, 
   atualizarLinks,
   sortearEmbed,
-  verificarTema,
-  trocarTema,
   escutaClickBotaoTema,
   adicionarEventoEpisodios,
   escutaConfirmacaoNavegacao,

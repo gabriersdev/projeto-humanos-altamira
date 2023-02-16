@@ -1,17 +1,21 @@
-import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra } from "./modulos/controller/personagensController.js";
-import { isEmpty } from "./modulos/utilitarios/utilitarios.js";
+import { 
+  buscarNaDescricao, 
+  buscarNaDescricaoPorPalavra, 
+  buscarNoNome, 
+  buscarNoNomePorPalavra 
+} from "./modulos/controller/personagensController.js";
+
+import { verificarTema, escutaClickBotaoTema } from "./modulos/funcoes/tema.js";
+import { atualizarDatas, isEmpty } from "./modulos/utilitarios/utilitarios.js";
 import { carregarCreditos } from "./modulos/view/creditosView.js";
 import { carregarEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens } from "./modulos/view/personagensView.js";
 
-import {
-  atualizarDatas, 
+import { 
   verificarConfirmacaoNavegacao, 
   controleFechamentoModal,
   atualizarLinks,
   sortearEmbed,
-  verificarTema,
-  escutaClickBotaoTema,
   adicionarEventoEpisodios,
   escutaConfirmacaoNavegacao,
   escutaClickVerMais,
@@ -41,7 +45,7 @@ import {
   escutaClickVerMais();
   
   const pesquisa = () => {
-    document.querySelectorAll('input').forEach(input => {
+    document.querySelectorAll('input[type=text]').forEach(input => {
       
       const filtroPersonagens = new Array();
       
@@ -111,17 +115,37 @@ import {
     const btnVerMais = section.querySelector('button.vermais');
     btnVerMais.querySelector('p').textContent = 'Ver + resultados';
     btnVerMais.dataset.verMaisResultados = '';
-
+    
     section.querySelector('h2').textContent = 'Resultados para a Busca'
     
     switch(secao){
       case "personagens":
-        carregarPersonagens(6, lista);
+      carregarPersonagens(6, lista);
+      break;
+      
+      case "episodios":
+      console.log('episódios');
+      break;
+      
+      case "créditos":
+      console.log('créditos')
       break;
     }
-
+    
+    function exibirResultados(){
+      
+    }
+    
+    function escutarClickVerMaisResultados(){
+      
+    }
+    
+    function limparResultados(){
+      
+    }
+    
   }
-
+  
   verificarTema();
   atualizarLinks();  
   sortearEmbed();

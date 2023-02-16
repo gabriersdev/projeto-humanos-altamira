@@ -1,3 +1,10 @@
+const atualizarDatas = () => {
+  const dataAtual = new Date();
+  document.querySelectorAll("[data-ano-atual]").forEach(area => {
+    area.textContent = `${dataAtual.getFullYear()}`;
+  })
+} 
+
 function comparaNomes(a, b){
   const primeiro = a.nome.toLowerCase();
   const segundo = b.nome.toLowerCase();
@@ -64,6 +71,7 @@ function zeroEsquerda(quantidadeZeros, valor){
 }
 
 export{
+  atualizarDatas,
   comparaNomes,
   comparaNumero,
   comparaNumeroDescrescente,
