@@ -112,6 +112,7 @@ function escutaClickRecarregar(secao){
     break;
   }
   
+  secao.querySelector('h2').textContent = titulo;
   const btnVerMais = secao.querySelector('button.vermais');
   btnVerMais.querySelector('p').textContent = 'Ver Mais';
   btnVerMais.dataset.verMais = `${secao.className}`;
