@@ -1,4 +1,4 @@
-import { personagensController } from "../controller/personagensController.js";
+import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra, personagensController } from "../controller/personagensController.js";
 import { comparaNomes } from "../utilitarios/utilitarios.js";
 
 const personagens = personagensController();
@@ -46,5 +46,7 @@ const maximoPersonagens = () => {
 
 export{
   carregarPersonagens,
-  maximoPersonagens
+  maximoPersonagens,
 }
+
+export const consultaPersonagensView = {buscarNoNome, buscarNoNomePorPalavra, buscarNaDescricao, buscarNaDescricaoPorPalavra};

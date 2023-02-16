@@ -132,7 +132,11 @@
       <div class="episodios__cabecalho" id="todos-episodios">
         <h2 class="episodios__titulo">Todos os episódios</h2>
         <form class="episodios__busca">
-          <input type="text" class="episodios__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+          <div class="autocomplete">
+            <input type="text" class="episodios__busca__input" placeholder="Episódio" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+            <ul class="autocomplete__lista">
+            </ul>
+          </div>
           <button type="submit" class="episodios__busca__botao">
             <i class="bi bi-search"></i>
           </button>
@@ -305,7 +309,11 @@
       <div class="creditos__cabecalho" id="creditos">
         <h2 class="creditos__titulo">Créditos</h2>
         <form class="creditos__busca">
-          <input type="text" class="creditos__busca__input" placeholder="Busque" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+          <div class="autocomplete">
+            <input type="text" class="creditos__busca__input" placeholder="Crédito" data-toggle="tooltip" data-placement="right" title="Preenc. obrigatório" required>
+            <ul class="autocomplete__lista">
+            </ul>
+          </div>
           <button type="submit" class="creditos__busca__botao">
             <i class="bi bi-search"></i>
           </button>

@@ -9,14 +9,21 @@
   align-items: center;
 }
 
-.feedback.sem-resultados i{
-  color: #E9271A;
+.feedback i{
   font-size: 2.5rem;
   margin-top: 0.25rem;
+  margin-right: 2rem;
+}
+
+.feedback.sem-resultados i{
+  color: #E9271A;
+}
+
+.feedback.consulta-resultados i{
+  color: #155EEA;
 }
 
 .feedback p{
-  margin-left: 2rem;
   font-size: var(--fonte-conteudo);
 }
 

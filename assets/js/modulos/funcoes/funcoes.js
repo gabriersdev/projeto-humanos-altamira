@@ -59,7 +59,7 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
           carregarEpisodios(maximoPersonagens());
           botao.remove();
         }
-
+        
         adicionarEventoEpisodios();
       })
       break;
@@ -95,15 +95,21 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
   })
 }
 
-function escutaClickRecarregar(conteudo){
-  document.querySelectorAll('[data-recarregar]').forEach(botao => {
+function escutaClickRecarregar(secao, conteudo){
+  secao.querySelector('h2').textContent = `${secao.className[0].toUpperCase() + secao.className.substr(1, secao.className.length)}`;
+  const btnVerMais = secao.querySelector('button.vermais');
+  btnVerMais.querySelector('p').textContent = 'Ver Mais';
+  btnVerMais.dataset.verMais = `${secao.className}`;
+
+  secao.querySelectorAll('[data-recarregar]').forEach(botao => {
     botao.onclick = () => {
       switch(botao.dataset.recarregar){
         case "personagens":
-          conteudo.style.display = 'block';
-          conteudo.parentElement.querySelector('div.feedback').remove();
-          escutaClickVerMais(6);
-          break;
+        conteudo.style.display = 'block';
+        conteudo.parentElement.querySelector('div.feedback').remove();
+        carregarPersonagens(6)
+        escutaClickVerMais(6);
+        break;
       }
     }
   })
@@ -175,8 +181,8 @@ const escutaConfirmacaoNavegacao = () => {
         window.location.href = 'https://www.projetohumanos.com.br';
         break;
         case "continuar":
-          localStorage.setItem('confirmacao-navegacao', true);
-          $('#modal-confirmacao-navegacao').modal('hide');
+        localStorage.setItem('confirmacao-navegacao', true);
+        $('#modal-confirmacao-navegacao').modal('hide');
       }
     })
   })
@@ -186,7 +192,7 @@ function escutarClickLista(lista, input){
   document.onclick = (evento) => {
     evento.preventDefault();
     const alvo = evento.target;
-
+    
     if(alvo.tagName.toLowerCase() == 'button' && alvo.parentElement.parentElement == lista && alvo.textContent.trim().length > 0){
       input.value = alvo.textContent.trim();
     }else{
@@ -195,14 +201,12 @@ function escutarClickLista(lista, input){
   }
 }
 
-function exibirFeedbackNenhumResultado(){
-  const personagens = document.querySelector('section.personagens');
-  personagens.innerHTML += `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
-  
-  const conteudo = personagens.querySelector('.personagens__conteudo');
+function exibirFeedbackNenhumResultado(secao){
+  secao.innerHTML += `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
+  const conteudo = secao.querySelector(`.${secao.className}__conteudo`);
   conteudo.style.display = 'none';
-
-  escutaClickRecarregar(conteudo);
+  
+  escutaClickRecarregar(secao, conteudo);
 }
 
 function limparItensLista(lista){
