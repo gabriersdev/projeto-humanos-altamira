@@ -23,14 +23,14 @@
 
 .autocomplete__lista li button:hover,
 .autocomplete__lista li button:focus{
-  background-color: darkgray;
+  background-color: var(--bckg-btn-autocomplete-hover);
 }
 
 .autocomplete__lista li button{
   padding: 0.75rem 0.75rem 0.65rem 0.75rem;
-  background-color: lightgray;
+  background-color: var(--bckg-btn-autocomplete);
   border: unset;
-  border-bottom: 1px dashed grey;
+  border-bottom: 1px dashed var(--border-btn-autocomplete);
   font-size: var(--fonte-conteudo);
   color: var(--txt);
   width: 100%;

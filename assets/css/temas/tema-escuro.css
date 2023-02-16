@@ -32,6 +32,10 @@
   --bckg-btn-input-hover: var(--branco);
   --btn-input: var(--branco);
   
+  --bckg-btn-autocomplete: var(--cinza-fortissimo);
+  --bckg-btn-autocomplete-hover: var(--cinza-forte);
+  --border-btn-autocomplete: var(--preto-50);
+
   --borda-card: var(--branco-20);
   --bckg-card-padrao: var(--preto);
   
