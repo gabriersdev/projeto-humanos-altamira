@@ -97,7 +97,8 @@
 }
 
 .personagens__busca__botao i,
-.creditos__busca__botao i{
+.creditos__busca__botao i,
+.episodios__busca__botao i{
   font-size: var(--icone);
   color: var(--btn-input);
 }
