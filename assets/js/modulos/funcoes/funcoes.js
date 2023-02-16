@@ -95,7 +95,8 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
   })
 }
 
-function escutaClickRecarregar(secao, conteudo){
+function escutaClickRecarregar(secao){
+
   secao.querySelector('h2').textContent = `${secao.className[0].toUpperCase() + secao.className.substr(1, secao.className.length)}`;
   const btnVerMais = secao.querySelector('button.vermais');
   btnVerMais.querySelector('p').textContent = 'Ver Mais';
@@ -103,16 +104,29 @@ function escutaClickRecarregar(secao, conteudo){
 
   secao.querySelectorAll('[data-recarregar]').forEach(botao => {
     botao.onclick = () => {
-      switch(botao.dataset.recarregar){
-        case "personagens":
-        conteudo.style.display = 'block';
-        conteudo.parentElement.querySelector('div.feedback').remove();
-        carregarPersonagens(6)
-        escutaClickVerMais(6);
-        break;
-      }
+      limparPesquisa(secao)
     }
   })
+}
+
+function limparPesquisa(secao) {
+  const nomeSecao = secao.className;
+  const conteudo = secao.querySelector(`.${nomeSecao}__conteudo`);
+
+  switch(nomeSecao.toLowerCase()){
+    case "personagens":
+    conteudo.style.display = 'block';
+    
+    try{
+      conteudo.parentElement.querySelector('div.feedback').remove();
+    }catch{
+
+    }
+
+    carregarPersonagens(6)
+    escutaClickVerMais(6);
+    break;
+  }
 }
 
 const atualizarLinks = () => {
@@ -210,7 +224,7 @@ function exibirFeedbackNenhumResultado(secao){
   const conteudo = secao.querySelector(`.${secao.className}__conteudo`);
   conteudo.style.display = 'none';
   
-  escutaClickRecarregar(secao, conteudo);
+  escutaClickRecarregar(secao);
 }
 
 function limparItensLista(lista){
@@ -237,6 +251,7 @@ export{
   escutaClickVerMais,
   escutarClickLista,
   exibirFeedbackNenhumResultado,
+  limparPesquisa,
   limparItensLista,
   limparArrayFiltro
 }

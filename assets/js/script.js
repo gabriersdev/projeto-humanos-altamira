@@ -14,6 +14,7 @@ import {
   escutaClickVerMais,
   escutarClickLista,
   exibirFeedbackNenhumResultado,
+  limparPesquisa,
   limparItensLista,
   limparArrayFiltro
 } from "./modulos/funcoes/funcoes.js"
@@ -150,9 +151,10 @@ import {
     btnVerMais.dataset.verMais = `resultados-${secao}`;
     
     section.querySelector('h2').textContent = 'Resultados para a Busca'
-    
+
     switch(secao){
       case "personagens":
+      limparPesquisa(section)
       carregarPersonagens(6, lista);
       escutarClickVerMaisResultados(section, lista);
       break;
