@@ -62,6 +62,7 @@ body{
 button, a{
   cursor: pointer;
   font-family: inherit;
+  outline: none;
 }
 
 ul.no-type li{
