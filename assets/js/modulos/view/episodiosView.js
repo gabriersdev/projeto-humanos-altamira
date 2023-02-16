@@ -1,16 +1,17 @@
-import { episodiosController } from "../controller/episodiosController.js";
+import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra, episodiosController } from "../controller/episodiosController.js";
 import { comparaNumero, comparaNumeroDescrescente } from "../utilitarios/utilitarios.js";
 
 const episodios = episodiosController();
 
-const carregarEpisodios = (quantidade) => {
+const carregarEpisodios = (quantidade, lista) => {
   quantidade == undefined ? quantidade = 6 : '';
+  lista == undefined ? lista = episodios : '';
   const episodiosCards = document.querySelector('.episodios__cards');
   episodiosCards.innerHTML = '';
   
-  episodios.sort((a, b) => comparaNumero(a, b));
+  lista.sort((a, b) => comparaNumero(a, b));
   
-  episodios.forEach((episodio, index) => {
+  lista.forEach((episodio, index) => {
     if(index < quantidade){
       episodiosCards.innerHTML += criarCard(episodio).trim();
     }
@@ -79,3 +80,10 @@ export{
   carregarUltimosEpisodios,
   maximoEpisodios
 }
+
+export const consultaEpisodiosView = {
+  buscarNoNome, 
+  buscarNoNomePorPalavra, 
+  buscarNaDescricao, 
+  buscarNaDescricaoPorPalavra
+};

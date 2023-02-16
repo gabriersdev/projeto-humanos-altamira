@@ -43,7 +43,7 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
       })
       break;
       
-      case 'episódios':
+      case 'episodios':
       let vezClickEpisodio = 2;
       botao.addEventListener('click', () => {
         
@@ -64,7 +64,7 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
       })
       break;
       
-      case 'créditos':
+      case 'creditos':
       let vezClickCreditos = 2;
       botao.addEventListener('click', () => {
         
@@ -96,12 +96,26 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
 }
 
 function escutaClickRecarregar(secao){
-
-  secao.querySelector('h2').textContent = `${secao.className[0].toUpperCase() + secao.className.substr(1, secao.className.length)}`;
+  
+  const classe = secao.className;
+  let titulo = null;
+  
+  switch(classe.toLowerCase()){
+    case 'personagens':
+    titulo = classe[0].toUpperCase() + classe.substr(1, classe.length);
+    break;
+    case 'episodios':
+    titulo = 'Episódios';
+    break;
+    case 'creditos':
+    titulo = 'Créditos';
+    break;
+  }
+  
   const btnVerMais = secao.querySelector('button.vermais');
   btnVerMais.querySelector('p').textContent = 'Ver Mais';
   btnVerMais.dataset.verMais = `${secao.className}`;
-
+  
   secao.querySelectorAll('[data-recarregar]').forEach(botao => {
     botao.onclick = () => {
       limparPesquisa(secao)
@@ -112,21 +126,27 @@ function escutaClickRecarregar(secao){
 function limparPesquisa(secao) {
   const nomeSecao = secao.className;
   const conteudo = secao.querySelector(`.${nomeSecao}__conteudo`);
-
+  
+  try{conteudo.parentElement.querySelector('div.feedback').remove()}catch{}
+  
   switch(nomeSecao.toLowerCase()){
     case "personagens":
     conteudo.style.display = 'block';
-    
-    try{
-      conteudo.parentElement.querySelector('div.feedback').remove();
-    }catch{
-
-    }
-
     carregarPersonagens(6)
-    escutaClickVerMais(6);
+    break;
+    
+    case "episodios":
+    conteudo.style.display = 'block';
+    carregarEpisodios(6)
+    break;
+    
+    case "creditos":
+    conteudo.style.display = 'block';
+    carregarCreditos(6)
     break;
   }
+  
+  escutaClickVerMais(6);
 }
 
 const atualizarLinks = () => {
@@ -216,11 +236,11 @@ function escutarClickLista(lista, input){
 }
 
 function exibirFeedbackNenhumResultado(secao){
-
+  
   if(isEmpty(secao.querySelector('.feedback'))){
     secao.innerHTML += `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
   }
-
+  
   const conteudo = secao.querySelector(`.${secao.className}__conteudo`);
   conteudo.style.display = 'none';
   

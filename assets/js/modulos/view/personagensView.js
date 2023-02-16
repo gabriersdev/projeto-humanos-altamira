@@ -49,4 +49,9 @@ export{
   maximoPersonagens,
 }
 
-export const consultaPersonagensView = {buscarNoNome, buscarNoNomePorPalavra, buscarNaDescricao, buscarNaDescricaoPorPalavra};
+export const consultaPersonagensView = {
+  buscarNoNome, 
+  buscarNoNomePorPalavra, 
+  buscarNaDescricao, 
+  buscarNaDescricaoPorPalavra
+};

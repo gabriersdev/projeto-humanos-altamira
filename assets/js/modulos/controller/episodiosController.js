@@ -45,5 +45,9 @@ function buscarNaDescricaoPorPalavra(string){
 }
 
 export{
-  episodiosController
+  episodiosController,
+  buscarNoNome,
+  buscarNoNomePorPalavra,
+  buscarNaDescricao,
+  buscarNaDescricaoPorPalavra
 }

@@ -1,16 +1,17 @@
-import { creditosController } from "../controller/creditosController.js";
+import { creditosController, buscarNoNome, buscarNoNomePorPalavra, buscarNaDescricao, buscarNaDescricaoPorPalavra } from "../controller/creditosController.js";
 import { comparaNomes, isEmpty } from "../utilitarios/utilitarios.js";
 
 const creditos = creditosController();
 
-const carregarCreditos = (quantidade) => {
+const carregarCreditos = (quantidade, lista) => {
   quantidade == undefined ? quantidade = 6 : '';
+  lista == undefined ? lista = creditos : '';
   const creditosCards = document.querySelector('.creditos__cards');
   creditosCards.innerHTML = '';
   
-  creditos.sort((a, b) => comparaNomes(a, b));
+  lista.sort((a, b) => comparaNomes(a, b));
   
-  creditos.forEach((credito, index) => {
+  lista.forEach((credito, index) => {
     if(index < quantidade){
       creditosCards.innerHTML += criarCard(credito);
     }
@@ -80,4 +81,11 @@ const maximoCreditos = () => {
 export{
   carregarCreditos,
   maximoCreditos
+}
+
+export const consultaCreditosView = {
+  buscarNoNome, 
+  buscarNoNomePorPalavra, 
+  buscarNaDescricao, 
+  buscarNaDescricaoPorPalavra
 }

@@ -1,7 +1,7 @@
 import { verificarTema, escutaClickBotaoTema } from "./modulos/funcoes/tema.js";
 import { atualizarDatas, isEmpty } from "./modulos/utilitarios/utilitarios.js";
-import { carregarCreditos } from "./modulos/view/creditosView.js";
-import { carregarEpisodios, carregarUltimosEpisodios } from "./modulos/view/episodiosView.js";
+import { carregarCreditos, consultaCreditosView } from "./modulos/view/creditosView.js";
+import { carregarEpisodios, carregarUltimosEpisodios, consultaEpisodiosView } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens, consultaPersonagensView } from "./modulos/view/personagensView.js";
 
 import { 
@@ -67,7 +67,7 @@ import {
               pesquisa();
             }
             break;
-
+            
             case "episodios":
             if(!isEmpty(filtroEpisodios)){
               exibirResultados(secaoInput, filtroEpisodios);
@@ -76,14 +76,14 @@ import {
               pesquisa();
             }
             break;
-
+            
             case "creditos":
-              if(!isEmpty(filtroCreditos)){
-                exibirResultados(secaoInput, filtroCreditos);
-              }else{
-                exibirFeedbackNenhumResultado(creditos);
-
-              } 
+            if(!isEmpty(filtroCreditos)){
+              exibirResultados(secaoInput, filtroCreditos);
+            }else{
+              exibirFeedbackNenhumResultado(creditos);
+              
+            } 
             break;
           }
         }
@@ -95,19 +95,34 @@ import {
         
         switch((input.className.split('__'))[0]){
           case 'personagens':
-          
           if(!isEmpty(valor)){
             filtroPersonagens.concat(pesquisarNoConteudo(filtroPersonagens, consultaPersonagensView, valor))
           }
-          
           limparItensLista(lista);
-          
           if(!isEmpty(filtroPersonagens)){
             alimentarLista(filtroPersonagens, lista, input);
           }
-          
           break;
-
+          
+          case 'creditos':
+          if(!isEmpty(valor)){
+            filtroCreditos.concat(pesquisarNoConteudo(filtroCreditos, consultaCreditosView, valor))
+          }
+          limparItensLista(lista);
+          if(!isEmpty(filtroCreditos)){
+            alimentarLista(filtroCreditos, lista, input);
+          }
+          break;
+          
+          case 'episodios':
+          if(!isEmpty(valor)){
+            filtroEpisodios.concat(pesquisarNoConteudo(filtroEpisodios, consultaEpisodiosView, valor))
+          }
+          limparItensLista(lista);
+          if(!isEmpty(filtroEpisodios)){
+            alimentarLista(filtroEpisodios, lista, input);
+          }
+          break;
           
         }
       })
@@ -129,10 +144,10 @@ import {
         filtro.push(busca);
       }
     }) 
-
+    
     return filtro;
   }
-
+  
   function alimentarLista(filtro, lista, input){
     filtro.slice(0, 5).forEach(itemFiltro => {
       const item = document.createElement('li');
@@ -143,7 +158,7 @@ import {
     })
     escutarClickLista(lista, input);
   }
-
+  
   function exibirResultados(secao, lista){
     const section = document.querySelector(`.${secao}`);
     const btnVerMais = section.querySelector('button.vermais');
@@ -151,20 +166,20 @@ import {
     btnVerMais.dataset.verMais = `resultados-${secao}`;
     
     section.querySelector('h2').textContent = 'Resultados para a Busca'
+    limparPesquisa(section);
+    escutarClickVerMaisResultados(section, lista);
 
     switch(secao){
       case "personagens":
-      limparPesquisa(section)
       carregarPersonagens(6, lista);
-      escutarClickVerMaisResultados(section, lista);
       break;
       
       case "episodios":
-      console.log('episódios');
+      carregarEpisodios(6, lista);
       break;
       
-      case "créditos":
-      console.log('créditos')
+      case "creditos":
+      carregarCreditos(6, lista);
       break;
     }    
   }

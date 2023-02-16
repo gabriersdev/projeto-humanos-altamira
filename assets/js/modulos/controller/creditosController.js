@@ -33,5 +33,9 @@ function buscarNaDescricaoPorPalavra(string){
 }
 
 export{
-  creditosController
+  creditosController,
+  buscarNoNome,
+  buscarNoNomePorPalavra,
+  buscarNaDescricao,
+  buscarNaDescricaoPorPalavra
 }
