@@ -82,7 +82,7 @@ import {
               exibirResultados(secaoInput, filtroCreditos);
             }else{
               exibirFeedbackNenhumResultado(creditos);
-              
+              pesquisa();
             } 
             break;
           }
