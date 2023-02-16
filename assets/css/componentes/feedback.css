@@ -1,6 +1,6 @@
 .feedback{
-  background-color: #F0F0F0;
-  border: 1px solid #D9D9D9;
+  background-color: var(--bckg-feedback);
+  border: 1px solid var(--borda-feedback);
   border-radius: 10px;
   padding: 0.25rem 1rem;
 
@@ -16,11 +16,11 @@
 }
 
 .feedback.sem-resultados i{
-  color: #E9271A;
+  color: var(--cor-feedback-sem-resultados);
 }
 
 .feedback.consulta-resultados i{
-  color: #155EEA;
+  color: var(--cor-feedback-resultados);
 }
 
 .feedback p{

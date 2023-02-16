@@ -82,6 +82,11 @@
   --borda-rodape: var(--cinza-forte);
   --txt-rodape: var(--cinza-forte);
   
+  --bckg-feedback: var(--branco-claro);
+  --borda-feedback: var(--cinza-clarissimo);
+  --cor-feedback-sem-resultados: var(--vermelho);
+  --cor-feedback-resultados: var(--azul);
+
   --bckg-rodape-tarja: var(--branco);
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);
