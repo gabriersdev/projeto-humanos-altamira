@@ -216,4 +216,11 @@ export const episodiosConteudos = [
     img: 'default.png'
   },
 
+  {
+    nome: '32 - A Criminóloga (Bônus)',
+    descricao: 'Entrevista com Ilana Casoy',
+    link: 'https://www.projetohumanos.com.br/altamira/32-a-criminologa-bonus/',
+    img: 'default.png'
+  },
+
 ]
