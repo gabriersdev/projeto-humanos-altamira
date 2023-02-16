@@ -202,7 +202,11 @@ function escutarClickLista(lista, input){
 }
 
 function exibirFeedbackNenhumResultado(secao){
-  secao.innerHTML += `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
+
+  if(isEmpty(secao.querySelector('.feedback'))){
+    secao.innerHTML += `<div class="feedback sem-resultados"><i class="bi bi-exclamation-circle-fill"></i><p>Oops! Nenhum resultado foi encontrado. <span data-recarregar="personagens">Recarregar</span></p></div>`
+  }
+
   const conteudo = secao.querySelector(`.${secao.className}__conteudo`);
   conteudo.style.display = 'none';
   
