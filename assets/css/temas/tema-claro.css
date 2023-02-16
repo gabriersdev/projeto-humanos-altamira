@@ -87,6 +87,19 @@
   --cor-feedback-sem-resultados: var(--vermelho);
   --cor-feedback-resultados: var(--azul);
 
+  --txt-trilha-sonora: var(--preto);
+  --bckg-fundo-trilha-sonora: var(--cinza-clarissimo);
+  --bckg-player: var(--branco);
+  --box-shadow-player: rgba(0, 0, 0, 0.1);
+  --cor-txt-autor-musica: rgba(0, 0, 0, 0.5);
+  --cor-icone-player: #808080;
+  --cor-icone-destaque-player: #3D3D3D;
+  --bckg-linha-reproducao: #DDD;
+  --bckg-botao-linha-reproducao: #3D3D3D;
+  --bckg-range-thumb: #3D3D3D;
+  --borda-playlist: #DDD;
+  --txt-playlist: rgba(0, 0, 0, 0.5);
+
   --bckg-rodape-tarja: var(--branco);
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);

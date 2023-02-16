@@ -1,6 +1,7 @@
 .trilha-sonora{
   padding: var(--espaco-padding-secao) var(--espaco-margem);
   position: relative;
+  color: var(--txt-trilha-sonora);
 }
 
 .trilha-sonora .fundo{
@@ -9,7 +10,7 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, 0%);
-  background-color: lightgray;
+  background-color: var(--bckg-fundo-trilha-sonora);
   width: calc(100%);
   height: 200px;
 }
@@ -21,14 +22,14 @@
 }
 
 .player{
-  background-color: white;
+  background-color: var(--bckg-player);
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   border-radius: 10px;
   padding: 1.5rem 1rem;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 20px var(--box-shadow-player);
   font-size: 1rem;
 }
 
@@ -42,7 +43,6 @@
   display: flex;
   flex-direction: column;
   min-width: 50%;
-  /* margin: 0 2rem; */
 }
 
 .player__titulo{
@@ -51,7 +51,7 @@
 }
 
 .player__autor{
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--cor-txt-autor-musica);
 }
 
 .player__controles{
@@ -73,26 +73,26 @@
 }
 
 .player__controles__principal #voltar{
-  color: #808080;
+  color: var(--cor-icone-player);
 }
 
 .player__controles__principal #play{
-  color: #3D3D3D;
+  color: var(--cor-icone-destaque-player);
   font-size: 2.5rem;
   margin: 0 0.25rem;
 }
 
 .player__controles__principal #proximo{
-  color: #808080;
+  color: var(--cor-icone-player);
 }
 
 .player__controles #som{
-  color: #3D3D3D;
+  color: var(--cor-icone-destaque-player);
 }
 
 .player__reproducao{
   -webkit-appearance: none;
-  background-color: #DDD;
+  background-color: var(--bckg-linha-reproducao);
   outline: none;
   width: 100%;
   height: 10px;
@@ -106,7 +106,7 @@
   height: 10px;
   border-radius: 10px;
   cursor: pointer;
-  background-color: #3D3D3D;
+  background-color: var(--bckg-botao-linha-reproducao);
 }
 
 .player__reproducao::-webkit-slider-thumb:hover{
@@ -118,14 +118,14 @@
   height: 25px;
   border-radius: 50%; 
 
-  background: #3D3D3D;
+  background: var(--bckg-range-thumb);
   cursor: pointer;
 }
 
 .trilha-sonora__playlist{
-  border-left: 1px solid #DDD;
+  border-left: 1px solid var(--borda-playlist);
   padding: 0 1rem;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--txt-playlist);
   overflow: auto;
   white-space: nowrap;
   
@@ -142,7 +142,7 @@
 .trilha-sonora__playlist ul li{
   padding: 0.25rem 0;
   margin: 0.25rem 0;
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid var(--borda-playlist);
   display: flex;
   align-items: center;
   cursor: pointer;
