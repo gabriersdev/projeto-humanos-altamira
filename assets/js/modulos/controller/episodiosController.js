@@ -24,30 +24,6 @@ const episodiosController = () => {
   return episodios;
 }
 
-function existeNoNome(string){
-  return episodiosConteudos.some(episodio => episodio.nome.substring(0, string.length).toLowerCase() == string.toLowerCase())
-}
-
-function buscarNoNome(string){
-  return episodiosConteudos.filter(episodio => episodio.nome.substring(0, string.length).toLowerCase() == string.toLowerCase());
-}
-
-function buscarNoNomePorPalavra(string){
-  return episodiosConteudos.filter(episodio => (episodio.nome.split(' ')).find(palavra => palavra.substring(0, string.length).toLowerCase() == string.toLowerCase()));
-}
-
-function buscarNaDescricao(string){
-  return episodiosConteudos.filter(episodio => episodio.descricao.substring(0, string.length).toLowerCase() == string.toLowerCase());
-}
-
-function buscarNaDescricaoPorPalavra(string){
-  return episodiosConteudos.filter(episodio => (episodio.descricao.split(' ')).find(palavra => palavra.substring(0, string.length).toLowerCase() == string.toLowerCase()));
-}
-
 export{
   episodiosController,
-  buscarNoNome,
-  buscarNoNomePorPalavra,
-  buscarNaDescricao,
-  buscarNaDescricaoPorPalavra
 }

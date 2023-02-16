@@ -1,4 +1,4 @@
-import { buscarNaDescricao, buscarNaDescricaoPorPalavra, buscarNoNome, buscarNoNomePorPalavra, episodiosController } from "../controller/episodiosController.js";
+import { episodiosController } from "../controller/episodiosController.js";
 import { comparaNumero, comparaNumeroDescrescente } from "../utilitarios/utilitarios.js";
 
 const episodios = episodiosController();
@@ -43,6 +43,7 @@ const criarCard = ({nome, descricao, link, img, wiki}) => {
 
   let numero = nome.split(' - ');
   numero = numero[0];
+  // console.log(numero, img, link);
 
   return `
   <div class="card" style='background-image:url(${img})'>
@@ -73,6 +74,26 @@ const criarCard = ({nome, descricao, link, img, wiki}) => {
 
 const maximoEpisodios = () => {
   return episodios.length;
+}
+
+function existeNoNome(string){
+  return episodios.some(episodio => episodio.getNome().substring(0, string.length).toLowerCase() == string.toLowerCase())
+}
+
+function buscarNoNome(string){
+  return episodios.filter(episodio => episodio.getNome().substring(0, string.length).toLowerCase() == string.toLowerCase());
+}
+
+function buscarNoNomePorPalavra(string){
+  return episodios.filter(episodio => (episodio.getNome().split(' ')).find(palavra => palavra.substring(0, string.length).toLowerCase() == string.toLowerCase()));
+}
+
+function buscarNaDescricao(string){
+  return episodios.filter(episodio => episodio.getDescricao().substring(0, string.length).toLowerCase() == string.toLowerCase());
+}
+
+function buscarNaDescricaoPorPalavra(string){
+  return episodios.filter(episodio => (episodio.getDescricao().split(' ')).find(palavra => palavra.substring(0, string.length).toLowerCase() == string.toLowerCase()));
 }
 
 export{
