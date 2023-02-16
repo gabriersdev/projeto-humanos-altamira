@@ -37,7 +37,7 @@ import {
   carregarUltimosEpisodios(5);
   
   escutaClickVerMais();
-  
+
   const pesquisa = () => {
     document.querySelectorAll('input[type=text]').forEach(input => {
       
@@ -56,7 +56,7 @@ import {
         
         if(input.validity.valueMissing){
           // $(input).tooltip('show');
-          input.focus();
+          // input.focus();
         }else{
           switch(secaoInput){
             case "personagens":
@@ -202,7 +202,7 @@ import {
       }
     }
   }
-  
+
   verificarTema();
   atualizarLinks();  
   sortearEmbed();

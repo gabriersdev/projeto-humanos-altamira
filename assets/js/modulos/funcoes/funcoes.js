@@ -225,7 +225,7 @@ const escutaConfirmacaoNavegacao = () => {
 
 function escutarClickLista(lista, input){
   document.onclick = (evento) => {
-    evento.preventDefault();
+    // evento.preventDefault();
     const alvo = evento.target;
     
     if(alvo.tagName.toLowerCase() == 'button' && alvo.parentElement.parentElement == lista && alvo.textContent.trim().length > 0){
