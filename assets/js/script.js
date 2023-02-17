@@ -19,7 +19,7 @@ import {
   limparArrayFiltro
 } from "./modulos/funcoes/funcoes.js"
 
-import { carregarTrilha, carregarTrilhasPlaylist } from "./modulos/view/trilhaSonoraView.js";
+import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAudio } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
   
@@ -215,8 +215,8 @@ import { carregarTrilha, carregarTrilhasPlaylist } from "./modulos/view/trilhaSo
       
       if(evento.target.tagName.toLowerCase() == 'button'){
         evento.target.parentElement.classList.toggle('ativo');
-        console.log('Música Selecionada:', evento.target.textContent);
-        carregarTrilha(evento.target.textContent);
+        // console.log('Música Selecionada:', evento.target.textContent);
+        carregarTrilha(evento.target.textContent, 'reproduzir');
       }
     })
   }
@@ -229,6 +229,25 @@ import { carregarTrilha, carregarTrilhasPlaylist } from "./modulos/view/trilhaSo
     })
   }
 
+  function escutaClickFaixaReproducao(){
+    const player = document.querySelector('[data-player]');
+    const range = player.querySelector('input[type=range].player__reproducao');
+    const audio = player.querySelector('[data-reprodutor]');
+    range.addEventListener('input', (evento) => {
+      executarAcao(evento);
+    })
+
+    range.addEventListener('change', (evento) => {
+      executarAcao(evento);
+    })
+
+    function executarAcao(evento){
+      alterarTempoAudio(evento.target.value, audio);
+    }
+  }
+
+  carregarTrilha('Os Meninos de Altamira');
+  escutaClickFaixaReproducao();
   escutarClickFaixaPlaylist();
 
   verificarTema();

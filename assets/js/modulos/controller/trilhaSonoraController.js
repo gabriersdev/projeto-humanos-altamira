@@ -4,8 +4,8 @@ import { TrilhaSonoraModel } from "../model/trilhaSonoraModel.js";
 const trilhaSonoraController = () => {
   const trilhas = new Array();
 
-  trilhaSonoraConteudo.forEach(trilha => {
-    trilhas.push(new TrilhaSonoraModel(trilha.nome, trilha.link));
+  trilhaSonoraConteudo.forEach((trilha, index) => {
+    trilhas.push(new TrilhaSonoraModel((index + 1), trilha.nome, trilha.link));
   })
 
   return trilhas;

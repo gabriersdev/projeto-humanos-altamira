@@ -70,11 +70,20 @@ function zeroEsquerda(quantidadeZeros, valor){
   return (zeros + valor).slice(-quantidadeZeros);
 }
 
+function segundosParaMinutos(segundos){
+  const campoMinutos = Math.floor(segundos / 60);
+  let campoSegundos = segundos % 60;
+  if(campoSegundos < 10){ campoSegundos = `0${campoSegundos}`}
+  return `${campoMinutos}:${campoSegundos}`;
+}
+
+
 export{
   atualizarDatas,
   comparaNomes,
   comparaNumero,
   comparaNumeroDescrescente,
   isEmpty,
-  zeroEsquerda
+  zeroEsquerda, 
+  segundosParaMinutos
 }
