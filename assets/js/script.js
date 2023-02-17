@@ -234,26 +234,26 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
     const audio = player.querySelector('[data-reprodutor]');
 
     player.querySelector('#voltar').onclick = () => {
-      console.log('clicou voltar');
+      // console.log('clicou voltar');
     }
 
     player.querySelector('#play').onclick = () => {
-      console.log('clicou play');
-      alterarReproducaoAudio(audio, player.querySelector('#play'));
+      // console.log('clicou play');
+      alterarReproducaoAudio(audio);
     }
 
     player.querySelector('#proximo').onclick = () => {
-      console.log('clicou proximo');
+      // console.log('clicou proximo');
     }
     
     const range = player.querySelector('input[type=range].player__reproducao');
     
     range.addEventListener('input', (evento) => {
-      executarAcao(evento);
+      alterarTempo(evento);
     })
     
     range.addEventListener('change', (evento) => {
-      executarAcao(evento);
+      alterarTempo(evento);
     })
     
     function alterarTempo(evento){
