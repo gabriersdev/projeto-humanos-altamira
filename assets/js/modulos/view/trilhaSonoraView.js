@@ -5,6 +5,7 @@ const trilhas = trilhaSonoraController();
 const player = document.querySelector('[data-player]');
 const playlist = player.querySelector('[data-playlist]');
 const audio = player.querySelector('[data-reprodutor]');
+audio.volume = 0.3;
 const titulo = player.querySelector('h3.player__titulo');
 
 const carregarTrilha = (nomeFaixa, condicao) => {
@@ -130,6 +131,10 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
   })
 }
 
+function alterarVolumeFaixa(valor){
+  audio.volume = (valor / 100);
+}
+
 const maximoTrilhas = () => {
   return trilhas.length;
 }
@@ -143,5 +148,6 @@ export{
   adicionarClasseAtivoFaixa,
   maximoTrilhas,
   alterarTempoAudio,
-  alterarReproducaoAudio
+  alterarReproducaoAudio,
+  alterarVolumeFaixa
 }

@@ -27,7 +27,8 @@ import {
   alterarReproducaoAudio, 
   adicionarClasseAtivoFaixa,
   proximaFaixa,
-  retrocederFaixa
+  retrocederFaixa,
+  alterarVolumeFaixa
 } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
@@ -216,7 +217,7 @@ import {
   
   carregarTrilhasPlaylist();
   
-  function escutarClickFaixaPlaylist(){
+  function escutaClickPlaylist(){
     document.querySelector('[data-playlist]').addEventListener('click', (evento) => {
             
       if(evento.target.tagName.toLowerCase() == 'button'){
@@ -261,12 +262,30 @@ import {
       alterarTempoAudio(evento.target.value);
     }
   }
+
+  function escutaClickFaixaSom(){
+    const ajusteSom = document.querySelector('.ajuste-som');
+    const range = ajusteSom.querySelector('input[type=range].ajuste-som__controle');
+
+    range.addEventListener('input', (evento) => {
+      alterarVolume(evento);
+    })
+    
+    range.addEventListener('change', (evento) => {
+      alterarVolume(evento);
+    })
+    
+    function alterarVolume(evento){
+      alterarVolumeFaixa(evento.target.value);
+    }
+  }
   
   carregarTrilha('Os Meninos de Altamira');
   adicionarClasseAtivoFaixa('Os Meninos de Altamira');
 
   escutaClickPlayer();
-  escutarClickFaixaPlaylist();
+  escutaClickPlaylist();
+  escutaClickFaixaSom();
   
   verificarTema();
   atualizarLinks();  
