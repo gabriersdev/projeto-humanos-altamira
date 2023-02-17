@@ -58,12 +58,18 @@
   color: var(--cor-txt-autor-musica);
 }
 
+.player__informacoes{
+  display: flex;
+  justify-content: space-between;
+}
+
 .player__controles{
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 0;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .player__controles__principal{
