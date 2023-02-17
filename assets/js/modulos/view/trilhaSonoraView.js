@@ -38,7 +38,7 @@ const atualizarTempoReproducao = (elemento, audio) => {
 
 const atualizarTempoReproduzindo = (elemento, audio, playerReproducao) => {
   const intervalo = setInterval(() => {
-    playerReproducao.value = Math.round((audio.currentTime * 100) / audio.duration);
+    playerReproducao.value = Math.floor((audio.currentTime * 100) / audio.duration);
     elemento.textContent = segundosParaMinutos(Math.floor(audio.currentTime));
   }, 1000)
   
@@ -50,6 +50,16 @@ const atualizarTempoReproduzindo = (elemento, audio, playerReproducao) => {
 
 const alterarTempoAudio = (tempo, audio) => {
   audio.currentTime = Math.round((audio.duration * tempo) / 100);
+}
+
+const alterarReproducaoAudio = (audio, botao) => {
+  if(audio.paused){
+    audio.play();
+    botao.innerHTML = `<i class="bi bi-pause-circle"></i>`;
+  }else{
+    audio.pause();
+    botao.innerHTML = `<i class="bi bi-play-circle"></i>`;
+  }
 }
 
 const carregarTrilhasPlaylist = () => {
@@ -76,5 +86,6 @@ export{
   carregarTrilha,
   carregarTrilhasPlaylist,
   maximoTrilhas,
-  alterarTempoAudio
+  alterarTempoAudio,
+  alterarReproducaoAudio
 }

@@ -19,7 +19,7 @@ import {
   limparArrayFiltro
 } from "./modulos/funcoes/funcoes.js"
 
-import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAudio } from "./modulos/view/trilhaSonoraView.js";
+import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAudio, alterarReproducaoAudio } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
   
@@ -39,7 +39,7 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
   carregarUltimosEpisodios(5);
   
   escutaClickVerMais();
-
+  
   const pesquisa = () => {
     document.querySelectorAll('input[type=text]').forEach(input => {
       
@@ -170,7 +170,7 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
     section.querySelector('h2').textContent = 'Resultados para a Busca'
     limparPesquisa(section);
     escutarClickVerMaisResultados(section, lista);
-
+    
     switch(secao){
       case "personagens":
       carregarPersonagens(6, lista);
@@ -204,13 +204,13 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
       }
     }
   }
-
+  
   carregarTrilhasPlaylist();
-
+  
   function escutarClickFaixaPlaylist(){
     const playlist = document.querySelector('[data-playlist]');
     playlist.addEventListener('click', (evento) => {
-
+      
       removerClasseAtivoFaixas(playlist);
       
       if(evento.target.tagName.toLowerCase() == 'button'){
@@ -220,7 +220,7 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
       }
     })
   }
-
+  
   function removerClasseAtivoFaixas(playlist){
     playlist.querySelectorAll('li').forEach(item => {
       if(item.classList.contains('ativo')){
@@ -228,28 +228,43 @@ import { carregarTrilha, carregarTrilhasPlaylist, maximoTrilhas, alterarTempoAud
       }
     })
   }
-
-  function escutaClickFaixaReproducao(){
+  
+  function escutaClickPlayer(){
     const player = document.querySelector('[data-player]');
-    const range = player.querySelector('input[type=range].player__reproducao');
     const audio = player.querySelector('[data-reprodutor]');
+
+    player.querySelector('#voltar').onclick = () => {
+      console.log('clicou voltar');
+    }
+
+    player.querySelector('#play').onclick = () => {
+      console.log('clicou play');
+      alterarReproducaoAudio(audio, player.querySelector('#play'));
+    }
+
+    player.querySelector('#proximo').onclick = () => {
+      console.log('clicou proximo');
+    }
+    
+    const range = player.querySelector('input[type=range].player__reproducao');
+    
     range.addEventListener('input', (evento) => {
       executarAcao(evento);
     })
-
+    
     range.addEventListener('change', (evento) => {
       executarAcao(evento);
     })
-
-    function executarAcao(evento){
+    
+    function alterarTempo(evento){
       alterarTempoAudio(evento.target.value, audio);
     }
   }
-
+  
   carregarTrilha('Os Meninos de Altamira');
-  escutaClickFaixaReproducao();
+  escutaClickPlayer();
   escutarClickFaixaPlaylist();
-
+  
   verificarTema();
   atualizarLinks();  
   sortearEmbed();
