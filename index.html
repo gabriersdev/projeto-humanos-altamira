@@ -90,6 +90,7 @@
     <div class="fundo"></div>
     <h2 class="trilha-sonora__titulo">Trilha sonora</h2>
     <div class="player">
+      <audio src="" class="reprodutor"></audio>
       <img src="./assets/img/thumb-trilha-sonora.png" alt="" class="player__imagem">
       <div class="player__conteudo">
         <h3 class="player__titulo">Título da trilha sonora</h3>
@@ -100,7 +101,7 @@
             <button id="play"><i class="bi bi-play-circle"></i></button>
             <button id="proximo"><i class="bi bi-skip-end-fill"></i></button>
           </div>
-          <button id="som"><i class="bi bi-soundwave"></i></button>
+          <button id="som"><i class="bi bi-volume-off-fill"></i></button>
           <div class="ajuste-som">
             +<input type="range" min="0" max="100" value="0" name="" id="" class="ajuste-som__controle">-
           </div>
@@ -108,11 +109,7 @@
         <input type="range" min="0" max="100" value="0" name="" id="" class="player__reproducao">
       </div>
       <div class="trilha-sonora__playlist">
-        <ul>
-          <li>Título da Trilha Sonora</li>
-          <li>Título da Trilha Sonora</li>
-          <li>Título da Trilha Sonora</li>
-          <li>Título da Trilha Sonora</li>
+        <ul data-playlist>
         </ul>
       </div>
     </div>

@@ -1,4 +1,4 @@
-export const trilhaSonora = [
+export const trilhaSonoraConteudo = [
   {
     nome: 'Os Meninos de Altamira',
     link: 'https://youtu.be/kiRQmD5jLmU'

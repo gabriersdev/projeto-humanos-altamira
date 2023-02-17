@@ -33,6 +33,10 @@
   font-size: 1rem;
 }
 
+.player .reprodutor{
+  display: none;
+}
+
 .player__imagem{
   width: 7rem;
   height: 7rem;
@@ -155,7 +159,6 @@
 .trilha-sonora__playlist{
   border-left: 1px solid var(--borda-playlist);
   padding: 0 1rem;
-  color: var(--txt-playlist);
   overflow: auto;
   white-space: nowrap;
   
@@ -166,25 +169,44 @@
 }
 
 .trilha-sonora__playlist ul{
-  
+  color: var(--txt-playlist);
 }
 
-.trilha-sonora__playlist ul li{
+.trilha-sonora__playlist ul li button{
   padding: 0.25rem 0;
   margin: 0.25rem 0;
+  background-color: unset;
+  border: unset;
   border-bottom: 1px solid var(--borda-playlist);
+  color: var(--txt-playlist);
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: 100%;
 }
 
-.trilha-sonora__playlist ul li::before{
-  content: "\F4F3";
+.trilha-sonora__playlist ul li button:focus{
+  color: #555;
+}
+
+.trilha-sonora__playlist ul li button:hover{
+  color: #000;
+}
+
+.trilha-sonora__playlist ul li button::before{
   display: inline-block;
   font-family: "bootstrap-icons";
   font-size: inherit;
   text-rendering: auto;
   margin-right: 1rem;
+}
+
+.trilha-sonora__playlist ul li button::before{
+  content: "\F4F3";
+}
+
+.trilha-sonora__playlist ul li.ativo button::before{
+  content: "\F57C";
 }
 
 @media screen and (max-width: 1300px) {

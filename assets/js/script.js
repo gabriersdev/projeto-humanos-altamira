@@ -19,6 +19,8 @@ import {
   limparArrayFiltro
 } from "./modulos/funcoes/funcoes.js"
 
+import { carregarTrilha, carregarTrilhasPlaylist } from "./modulos/view/trilhaSonoraView.js";
+
 (() => {
   
   $(function () {
@@ -202,6 +204,32 @@ import {
       }
     }
   }
+
+  carregarTrilhasPlaylist();
+
+  function escutarClickFaixaPlaylist(){
+    const playlist = document.querySelector('[data-playlist]');
+    playlist.addEventListener('click', (evento) => {
+
+      removerClasseAtivoFaixas(playlist);
+      
+      if(evento.target.tagName.toLowerCase() == 'button'){
+        evento.target.parentElement.classList.toggle('ativo');
+        console.log('Música Selecionada:', evento.target.textContent);
+        carregarTrilha(evento.target.textContent);
+      }
+    })
+  }
+
+  function removerClasseAtivoFaixas(playlist){
+    playlist.querySelectorAll('li').forEach(item => {
+      if(item.classList.contains('ativo')){
+        item.classList.remove('ativo');
+      }
+    })
+  }
+
+  escutarClickFaixaPlaylist();
 
   verificarTema();
   atualizarLinks();  
