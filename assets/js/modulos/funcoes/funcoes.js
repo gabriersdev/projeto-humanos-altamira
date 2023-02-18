@@ -9,7 +9,9 @@ import {
   alterarReproducaoAudio,
   proximaFaixa,
   retrocederFaixa,
-  alterarVolumeFaixa, 
+  alterarVolumeFaixa,
+  adicionarClasseAtivoFaixa,
+  carregarTrilha, 
 } from "../view/trilhaSonoraView.js"
 
 const verificarConfirmacaoNavegacao = () => {
