@@ -76,6 +76,11 @@ const maximoEpisodios = () => {
   return episodios.length;
 }
 
+const dadosUltimoEpisodio = () => {
+  episodios.sort((a, b) => comparaNumero(a, b));
+  return episodios[(maximoEpisodios() - 1)];
+}
+
 function existeNoNome(string){
   return episodios.some(episodio => episodio.getNome().substring(0, string.length).toLowerCase() == string.toLowerCase())
 }
@@ -99,7 +104,8 @@ function buscarNaDescricaoPorPalavra(string){
 export{
   carregarEpisodios,
   carregarUltimosEpisodios,
-  maximoEpisodios
+  maximoEpisodios,
+  dadosUltimoEpisodio
 }
 
 export const consultaEpisodiosView = {
