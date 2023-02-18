@@ -8,8 +8,8 @@ const audio = player.querySelector('[data-reprodutor]');
 audio.volume = 0.3;
 const titulo = player.querySelector('h3.player__titulo');
 
-const carregarTrilha = (nomeFaixa, condicao) => {
-  const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixa.toLowerCase().trim());
+const carregarTrilha = (nomeFaixaAtual, condicao) => {
+  const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
   const idFaixa = trilhas[indice].getId();
   
   audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
@@ -19,11 +19,31 @@ const carregarTrilha = (nomeFaixa, condicao) => {
       audio.play();
     }
     atualizarDados(trilhas[indice]);
+  });
+
+  if((indice + 1)== maximoTrilhas()){
+    player.querySelector('#proximo').style.cursor = 'not-allowed';
+    player.querySelector('#proximo').style.opacity = '0.5';
+  }else{
+    player.querySelector('#proximo').style.cursor = 'pointer';
+    player.querySelector('#proximo').style.opacity = '1';
+  }
+
+  if(indice == 0){
+    player.querySelector('#voltar').style.cursor = 'not-allowed';
+    player.querySelector('#voltar').style.opacity = '0.5';
+  }else{
+    player.querySelector('#voltar').style.cursor = 'pointer';
+    player.querySelector('#voltar').style.opacity = '1';
+  }
+
+  audio.addEventListener('ended', () => {
+    proximaFaixa();
   })
 }
 
-const retrocederFaixa = (nomeFaixaAtual) => {
-  const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
+const retrocederFaixa = () => {
+  const indice = retornarIndiceFaixaAtual();
 
   if((indice - 1) >= 0){
     const dadosFaixa = trilhas[indice - 1];
@@ -35,8 +55,13 @@ const retrocederFaixa = (nomeFaixaAtual) => {
   return false;
 }
 
-const proximaFaixa = (nomeFaixaAtual) => {
-  const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
+const retornarIndiceFaixaAtual = () => {
+  const nomeFaixaAtual = titulo.textContent;
+  return trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
+}
+
+const proximaFaixa = () => {
+  const indice = retornarIndiceFaixaAtual();
 
   if((indice + 1) < maximoTrilhas()){
     const dadosFaixa = trilhas[indice + 1];

@@ -230,10 +230,9 @@ import {
   
   function escutaClickPlayer(){
     const player = document.querySelector('[data-player]');
-    const titulo = player.querySelector('h3.player__titulo');
 
     player.querySelector('#voltar').onclick = () => {
-      if(!retrocederFaixa(titulo.textContent)){
+      if(!retrocederFaixa()){
         //
       }
     }
@@ -243,7 +242,7 @@ import {
     }
 
     player.querySelector('#proximo').onclick = () => {
-      if(!proximaFaixa(titulo.textContent)){
+      if(!proximaFaixa()){
         //
       }
     }
