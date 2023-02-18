@@ -1,11 +1,10 @@
 .banner{
-  font-size: var(--txt-banner);
-  font-size: 1rem;
+  font-size: var(--fonte-conteudo);
   color: #FFF;
   border-radius: 12.5px;
   padding: 2rem 1.5rem;
   margin: 2rem var(--espaco-margem);
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px var(--box-shadow-banner);
 }
 
 .banner:last-child{
@@ -31,8 +30,8 @@
 .banner__link{
   font-size: inherit;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: var(--bckg-link-banner);
+  border: 1px solid var(--borda-banner);
   padding: 0.5rem 1rem;
   backdrop-filter: blur(4px);
   transition: background ease-in-out 0.2s;
@@ -48,8 +47,8 @@
 
 .banner__link:focus,
 .banner__link:hover{
-  background-color: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.6);
+  background-color: var(--bckg-link-banner-hover);
+  border-color: var(--borda-banner-hover);
 }
 
 .banner__descricao{
@@ -83,10 +82,10 @@
   position: absolute;
   top: -0.75rem;
   left: -0.75rem;
-  background-color: #155EEA;
+  background-color: var(--bckg-tag-caso-leandro);
   padding: 0.45rem 1rem 0.35rem 1rem;
   border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px var(--box-shadow-banner);
 }
 
 .banner.caso-leandro .banner__titulo{
@@ -118,11 +117,11 @@
 }
 
 .banner.wiki-temporada{
-  background-color: #474BFF;
+  background-color: var(--bckg-banner-wiki);
 }
 
 .banner.creditos-temporada{
-  background-color: #155EEA;
+  background-color: var(--bckg-banner-creditos);
 }
 
 @media screen and (max-width: 550px) {

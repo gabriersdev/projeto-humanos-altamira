@@ -104,6 +104,15 @@
   --borda-playlist: var(--cinza-claro);
   --txt-playlist: var(--preto-50);
 
+  --box-shadow-banner: var(--preto-25);
+  --bckg-link-banner: var(--branco-10);
+  --borda-banner: var(--branco-50);
+  --bckg-link-banner-hover: var(--preto-20);
+  --borda-banner-hover: var(--branco-60);
+  --bckg-tag-caso-leandro: var(--azul);
+  --bckg-banner-creditos: var(--azul);
+  --bckg-banner-wiki: var(--roxo);
+
   --bckg-rodape-tarja: var(--branco);
   --bckg-link-rodape-tarja: var(--roxo);
   --box-shadow-link-rodape-tarja: var(--roxo-30);
