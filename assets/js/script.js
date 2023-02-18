@@ -49,7 +49,7 @@ import {
   carregarUltimosEpisodios(5);
   
   escutaClickVerMais();
-  
+
   const pesquisa = () => {
     document.querySelectorAll('input[type=text]').forEach(input => {
       

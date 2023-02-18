@@ -1,0 +1,138 @@
+.banner{
+  font-size: var(--txt-banner);
+  font-size: 1rem;
+  color: #FFF;
+  border-radius: 12.5px;
+  padding: 2rem 1.5rem;
+  margin: 2rem var(--espaco-margem);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.banner:last-child{
+  margin-bottom: 0;
+}
+
+.banner__tag{
+  text-align: left;
+}
+
+.banner__principal{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.banner__titulo{
+  font-size: var(--titulos-h2);
+  font-family: 'CircularStd Bold', sans-serif;
+}
+
+.banner__link{
+  font-size: inherit;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.65rem 0.75rem;
+  backdrop-filter: blur(4px);
+  transition: background ease-in-out 0.2s;
+}
+
+.banner__link::after{
+  content: "\F144";
+  display: inline-block;
+  font-family: "bootstrap-icons";
+  text-rendering: auto;
+  margin-left: 0.5rem;
+}
+
+.banner__link:focus,
+.banner__link:hover{
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.banner__descricao{
+  font-size: inherit;
+}
+
+.banner__rodape{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.banner.caso-evandro .banner__principal,
+.banner.caso-leandro .banner__principal{
+  margin: 2rem 0;
+}
+
+.banner.caso-evandro{
+  background: url(../../img/banner/banner-caso-evandro.png) top / cover no-repeat;
+  margin-bottom: 4rem;
+}
+
+.banner.caso-leandro{
+  position: relative;
+  background: url(../../img/banner/banner-caso-leandro.png) center / cover no-repeat;
+  margin-bottom: 4rem;
+}
+
+.banner.caso-leandro .banner__tag{
+  position: absolute;
+  top: -0.75rem;
+  left: -0.75rem;
+  background-color: #155EEA;
+  padding: 0.45rem 1rem 0.35rem 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+}
+
+.banner.caso-leandro .banner__titulo{
+  font-family: 'CircularStd Book';
+  font-weight: initial;
+}
+
+.banner.caso-leandro .banner__titulo:last-child{
+  font-family: 'CircularStd Bold';
+}
+
+.banner.wiki-temporada,
+.banner.creditos-temporada{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
+.banner.wiki-temporada .banner__titulo,
+.banner.creditos-temporada .banner__titulo{
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.banner.wiki-temporada .banner__link,
+.banner.creditos-temporada .banner__link{
+  margin-top: 1rem;
+}
+
+.banner.wiki-temporada{
+  background-color: #474BFF;
+}
+
+.banner.creditos-temporada{
+  background-color: #155EEA;
+}
+
+@media screen and (max-width: 550px) {
+  .banner.caso-evandro .banner__principal,
+  .banner.caso-leandro .banner__principal{
+    flex-direction: column;
+  }
+
+  .banner.caso-evandro .banner__link,
+  .banner.caso-leandro .banner__link{
+    margin-top: 1rem;
+  }
+}

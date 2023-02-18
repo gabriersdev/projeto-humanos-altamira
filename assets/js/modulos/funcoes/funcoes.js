@@ -168,6 +168,15 @@ const atualizarLinks = () => {
       case "portfolio-gabriel":
       link.href = 'https://gabrieszin.github.io/portfolio/';
       break;
+      case "wiki-temporada":
+      link.href = 'https://www.projetohumanos.com.br/wiki/altamira/';
+      break;
+      case "caso-evandro":
+      link.href = 'https://www.projetohumanos.com.br/temporada/o-caso-evandro/';
+      break;
+      default:
+      link.href = '';
+      break;
     }
   })
 }
