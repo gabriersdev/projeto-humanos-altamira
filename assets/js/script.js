@@ -27,7 +27,8 @@ import {
   adicionarClasseAtivoFaixa,
   proximaFaixa,
   retrocederFaixa,
-  alterarVolumeFaixa
+  alterarVolumeFaixa,
+  verificarFaixaRegistrada
 } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
@@ -143,6 +144,15 @@ import {
   pesquisa();  
   
   window.onload = async () => {
+
+    if(!isEmpty(verificarFaixaRegistrada())){
+      carregarTrilha(verificarFaixaRegistrada());
+      adicionarClasseAtivoFaixa(verificarFaixaRegistrada());
+    }else{
+      carregarTrilha('Os Meninos de Altamira');
+      adicionarClasseAtivoFaixa('Os Meninos de Altamira');
+    }
+
     verificarConfirmacaoNavegacao();
     atualizarDatas();
   }
@@ -277,9 +287,6 @@ import {
       alterarVolumeFaixa(evento.target.value);
     }
   }
-  
-  carregarTrilha('Os Meninos de Altamira');
-  adicionarClasseAtivoFaixa('Os Meninos de Altamira');
 
   escutaClickPlayer();
   escutaClickPlaylist();

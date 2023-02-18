@@ -19,6 +19,7 @@ const carregarTrilha = (nomeFaixaAtual, condicao) => {
       audio.play();
     }
     atualizarDados(trilhas[indice]);
+    registrarFaixaSessao(nomeFaixaAtual);
   });
 
   verificarSeEhUltimoDaLista(indice);
@@ -77,6 +78,20 @@ function verificarSeEhPrimeiroDaLista(indice){
   }else{
     player.querySelector('#voltar').style.cursor = 'pointer';
     player.querySelector('#voltar').style.opacity = '1';
+  }
+}
+
+function registrarFaixaSessao(nomeFaixa){
+  if(!isEmpty(nomeFaixa)){
+    localStorage.setItem('faixa', nomeFaixa);
+  }
+}
+
+function verificarFaixaRegistrada(){
+  if(!isEmpty(localStorage.getItem('faixa'))){
+    return localStorage.getItem('faixa');
+  }else{
+    return null;
   }
 }
 
@@ -164,8 +179,10 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
 }
 
 function alterarVolumeFaixa(valor){
-  audio.volume = (valor / 100);
-  localStorage.setItem('volume', valor);
+  if(!isEmpty(valor)){
+    audio.volume = (valor / 100);
+    localStorage.setItem('volume', valor);
+  }
 }
 
 function verificarVolumeDefinido(){
@@ -194,5 +211,6 @@ export{
   maximoTrilhas,
   alterarTempoAudio,
   alterarReproducaoAudio,
-  alterarVolumeFaixa
+  alterarVolumeFaixa,
+  verificarFaixaRegistrada
 }
