@@ -14,7 +14,7 @@ const carregarTrilha = (nomeFaixaAtual, condicao) => {
   audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
   
   audio.addEventListener('canplaythrough', () => {
-    verificarVolumeDefinidio();
+    verificarVolumeDefinido();
     if(condicao == 'reproduzir'){
       audio.play();
     }
@@ -161,7 +161,7 @@ function alterarVolumeFaixa(valor){
   localStorage.setItem('volume', valor);
 }
 
-function verificarVolumeDefinidio(){
+function verificarVolumeDefinido(){
   const range = player.querySelector('input[type=range].ajuste-som__controle');
 
   if(!isEmpty(localStorage.getItem('volume'))){
