@@ -21,21 +21,8 @@ const carregarTrilha = (nomeFaixaAtual, condicao) => {
     atualizarDados(trilhas[indice]);
   });
 
-  if((indice + 1)== maximoTrilhas()){
-    player.querySelector('#proximo').style.cursor = 'not-allowed';
-    player.querySelector('#proximo').style.opacity = '0.5';
-  }else{
-    player.querySelector('#proximo').style.cursor = 'pointer';
-    player.querySelector('#proximo').style.opacity = '1';
-  }
-
-  if(indice == 0){
-    player.querySelector('#voltar').style.cursor = 'not-allowed';
-    player.querySelector('#voltar').style.opacity = '0.5';
-  }else{
-    player.querySelector('#voltar').style.cursor = 'pointer';
-    player.querySelector('#voltar').style.opacity = '1';
-  }
+  verificarSeEhUltimoDaLista(indice);
+  verificarSeEhPrimeiroDaLista(indice);
 
   audio.addEventListener('ended', () => {
     proximaFaixa();
@@ -71,6 +58,26 @@ const proximaFaixa = () => {
   }
 
   return false;
+}
+
+function verificarSeEhUltimoDaLista(indice){
+  if((indice + 1)== maximoTrilhas()){
+    player.querySelector('#proximo').style.cursor = 'not-allowed';
+    player.querySelector('#proximo').style.opacity = '0.5';
+  }else{
+    player.querySelector('#proximo').style.cursor = 'pointer';
+    player.querySelector('#proximo').style.opacity = '1';
+  }
+}
+
+function verificarSeEhPrimeiroDaLista(indice){
+  if(indice == 0){
+    player.querySelector('#voltar').style.cursor = 'not-allowed';
+    player.querySelector('#voltar').style.opacity = '0.5';
+  }else{
+    player.querySelector('#voltar').style.cursor = 'pointer';
+    player.querySelector('#voltar').style.opacity = '1';
+  }
 }
 
 const atualizarDados = ({nome}) => {
