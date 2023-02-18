@@ -8,6 +8,8 @@
 @import url(../css/elementos/secoes.css);
 @import url(../css/elementos/cards.css);
 
+@import url(../css/componentes/no-script.css);
+
 @import url(../css/componentes/creditos.css);
 @import url(../css/componentes/personagens.css);
 @import url(../css/componentes/contexto.css);
