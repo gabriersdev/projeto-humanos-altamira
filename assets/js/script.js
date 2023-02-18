@@ -60,11 +60,11 @@ import {
       const episodios = document.querySelector('section.episodios');
       const creditos = document.querySelector('section.creditos');
       
-      input.parentElement.parentElement.querySelector('button[type=submit]').addEventListener('click', (evento) => {
+      input.parentElement.parentElement.addEventListener('submit', (evento) => {
         const secaoInput = (input.className.split('__'))[0].toLowerCase();
         input.setCustomValidity('');
-        evento.preventDefault();  
-        
+        evento.preventDefault();
+
         if(input.validity.valueMissing){
           // $(input).tooltip('show');
           // input.focus();
