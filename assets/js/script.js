@@ -22,7 +22,6 @@ import {
 import { 
   carregarTrilha, 
   carregarTrilhasPlaylist, 
-  removerClasseAtivoFaixas,
   alterarTempoAudio, 
   alterarReproducaoAudio, 
   adicionarClasseAtivoFaixa,

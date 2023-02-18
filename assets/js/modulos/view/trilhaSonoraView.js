@@ -1,11 +1,10 @@
 import { trilhaSonoraController } from "../controller/trilhaSonoraController.js";
-import { zeroEsquerda, segundosParaMinutos } from "../utilitarios/utilitarios.js";
+import { zeroEsquerda, segundosParaMinutos, isEmpty } from "../utilitarios/utilitarios.js";
 
 const trilhas = trilhaSonoraController();
 const player = document.querySelector('[data-player]');
 const playlist = player.querySelector('[data-playlist]');
 const audio = player.querySelector('[data-reprodutor]');
-audio.volume = 0.3;
 const titulo = player.querySelector('h3.player__titulo');
 
 const carregarTrilha = (nomeFaixaAtual, condicao) => {
@@ -15,6 +14,7 @@ const carregarTrilha = (nomeFaixaAtual, condicao) => {
   audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
   
   audio.addEventListener('canplaythrough', () => {
+    verificarVolumeDefinidio();
     if(condicao == 'reproduzir'){
       audio.play();
     }
@@ -158,6 +158,19 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
 
 function alterarVolumeFaixa(valor){
   audio.volume = (valor / 100);
+  localStorage.setItem('volume', valor);
+}
+
+function verificarVolumeDefinidio(){
+  const range = player.querySelector('input[type=range].ajuste-som__controle');
+
+  if(!isEmpty(localStorage.getItem('volume'))){
+    alterarVolumeFaixa(localStorage.getItem('volume'));
+    range.value = localStorage.getItem('volume');
+  }else{
+    alterarVolumeFaixa(30);
+    range.value = 30;
+  }
 }
 
 const maximoTrilhas = () => {
