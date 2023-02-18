@@ -12,23 +12,21 @@ import {
   adicionarEventoEpisodios,
   escutaConfirmacaoNavegacao,
   escutaClickVerMais,
-  escutarClickLista,
   exibirFeedbackNenhumResultado,
-  limparPesquisa,
   limparItensLista,
-  limparArrayFiltro
+  pesquisarNoConteudo,
+  alimentarLista,
+  exibirResultados,
+  escutaClickPlaylist,
+  escutaClickPlayer,
+  escutaClickFaixaSom,
 } from "./modulos/funcoes/funcoes.js"
 
 import { 
   carregarTrilha, 
-  carregarTrilhasPlaylist, 
-  alterarTempoAudio, 
-  alterarReproducaoAudio, 
+  carregarTrilhasPlaylist,
   adicionarClasseAtivoFaixa,
-  proximaFaixa,
-  retrocederFaixa,
-  alterarVolumeFaixa,
-  verificarFaixaRegistrada
+  verificarFaixaRegistrada,
 } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
@@ -147,7 +145,7 @@ import {
 
     if(!isEmpty(verificarFaixaRegistrada())){
       carregarTrilha(verificarFaixaRegistrada());
-      adicionarClasseAtivoFaixa(verificarFaixaRegistrada());
+      adicionarClasseAtivoFaixa('Os Meninos de Altamira');
     }else{
       carregarTrilha('Os Meninos de Altamira');
       adicionarClasseAtivoFaixa('Os Meninos de Altamira');
@@ -157,145 +155,15 @@ import {
     atualizarDatas();
   }
   
-  function pesquisarNoConteudo(filtro, view, valor){
-    limparArrayFiltro(filtro);
-    const buscas = view.buscarNoNomePorPalavra(valor).concat(view.buscarNaDescricaoPorPalavra(valor).concat(view.buscarNoNome(valor).concat(view.buscarNaDescricao(valor))))
-    buscas.forEach(busca => {
-      if(!filtro.includes(busca)){
-        filtro.push(busca);
-      }
-    }) 
-    
-    return filtro;
-  }
-  
-  function alimentarLista(filtro, lista, input){
-    filtro.slice(0, 5).forEach(itemFiltro => {
-      const item = document.createElement('li');
-      const botao = document.createElement('button');
-      botao.textContent = itemFiltro.nome;
-      item.appendChild(botao);
-      lista.appendChild(item);
-    })
-    escutarClickLista(lista, input);
-  }
-  
-  function exibirResultados(secao, lista){
-    const section = document.querySelector(`.${secao}`);
-    const btnVerMais = section.querySelector('button.vermais');
-    btnVerMais.querySelector('p').textContent = 'Mais Resultados';
-    btnVerMais.dataset.verMais = `resultados-${secao}`;
-    
-    section.querySelector('h2').textContent = 'Resultados para a Busca'
-    limparPesquisa(section);
-    escutarClickVerMaisResultados(section, lista);
-    
-    switch(secao){
-      case "personagens":
-      carregarPersonagens(6, lista);
-      break;
-      
-      case "episodios":
-      carregarEpisodios(6, lista);
-      break;
-      
-      case "creditos":
-      carregarCreditos(6, lista);
-      break;
-    }    
-  }
-  
-  function escutarClickVerMaisResultados(secao, lista){
-    let qtdeCardsInicial = 12;
-    const botao = secao.querySelector(`[data-ver-mais=resultados-${secao.className}]`);
-    
-    if(6 > lista.length){
-      botao.style.display = 'none'
-    }
-    
-    botao.onclick = () => {
-      if(qtdeCardsInicial < lista.length){
-        carregarPersonagens(qtdeCardsInicial, lista);
-        qtdeCardsInicial += 6;
-      }else{
-        carregarPersonagens(lista.length, lista);
-        botao.style.display = 'none'
-      }
-    }
-  }
-  
   carregarTrilhasPlaylist();
-  
-  function escutaClickPlaylist(){
-    document.querySelector('[data-playlist]').addEventListener('click', (evento) => {
-            
-      if(evento.target.tagName.toLowerCase() == 'button'){
-        adicionarClasseAtivoFaixa(evento.target.textContent);
-        // console.log('Música Selecionada:', evento.target.textContent);
-        carregarTrilha(evento.target.textContent, 'reproduzir');
-      }
-    })
-  }
-  
-  function escutaClickPlayer(){
-    const player = document.querySelector('[data-player]');
-
-    player.querySelector('#voltar').onclick = () => {
-      if(!retrocederFaixa()){
-        //
-      }
-    }
-
-    player.querySelector('#play').onclick = () => {
-      alterarReproducaoAudio();
-    }
-
-    player.querySelector('#proximo').onclick = () => {
-      if(!proximaFaixa()){
-        //
-      }
-    }
-    
-    const range = player.querySelector('input[type=range].player__reproducao');
-    
-    range.addEventListener('input', (evento) => {
-      alterarTempo(evento);
-    })
-    
-    range.addEventListener('change', (evento) => {
-      alterarTempo(evento);
-    })
-    
-    function alterarTempo(evento){
-      alterarTempoAudio(evento.target.value);
-    }
-  }
-
-  function escutaClickFaixaSom(){
-    const ajusteSom = document.querySelector('.ajuste-som');
-    const range = ajusteSom.querySelector('input[type=range].ajuste-som__controle');
-
-    range.addEventListener('input', (evento) => {
-      alterarVolume(evento);
-    })
-    
-    range.addEventListener('change', (evento) => {
-      alterarVolume(evento);
-    })
-    
-    function alterarVolume(evento){
-      alterarVolumeFaixa(evento.target.value);
-    }
-  }
-
   escutaClickPlayer();
   escutaClickPlaylist();
   escutaClickFaixaSom();
   
   verificarTema();
+  escutaClickBotaoTema();
   atualizarLinks();  
   sortearEmbed();
-  escutaClickBotaoTema();
   controleFechamentoModal();
   escutaConfirmacaoNavegacao();
   adicionarEventoEpisodios();
