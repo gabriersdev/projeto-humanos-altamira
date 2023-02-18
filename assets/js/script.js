@@ -143,9 +143,10 @@ import {
   
   window.onload = async () => {
 
-    if(!isEmpty(verificarFaixaRegistrada())){
-      carregarTrilha(verificarFaixaRegistrada());
-      adicionarClasseAtivoFaixa('Os Meninos de Altamira');
+    const musicaRegistrada = verificarFaixaRegistrada()
+    if(!isEmpty(musicaRegistrada)){
+      carregarTrilha(musicaRegistrada);
+      adicionarClasseAtivoFaixa(musicaRegistrada);
     }else{
       carregarTrilha('Os Meninos de Altamira');
       adicionarClasseAtivoFaixa('Os Meninos de Altamira');
