@@ -87,8 +87,9 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
       case 'todos-episódios':
       botao.addEventListener('click', (evento) => {
         evento.preventDefault();
+        document.querySelector('section.ultimos-episodios').style.display = 'none';
         document.querySelector('section.episodios').style.display = 'block';
-        window.location.href = '#todos-episodios';
+        // window.location.href = '#todos-episodios';
       })
       break;
     }
