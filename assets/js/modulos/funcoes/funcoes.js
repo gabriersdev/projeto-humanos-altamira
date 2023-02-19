@@ -185,6 +185,9 @@ const atualizarLinks = () => {
       case "caso-evandro":
       link.href = 'https://www.projetohumanos.com.br/temporada/o-caso-evandro/';
       break;
+      case "creditos-temporada":
+      link.href = 'https://www.projetohumanos.com.br/altamira/creditos-fontes-e-agradecimentos-2/';
+      break;
       default:
       link.href = '';
       break;
@@ -282,7 +285,7 @@ function limparArrayFiltro(array){
 
 function escutaClickPlaylist(){
   document.querySelector('[data-playlist]').addEventListener('click', (evento) => {
-          
+    
     if(evento.target.tagName.toLowerCase() == 'button'){
       adicionarClasseAtivoFaixa(evento.target.textContent);
       // console.log('Música Selecionada:', evento.target.textContent);
@@ -293,17 +296,17 @@ function escutaClickPlaylist(){
 
 function escutaClickPlayer(){
   const player = document.querySelector('[data-player]');
-
+  
   player.querySelector('#voltar').onclick = () => {
     if(!retrocederFaixa()){
       //
     }
   }
-
+  
   player.querySelector('#play').onclick = () => {
     alterarReproducaoAudio();
   }
-
+  
   player.querySelector('#proximo').onclick = () => {
     if(!proximaFaixa()){
       //
@@ -328,7 +331,7 @@ function escutaClickPlayer(){
 function escutaClickFaixaSom(){
   const ajusteSom = document.querySelector('.ajuste-som');
   const range = ajusteSom.querySelector('input[type=range].ajuste-som__controle');
-
+  
   range.addEventListener('input', (evento) => {
     alterarVolume(evento);
   })
