@@ -1,7 +1,7 @@
 import { verificarTema, escutaClickBotaoTema } from "./modulos/funcoes/tema.js";
 import { atualizarDatas, isEmpty } from "./modulos/utilitarios/utilitarios.js";
 import { carregarCreditos, consultaCreditosView } from "./modulos/view/creditosView.js";
-import { carregarEpisodios, carregarUltimosEpisodios, consultaEpisodiosView, dadosUltimoEpisodio } from "./modulos/view/episodiosView.js";
+import { carregarEpisodios, carregarUltimosEpisodios, consultaEpisodiosView } from "./modulos/view/episodiosView.js";
 import { carregarPersonagens, consultaPersonagensView } from "./modulos/view/personagensView.js";
 
 import { 
@@ -20,6 +20,7 @@ import {
   escutaClickPlaylist,
   escutaClickPlayer,
   escutaClickFaixaSom,
+  atualizarInformacoesEmbed
 } from "./modulos/funcoes/funcoes.js"
 
 import { 
@@ -160,17 +161,6 @@ import {
 
     verificarConfirmacaoNavegacao();
     atualizarDatas();
-  }
-  
-  function atualizarInformacoesEmbed(){
-    document.querySelectorAll('[data-embed]').forEach(embed => {
-      const dados = dadosUltimoEpisodio();
-      if(!isEmpty(dados)){
-        embed.dataset.bsContent = `Último Episódio: ${dados.nome}. Descrição: ${dados.descricao}`;
-      }else{
-        embed.dataset.bsContent = 'Último Episódio';
-      }
-    })
   }
 
   atualizarInformacoesEmbed();

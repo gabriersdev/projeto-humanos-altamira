@@ -1,6 +1,6 @@
 import { isEmpty } from "../utilitarios/utilitarios.js";
 import { carregarPersonagens, maximoPersonagens } from "../view/personagensView.js";
-import { carregarEpisodios, maximoEpisodios } from "../view/episodiosView.js";
+import { carregarEpisodios, maximoEpisodios, dadosUltimoEpisodio } from "../view/episodiosView.js";
 import { carregarCreditos, maximoCreditos } from "../view/creditosView.js";
 import { escutaClickBotaoTema } from "./tema.js";
 
@@ -191,6 +191,17 @@ const atualizarLinks = () => {
       default:
       link.href = '';
       break;
+    }
+  })
+}
+
+function atualizarInformacoesEmbed(){
+  document.querySelectorAll('[data-embed]').forEach(embed => {
+    const dados = dadosUltimoEpisodio();
+    if(!isEmpty(dados)){
+      embed.dataset.bsContent = `Último Episódio: ${dados.nome}. Descrição: ${dados.descricao}`;
+    }else{
+      embed.dataset.bsContent = 'Último Episódio';
     }
   })
 }
@@ -434,4 +445,5 @@ export{
   escutaClickPlaylist,
   escutaClickPlayer,
   escutaClickFaixaSom,
+  atualizarInformacoesEmbed
 }
