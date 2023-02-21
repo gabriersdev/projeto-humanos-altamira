@@ -1,5 +1,4 @@
-.box-no-script,
-.box-mensagem{
+.box-no-script{
   position: fixed;
   top: 0;
   left: 0;
@@ -26,7 +25,6 @@
   transition: background ease-in-out 0.3s;
 }
 
-.modal__botao:hover,
 .btn-principal-no-script:hover{
   background-color: #DDD;
   border-color: #BBB;
