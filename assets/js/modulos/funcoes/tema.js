@@ -2,7 +2,7 @@ import { isEmpty } from "../utilitarios/utilitarios.js";
 
 const verificarTema = () => {
   const tema = JSON.parse(localStorage.getItem('tema'));
-  if(!isEmpty(tema)){
+  if(!isEmpty(tema) && tema == 'claro' || tema == 'escuro'){
     trocarTema(tema);
   }else{
     trocarTema('escuro');
