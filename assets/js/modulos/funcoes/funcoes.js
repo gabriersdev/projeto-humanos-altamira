@@ -15,7 +15,8 @@ import {
 } from "../view/trilhaSonoraView.js"
 
 const verificarConfirmacaoNavegacao = () => {
-  if(isEmpty(JSON.parse(localStorage.getItem('confirmacao-navegacao')))){
+  const confirmacao = JSON.parse(localStorage.getItem('confirmacao-navegacao'));
+  if(isEmpty(confirmacao) || !confirmacao){
     $('#modal-confirmacao-navegacao').modal('show');
   }
 }
