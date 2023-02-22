@@ -15,7 +15,7 @@ import {
 } from "../view/trilhaSonoraView.js"
 
 const verificarConfirmacaoNavegacao = () => {
-  if(isEmpty(localStorage.getItem('confirmacao-navegacao'))){
+  if(isEmpty(JSON.parse(localStorage.getItem('confirmacao-navegacao')))){
     $('#modal-confirmacao-navegacao').modal('show');
   }
 }
@@ -250,7 +250,7 @@ const escutaConfirmacaoNavegacao = () => {
         window.location.href = 'https://www.projetohumanos.com.br';
         break;
         case "continuar":
-        localStorage.setItem('confirmacao-navegacao', true);
+        localStorage.setItem('confirmacao-navegacao', JSON.stringify(true));
         $('#modal-confirmacao-navegacao').modal('hide');
       }
     })

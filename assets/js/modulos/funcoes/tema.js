@@ -1,8 +1,9 @@
 import { isEmpty } from "../utilitarios/utilitarios.js";
 
 const verificarTema = () => {
-  if(!isEmpty(localStorage.getItem('tema'))){
-    trocarTema(localStorage.getItem('tema'));
+  const tema = JSON.parse(localStorage.getItem('tema'));
+  if(!isEmpty(tema)){
+    trocarTema(tema);
   }else{
     trocarTema('escuro');
   }
@@ -35,12 +36,12 @@ const escutaClickBotaoTema = () => {
     botao.addEventListener('click', () => {
       switch(botao.dataset.tema){
         case 'claro':
-        localStorage.setItem('tema', 'claro');
+        localStorage.setItem('tema', JSON.stringify('claro'));
         trocarTema('claro');
         break;
         
         case 'escuro':
-        localStorage.setItem('tema', 'escuro');
+        localStorage.setItem('tema', JSON.stringify('escuro'));
         trocarTema('escuro');
         break;
       }
