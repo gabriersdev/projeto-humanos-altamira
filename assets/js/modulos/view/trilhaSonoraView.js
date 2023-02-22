@@ -83,13 +83,15 @@ function verificarSeEhPrimeiroDaLista(indice){
 
 function registrarFaixaSessao(nomeFaixa){
   if(!isEmpty(nomeFaixa)){
-    localStorage.setItem('faixa', nomeFaixa);
+    localStorage.setItem('faixa', JSON.stringify(nomeFaixa));
   }
 }
 
 function verificarFaixaRegistrada(){
-  if(!isEmpty(localStorage.getItem('faixa'))){
-    return localStorage.getItem('faixa');
+  const faixa = JSON.parse(localStorage.getItem('faixa'));
+
+  if(!isEmpty(faixa) && !isEmpty(trilhas.filter(trilha => trilha.nome.toLowerCase() ==  faixa.toLowerCase()))){
+    return faixa;
   }else{
     return null;
   }
@@ -180,15 +182,16 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
 
 function alterarVolumeFaixa(valor){
   if(!isEmpty(valor)){
-    audio.volume = (valor / 100);
-    localStorage.setItem('volume', valor);
+    audio.volume = parseInt(valor / 100);
+    localStorage.setItem('volume', JSON.stringify(valor));
   }
 }
 
 function verificarVolumeDefinido(){
   const range = player.querySelector('input[type=range].ajuste-som__controle');
-
-  if(!isEmpty(localStorage.getItem('volume'))){
+  const volume = JSON.parse(localStorage.getItem('volume'));
+  
+  if(!isEmpty(volume) && Number.isInteger(volume) && volume >= 0 && volume <= 100){
     alterarVolumeFaixa(localStorage.getItem('volume'));
     range.value = localStorage.getItem('volume');
   }else{
