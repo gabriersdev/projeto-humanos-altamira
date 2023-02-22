@@ -22,11 +22,11 @@ const carregarUltimosEpisodios = (quantidade) => {
   const ultimosEpisodiosCards = document.querySelector('.ultimos-episodios__cards');
   ultimosEpisodiosCards.innerHTML = '';
 
-  const ultimosEpisodios = episodiosController().splice(episodiosController().length - quantidade, episodiosController().length);
+  const ultimosEpisodios = episodiosController().slice(episodiosController().length - quantidade, episodiosController().length);
 
   ultimosEpisodios.sort((a, b) => comparaNumeroDescrescente(a, b));
 
-  ultimosEpisodios.splice(0, quantidade).forEach(episodio => {
+  ultimosEpisodios.slice(0, quantidade).forEach(episodio => {
     ultimosEpisodiosCards.innerHTML += criarCard(episodio).trim();
   })
 }
