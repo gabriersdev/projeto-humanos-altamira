@@ -144,7 +144,7 @@ import {
   
   window.onload = async () => {
 
-    const musicaRegistrada = verificarFaixaRegistrada()
+    const musicaRegistrada = verificarFaixaRegistrada();
     if(!isEmpty(musicaRegistrada)){
       carregarTrilha(musicaRegistrada);
       adicionarClasseAtivoFaixa(musicaRegistrada);

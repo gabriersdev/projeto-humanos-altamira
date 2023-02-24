@@ -182,6 +182,7 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
 
 function alterarVolumeFaixa(valor){
   valor = parseFloat(valor);
+
   if(!isEmpty(valor) && (typeof valor == 'number')){
     audio.volume = parseFloat(valor / 100);
     localStorage.setItem('volume', JSON.stringify(valor));
