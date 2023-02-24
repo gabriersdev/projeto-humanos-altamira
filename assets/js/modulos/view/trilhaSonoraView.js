@@ -181,18 +181,21 @@ function adicionarClasseAtivoFaixa(nomeFaixa){
 }
 
 function alterarVolumeFaixa(valor){
-  if(!isEmpty(valor)){
-    audio.volume = parseInt(valor / 100);
+  valor = parseFloat(valor);
+  if(!isEmpty(valor) && (typeof valor == 'number')){
+    audio.volume = parseFloat(valor / 100);
     localStorage.setItem('volume', JSON.stringify(valor));
+  }else{
+    console.log('Valor informado para definir o volume não é válido');
   }
 }
 
 function verificarVolumeDefinido(){
   const range = player.querySelector('input[type=range].ajuste-som__controle');
-  const volume = JSON.parse(localStorage.getItem('volume'));
-  
-  if(!isEmpty(volume) && Number.isInteger(volume) && volume >= 0 && volume <= 100){
-    alterarVolumeFaixa(localStorage.getItem('volume'));
+  const volume = parseFloat(JSON.parse(localStorage.getItem('volume')));
+
+  if(!isEmpty(volume) && volume >= 0 && volume <= 100){
+    alterarVolumeFaixa(volume);
     range.value = localStorage.getItem('volume');
   }else{
     alterarVolumeFaixa(30);
