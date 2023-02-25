@@ -32,7 +32,7 @@
 .recomendacao__titulo,
 .episodios__titulo,
 .ultimos-episodios__titulo{
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
   font-size: var(--titulos-h2);
   margin-right: 2rem;
 }

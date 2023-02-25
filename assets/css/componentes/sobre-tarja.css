@@ -28,7 +28,7 @@
 
 .sobre-tarja__titulo{
   font-size: var(--titulos-h2);
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
   flex-grow: 2;
 }
 

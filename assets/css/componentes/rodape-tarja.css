@@ -10,7 +10,7 @@
 
 .rodape-tarja__titulo{
   font-size: var(--titulos-h2);
-  font-family: 'Inter Tight';
+  font-family: var(--texto-fonte-inter);
   font-weight: 600;
   color: var(--titulo-rodape-tarja);
 }

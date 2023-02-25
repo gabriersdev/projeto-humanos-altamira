@@ -77,14 +77,14 @@
 
 .episodios .card__titulo,
 .ultimos-episodios .card__titulo{
-  font-family: 'CircularStd Bold', sans-serif;
+  font-family: var(--texto-bold);
   font-size: var(--titulos-h3);
   margin-bottom: 1rem;
 }
 
 .episodios .card__conteudo p,
 .ultimos-episodios .card__conteudo p{
-  font-family: 'CircularStd Light', 'CircularStd Book', sans-serif;
+  font-family: var(--texto-light);
 }
 
 .episodios div.card__rodape,
@@ -119,7 +119,7 @@
 .ultimos-episodios .card__cabecalho p,
 .ultimos-episodios .identificacao-ep__nome,
 .ultimos-episodios .identificacao-ep__numero{
-  font-family: 'Inter Tight', 'Circular', sans-serif;
+  font-family: var(--texto-fonte-inter);
 }
 
 .episodios .card__cabecalho p,

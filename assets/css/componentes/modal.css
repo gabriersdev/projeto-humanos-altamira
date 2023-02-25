@@ -30,7 +30,7 @@ button[data-modal-fecha]{
 }
 
 .modal__titulo{
-  font-family: 'CircularStd Bold', 'CircularStd Book', sans-serif;
+  font-family: var(--texto-bold);
   font-size: var(--titulos-h3);
   color: var(--txt-modal) !important;
 }

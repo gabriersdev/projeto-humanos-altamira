@@ -51,7 +51,7 @@
 .personagens .card__titulo,
 .creditos .card__titulo,
 .extras .card__titulo{
-  font-family: 'Inter Tight', 'Circular', sans-serif;
+  font-family: var(--texto-fonte-inter);
   font-weight: 700;
   font-size: var(--titulos-h3);
 }
@@ -71,7 +71,7 @@
 .creditos .card__conteudo p,
 .extras .card__conteudo p{
   line-height: 1.5;
-  font-family: 'Inter Tight', 'Circular', sans-serif;
+  font-family: var(--texto-fonte-inter);
   font-size: var(--fonte-conteudo);
 }
 

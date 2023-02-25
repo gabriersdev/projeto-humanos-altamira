@@ -35,6 +35,12 @@
   --titulos-h3: 1.6rem;
   --titulo-h1: 3.25rem;
   --icone: 1.5rem;
+
+  --texto-light: 'CircularStd Light', sans-serif;
+  --texto-regular: 'CircularStd Book', sans-serif;
+  --texto-bold: 'CircularStd Bold', sans-serif;
+  --texto-fonte-inter: 'Inter Tight', sans-serif;
+  --fonte-bootstrap-icons: "bootstrap-icons";
 }
 
 @media screen and (max-width: 1060px) {

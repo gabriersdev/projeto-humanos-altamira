@@ -87,16 +87,16 @@ a:focus .menu__item{
 
 .cabecalho__titulo{
   font-size: var(--titulo-h1);
-  font-family: 'CircularStd Light';
+  font-family: var(--texto-light);
 }
 
 .cabecalho__titulo:first-child{
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
 }
 
 .cabecalho__descricao{
   margin-top: 2rem;
-  font-family: 'CircularStd Light';
+  font-family: var(--texto-light);
   font-size: var(--fonte-conteudo);
   max-width: 50%;
 }

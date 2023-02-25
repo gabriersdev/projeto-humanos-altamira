@@ -17,7 +17,7 @@
 
 .trilha-sonora__titulo{
   margin-bottom: 1rem;
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
   font-size: var(--titulos-h2);
 }
 
@@ -51,7 +51,7 @@
 
 .player__titulo{
   font-size: 1.5rem;
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
 }
 
 .player__autor{

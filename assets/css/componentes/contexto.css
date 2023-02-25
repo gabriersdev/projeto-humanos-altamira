@@ -42,7 +42,7 @@
 
 .contexto__periodo__titulo{
   font-size: var(--titulos-h3);
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
   margin-bottom: 0.75rem;
   line-height: 0.75;
 }

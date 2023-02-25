@@ -24,7 +24,7 @@
 
 .banner__titulo{
   font-size: var(--titulos-h2);
-  font-family: 'CircularStd Bold', sans-serif;
+  font-family: var(--texto-bold);
 }
 
 .banner__link{
@@ -89,12 +89,12 @@
 }
 
 .banner.caso-leandro .banner__titulo{
-  font-family: 'CircularStd Book';
+  font-family: var(--texto-regular);
   font-weight: initial;
 }
 
 .banner.caso-leandro .banner__titulo:last-child{
-  font-family: 'CircularStd Bold';
+  font-family: var(--texto-bold);
 }
 
 .banner.wiki-temporada,
