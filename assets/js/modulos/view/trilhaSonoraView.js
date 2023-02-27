@@ -193,7 +193,14 @@ function alterarVolumeFaixa(valor){
 
 function verificarVolumeDefinido(){
   const range = player.querySelector('input[type=range].ajuste-som__controle');
-  const volume = parseFloat(JSON.parse(localStorage.getItem('volume')));
+  let volume = 30;
+
+  try{
+    volume = parseFloat(JSON.parse(localStorage.getItem('volume')));
+  }catch (error){
+    console.log('Valor informado para definir o volume não é válido');
+    alterarVolumeFaixa(30);
+  }
 
   if(!isEmpty(volume) && volume >= 0 && volume <= 100){
     alterarVolumeFaixa(volume);
