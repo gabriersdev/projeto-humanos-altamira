@@ -149,7 +149,7 @@
 
 .player__reproducao::-webkit-slider-thumb:hover,
 .ajuste-som__controle::-webkit-slider-thumb:hover{
-  background-color: rebeccapurple;
+  background-color: var(--bckg-botao-linha-reproducao-hover);
 }
 
 .player__reproducao::-moz-range-thumb,
