@@ -15,7 +15,14 @@ import {
 } from "../view/trilhaSonoraView.js"
 
 const verificarConfirmacaoNavegacao = () => {
-  const confirmacao = JSON.parse(localStorage.getItem('confirmacao-navegacao'));
+  let confirmacao = null;
+  
+  try{
+    confirmacao = JSON.parse(localStorage.getItem('confirmacao-navegacao'));
+  }catch(error){
+    console.log('Valor informado para confirmar a navegação não é válido');
+  }
+
   if(isEmpty(confirmacao) || !confirmacao){
     $('#modal-confirmacao-navegacao').modal('show');
   }
