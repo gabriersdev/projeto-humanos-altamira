@@ -142,17 +142,7 @@ import {
   
   pesquisa();  
   
-  window.onload = async () => {
-
-    const musicaRegistrada = verificarFaixaRegistrada();
-    if(!isEmpty(musicaRegistrada)){
-      carregarTrilha(musicaRegistrada);
-      adicionarClasseAtivoFaixa(musicaRegistrada);
-    }else{
-      carregarTrilha('Os Meninos de Altamira');
-      adicionarClasseAtivoFaixa('Os Meninos de Altamira');
-    }
-
+  window.onload = () => {
     document.querySelectorAll('[data-recarrega-pagina]').forEach(botao => {
       botao.addEventListener('click', () => {
         window.location.reload;
@@ -161,6 +151,15 @@ import {
 
     verificarConfirmacaoNavegacao();
     atualizarDatas();
+  }
+
+  const musicaRegistrada = verificarFaixaRegistrada();
+  if(!isEmpty(musicaRegistrada)){
+    carregarTrilha(musicaRegistrada);
+    adicionarClasseAtivoFaixa(musicaRegistrada);
+  }else{
+    carregarTrilha('Os Meninos de Altamira');
+    adicionarClasseAtivoFaixa('Os Meninos de Altamira');
   }
 
   atualizarInformacoesEmbed();
