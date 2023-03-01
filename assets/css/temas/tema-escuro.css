@@ -91,19 +91,19 @@
   --cor-feedback-sem-resultados: var(--vermelho);
   --cor-feedback-resultados: var(--azul);
 
-  --txt-trilha-sonora: var(--preto);
-  --bckg-fundo-trilha-sonora: var(--cinza-clarissimo);
-  --bckg-player: var(--branco);
+  --txt-trilha-sonora: var(--branco);
+  --bckg-fundo-trilha-sonora: var(--cinza-forte);
+  --bckg-player: var(--cinza-2);
   --box-shadow-player: var(--preto-10);
-  --cor-txt-autor-musica: var(--preto-50);
-  --cor-icone-player: var(--cinza-fortissimo);
-  --cor-icone-destaque-player: var(--cinza-forte);
-  --bckg-linha-reproducao: var(--cinza-claro);
-  --bckg-botao-linha-reproducao: var(--cinza-forte);
-  --bckg-botao-linha-reproducao-hover: var(--roxo);
+  --cor-txt-autor-musica: var(--branco-60);
+  --cor-icone-player: var(--branco);
+  --cor-icone-destaque-player: var(--branco);
+  --bckg-linha-reproducao: var(--branco-10);
+  --bckg-botao-linha-reproducao: var(--branco);
+  --bckg-botao-linha-reproducao-hover: var(--branco-60);
   --bckg-range-thumb: var(--cinza-forte);
   --borda-playlist: var(--cinza-claro);
-  --txt-playlist: var(--preto-50);
+  --txt-playlist: var(--branco-60);
 
   --box-shadow-banner: var(--preto-25);
   --bckg-link-banner: var(--branco-10);
