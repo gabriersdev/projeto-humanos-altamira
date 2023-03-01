@@ -192,11 +192,11 @@
 }
 
 .trilha-sonora__playlist ul li button:focus{
-  color: #555;
+  color: var(--txt-playlist-focus);
 }
 
 .trilha-sonora__playlist ul li button:hover{
-  color: #000;
+  color: var(--txt-playlist-hover);
 }
 
 .trilha-sonora__playlist ul li button::before{

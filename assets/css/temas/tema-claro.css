@@ -104,6 +104,8 @@
   --bckg-range-thumb: var(--cinza-forte);
   --borda-playlist: var(--cinza-claro);
   --txt-playlist: var(--preto-50);
+  --txt-playlist-focus: var(--cinza-5);
+  --txt-playlist-hover: var(--preto);
 
   --box-shadow-banner: var(--preto-25);
   --bckg-link-banner: var(--branco-10);
