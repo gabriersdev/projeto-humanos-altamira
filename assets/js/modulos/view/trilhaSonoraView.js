@@ -24,6 +24,7 @@ const carregarTrilha = (nomeFaixaAtual, condicao, tempo) => {
     }
     atualizarDados(trilhas[indice]);
     registrarFaixaSessao(nomeFaixaAtual);
+    adicionarClasseAtivoFaixa(trilhas[indice].getNome());
   });
 
   verificarSeEhUltimoDaLista(indice);
