@@ -87,11 +87,13 @@ a:focus .menu__item{
 
 .cabecalho__titulo{
   font-size: var(--titulo-h1);
-  font-family: var(--texto-light);
+  font-family: var(--texto-fonte-inter);
+  font-weight: 700;
+  letter-spacing: 0.075rem;
 }
 
 .cabecalho__titulo:first-child{
-  font-family: var(--texto-bold);
+  font-weight: 400;
 }
 
 .cabecalho__descricao{
