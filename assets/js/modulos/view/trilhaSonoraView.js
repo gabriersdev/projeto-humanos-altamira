@@ -7,12 +7,16 @@ const playlist = player.querySelector('[data-playlist]');
 const audio = player.querySelector('[data-reprodutor]');
 const titulo = player.querySelector('h3.player__titulo');
 
-const carregarTrilha = (nomeFaixaAtual, condicao) => {
+const carregarTrilha = (nomeFaixaAtual, condicao, tempo) => {
   const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
   const idFaixa = trilhas[indice].getId();
   
   audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
   
+  if(!isEmpty(tempo) && typeof tempo == 'number'){
+    audio.currentTime = tempo;
+  }
+
   audio.addEventListener('canplaythrough', () => {
     verificarVolumeDefinido();
     if(condicao == 'reproduzir'){
@@ -121,12 +125,40 @@ const atualizarTempoReproduzindo = () => {
       
       if(!audio.paused){
         alterarIconeBTNPlay('play');
+        salvarTempoReproducao(audio.currentTime);
       }
 
       playerReproducao.value = Math.round((audio.currentTime * 100) / audio.duration);
       tempoR.textContent = segundosParaMinutos(Math.round(audio.currentTime));      
     }
   }, 1000)
+}
+
+const salvarTempoReproducao = (tempo) => {
+  tempo = parseFloat(tempo);
+
+  if(typeof tempo == 'number'){
+    try{
+      localStorage.setItem('tempo-reproduzido', JSON.stringify(tempo));
+    }catch(error){
+      console.log('Ocorreu um erro ao salvar o tempo de reprodução da faixa', error);
+    }
+  }
+}
+
+const verificarTempoReproducao = () => {
+  try{
+    const tempo = parseFloat(JSON.parse(localStorage.getItem('tempo-reproduzido')));
+
+    if(!isEmpty(tempo) && typeof tempo == 'number'){
+      return tempo;
+    }else{
+      return null;
+    }
+
+  }catch(error){
+    console.log('Ocorreu um erro na obtenção do tempo em reprodução', error);
+  }
 }
 
 const alterarTempoAudio = (tempo) => {
@@ -226,5 +258,6 @@ export{
   alterarTempoAudio,
   alterarReproducaoAudio,
   alterarVolumeFaixa,
-  verificarFaixaRegistrada
+  verificarFaixaRegistrada,
+  verificarTempoReproducao
 }

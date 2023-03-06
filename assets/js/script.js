@@ -28,6 +28,7 @@ import {
   carregarTrilhasPlaylist,
   adicionarClasseAtivoFaixa,
   verificarFaixaRegistrada,
+  verificarTempoReproducao,
 } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
@@ -155,7 +156,15 @@ import {
 
   const musicaRegistrada = verificarFaixaRegistrada();
   if(!isEmpty(musicaRegistrada)){
-    carregarTrilha(musicaRegistrada);
+
+    const tempo = verificarTempoReproducao();
+
+    if(!isEmpty(tempo)){
+      carregarTrilha(musicaRegistrada, false, tempo);
+    }else{
+      carregarTrilha(musicaRegistrada);
+    }
+
     adicionarClasseAtivoFaixa(musicaRegistrada);
   }else{
     carregarTrilha('Os Meninos de Altamira');
