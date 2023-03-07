@@ -11,28 +11,40 @@ const carregarTrilha = (nomeFaixaAtual, condicao, tempo) => {
   const indice = trilhas.findIndex(trilha => trilha.getNome().toLowerCase().trim() == nomeFaixaAtual.toLowerCase().trim());
   const idFaixa = trilhas[indice].getId();
   
-  audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
-  
-  if(!isEmpty(tempo) && typeof tempo == 'number'){
-    audio.currentTime = tempo;
-  }
+  try{
+    audio.src = `./assets/audios/${zeroEsquerda(2, idFaixa)}.mp3`;
 
-  audio.addEventListener('canplaythrough', () => {
-    verificarVolumeDefinido();
-    if(condicao == 'reproduzir'){
-      audio.play();
+    try{
+      if(!isEmpty(tempo) && typeof tempo == 'number'){
+        audio.currentTime = tempo;
+      }
+    
+      audio.addEventListener('canplaythrough', () => {
+        verificarVolumeDefinido();
+        if(condicao == 'reproduzir'){
+          audio.play();
+        }
+        atualizarDados(trilhas[indice]);
+        registrarFaixaSessao(nomeFaixaAtual);
+        adicionarClasseAtivoFaixa(trilhas[indice].getNome());
+      });
+    
+      verificarSeEhUltimoDaLista(indice);
+      verificarSeEhPrimeiroDaLista(indice);
+    
+      audio.addEventListener('ended', () => {
+        proximaFaixa();
+      })
     }
-    atualizarDados(trilhas[indice]);
-    registrarFaixaSessao(nomeFaixaAtual);
-    adicionarClasseAtivoFaixa(trilhas[indice].getNome());
-  });
-
-  verificarSeEhUltimoDaLista(indice);
-  verificarSeEhPrimeiroDaLista(indice);
-
-  audio.addEventListener('ended', () => {
-    proximaFaixa();
-  })
+    
+    catch(error){
+      console.log('Ocorreu um erro na preparação para reprodução do áudio.', error);
+    }
+  }
+  
+  catch(error){
+    console.log('Ocorreu na busca pelo aúdio.', error);
+  }
 }
 
 const retrocederFaixa = () => {
