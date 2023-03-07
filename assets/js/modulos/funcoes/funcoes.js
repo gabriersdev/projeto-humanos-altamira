@@ -99,6 +99,7 @@ const escutaClickVerMais = (qtdeCardsInicial) => {
           botao.remove();
         }
         
+        escutaTooltip();
       })
       break;
       
@@ -431,6 +432,12 @@ function escutarClickVerMaisResultados(secao, lista){
   }
 }
 
+const escutaTooltip = () => {
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+}
+
 export{
   verificarConfirmacaoNavegacao, 
   controleFechamentoModal, 
@@ -453,5 +460,6 @@ export{
   escutaClickPlaylist,
   escutaClickPlayer,
   escutaClickFaixaSom,
-  atualizarInformacoesEmbed
+  atualizarInformacoesEmbed,
+  escutaTooltip
 }

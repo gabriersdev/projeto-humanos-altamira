@@ -20,7 +20,8 @@ import {
   escutaClickPlaylist,
   escutaClickPlayer,
   escutaClickFaixaSom,
-  atualizarInformacoesEmbed
+  atualizarInformacoesEmbed,
+  escutaTooltip
 } from "./modulos/funcoes/funcoes.js"
 
 import { 
@@ -32,10 +33,6 @@ import {
 } from "./modulos/view/trilhaSonoraView.js";
 
 (() => {
-  
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip()
-  })
   
   $(document).ready(function(){
     $('[data-bs-toggle="popover"]').popover();  
@@ -92,6 +89,7 @@ import {
             case "creditos":
             if(!isEmpty(filtroCreditos)){
               exibirResultados(secaoInput, filtroCreditos);
+              escutaTooltip();
             }else{
               exibirFeedbackNenhumResultado(creditos);
               pesquisa();
@@ -186,4 +184,5 @@ import {
   escutaConfirmacaoNavegacao();
   adicionarEventoEpisodios();
   
+  escutaTooltip();
 })();
