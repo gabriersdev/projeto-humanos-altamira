@@ -16,7 +16,11 @@ const carregarTrilha = (nomeFaixaAtual, condicao, tempo) => {
 
     try{
       if(!isEmpty(tempo) && typeof tempo == 'number'){
-        audio.currentTime = tempo;
+        if(isNaN(tempo)){
+          audio.currentTime = 0;
+        }else{
+          audio.currentTime = tempo;
+        }
       }
     
       audio.addEventListener('canplaythrough', () => {
