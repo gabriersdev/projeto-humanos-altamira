@@ -100,3 +100,10 @@ a.link-visivel{
   bottom: 1rem;
   right: 0.5rem;
 }
+
+#modal-confirmacao-navegacao .modal-dialog{
+  position: fixed;
+  left: 1%;
+  bottom: 0 !important;
+  transform: translate(0%, 34%);
+}
