@@ -274,10 +274,14 @@ function escutarClickLista(lista, input){
     // evento.preventDefault();
     const alvo = evento.target;
     
-    if(alvo.tagName.toLowerCase() == 'button' && alvo.parentElement.parentElement == lista && alvo.textContent.trim().length > 0){
-      input.value = alvo.textContent.trim();
-    }else{
-      limparItensLista(lista)
+    try{
+      if(alvo.tagName.toLowerCase() == 'button' && alvo.parentElement.parentElement == lista && alvo.textContent.trim().length > 0){
+        input.value = alvo.textContent.trim();
+      }else{
+        limparItensLista(lista)
+      }
+    }catch(error){
+      
     }
   }
 }
