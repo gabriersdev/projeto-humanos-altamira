@@ -136,6 +136,9 @@ function escutaClickRecarregar(secao){
   const btnVerMais = secao.querySelector('button.vermais');
   btnVerMais.querySelector('p').textContent = 'Ver Mais';
   btnVerMais.dataset.verMais = `${secao.className}`;
+
+  btnVerMais.classList.remove('none');
+  btnVerMais.style.display = 'flex';
   
   secao.querySelectorAll('[data-recarregar]').forEach(botao => {
     botao.onclick = () => {
