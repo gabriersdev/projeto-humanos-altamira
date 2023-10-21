@@ -4,18 +4,22 @@ import { comparaNomes, isEmpty } from "../utilitarios/utilitarios.js";
 const creditos = creditosController();
 
 const carregarCreditos = (quantidade, lista) => {
-  quantidade == undefined ? quantidade = 6 : '';
-  lista == undefined ? lista = creditos : '';
-  const creditosCards = document.querySelector('.creditos__cards');
-  creditosCards.innerHTML = '';
-  
-  lista.sort((a, b) => comparaNomes(a, b));
-  
-  lista.forEach((credito, index) => {
-    if(index < quantidade){
-      creditosCards.innerHTML += criarCard(credito);
-    }
-  })
+  try{
+    quantidade == undefined ? quantidade = 6 : '';
+    lista == undefined ? lista = creditos : '';
+    const creditosCards = document.querySelector('.creditos__cards');
+    creditosCards.innerHTML = '';
+    
+    lista.sort((a, b) => comparaNomes(a, b));
+    
+    lista.forEach((credito, index) => {
+      if(index < quantidade){
+        creditosCards.innerHTML += criarCard(credito);
+      }
+    })
+  }catch(error){
+    
+  }
 }
 
 const criarCard = ({nome, descricao, contato}) => {

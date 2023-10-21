@@ -4,18 +4,22 @@ import { comparaNomes } from "../utilitarios/utilitarios.js";
 const personagens = personagensController();
 
 const carregarPersonagens = (quantidade, lista) => {
-  quantidade == undefined ? quantidade = 6 : '';
-  lista == undefined ? lista = personagens : '';
-  const personagensCards = document.querySelector('.personagens__cards');
-  personagensCards.innerHTML = '';
+  try{
+    quantidade == undefined ? quantidade = 6 : '';
+    lista == undefined ? lista = personagens : '';
+    const personagensCards = document.querySelector('.personagens__cards');
+    personagensCards.innerHTML = '';
+    
+    lista.sort((a, b) => comparaNomes(a, b));
   
-  lista.sort((a, b) => comparaNomes(a, b));
-
-  lista.forEach((personagem, index) => {
-    if(index < quantidade){
-      personagensCards.innerHTML += criarCard(personagem).trim();
-    }
-  });
+    lista.forEach((personagem, index) => {
+      if(index < quantidade){
+        personagensCards.innerHTML += criarCard(personagem).trim();
+      }
+    });
+  }catch(error){
+    
+  }
 }
 
 const criarCard = ({nome, descricao, link}) => {

@@ -219,7 +219,8 @@ function atualizarInformacoesEmbed(){
 }
 
 const sortearEmbed = () => {
-  const sorteio = Math.floor(Math.random() * 2);
+  // const sorteio = Math.floor(Math.random() * 2);
+  const sorteio = 1; // Apenas o deezer
   const embeds = document.querySelectorAll('[data-embed]');
   const recomendacao = document.querySelector('.recomendacao__conteudo');
   

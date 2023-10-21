@@ -4,31 +4,39 @@ import { comparaNumero, comparaNumeroDescrescente } from "../utilitarios/utilita
 const episodios = episodiosController();
 
 const carregarEpisodios = (quantidade, lista) => {
-  quantidade == undefined ? quantidade = 6 : '';
-  lista == undefined ? lista = episodios : '';
-  const episodiosCards = document.querySelector('.episodios__cards');
-  episodiosCards.innerHTML = '';
-  
-  lista.sort((a, b) => comparaNumero(a, b));
-  
-  lista.forEach((episodio, index) => {
-    if(index < quantidade){
-      episodiosCards.innerHTML += criarCard(episodio).trim();
-    }
-  })
+  try{
+    quantidade == undefined ? quantidade = 6 : '';
+    lista == undefined ? lista = episodios : '';
+    const episodiosCards = document.querySelector('.episodios__cards');
+    episodiosCards.innerHTML = '';
+    
+    lista.sort((a, b) => comparaNumero(a, b));
+    
+    lista.forEach((episodio, index) => {
+      if(index < quantidade){
+        episodiosCards.innerHTML += criarCard(episodio).trim();
+      }
+    })
+  }catch(error){
+
+  }
 }
 
 const carregarUltimosEpisodios = (quantidade) => {
-  const ultimosEpisodiosCards = document.querySelector('.ultimos-episodios__cards');
-  ultimosEpisodiosCards.innerHTML = '';
-
-  const ultimosEpisodios = episodiosController().slice(episodiosController().length - quantidade, episodiosController().length);
-
-  ultimosEpisodios.sort((a, b) => comparaNumeroDescrescente(a, b));
-
-  ultimosEpisodios.slice(0, quantidade).forEach(episodio => {
-    ultimosEpisodiosCards.innerHTML += criarCard(episodio).trim();
-  })
+  try{
+    const ultimosEpisodiosCards = document.querySelector('.ultimos-episodios__cards');
+    ultimosEpisodiosCards.innerHTML = '';
+  
+    const ultimosEpisodios = episodiosController().slice(episodiosController().length - quantidade, episodiosController().length);
+  
+    ultimosEpisodios.sort((a, b) => comparaNumeroDescrescente(a, b));
+  
+    ultimosEpisodios.slice(0, quantidade).forEach(episodio => {
+      ultimosEpisodiosCards.innerHTML += criarCard(episodio).trim();
+    })
+  }catch(error){
+    
+  }
 }
 
 const criarCard = ({nome, descricao, link, img, wiki}) => {
