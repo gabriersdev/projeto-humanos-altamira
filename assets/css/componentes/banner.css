@@ -5,10 +5,15 @@
   padding: 2rem 1.5rem;
   margin: 2rem var(--espaco-margem);
   box-shadow: 0px 0px 10px var(--box-shadow-banner);
+  transition: scale ease-in-out 0.2s;
 }
 
 .banner:last-child{
   margin-bottom: 0;
+}
+
+.banner.caso-leandro:hover{
+  scale: 1.05;
 }
 
 .banner__tag{
