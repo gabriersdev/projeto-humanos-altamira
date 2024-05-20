@@ -186,10 +186,10 @@ const atualizarLinks = () => {
       link.href = 'https://mizanzuk.com';
       break;
       case "orçamento":
-      link.href = 'https://gabrieszin.github.io/portfolio/#formulario';
+      link.href = 'https://gabriersdev.github.io/portfolio/#formulario';
       break;
       case "portfolio-gabriel":
-      link.href = 'https://gabrieszin.github.io/portfolio/';
+      link.href = 'https://gabriersdev.github.io/portfolio/';
       break;
       case "wiki-temporada":
       link.href = 'https://www.projetohumanos.com.br/wiki/altamira/';

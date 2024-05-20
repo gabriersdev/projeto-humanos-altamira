@@ -3,7 +3,7 @@
 Este projeto foi desenvolvido em homenagem ao podcast Projeto Humanos cuja a quinta temporada tem como o tema Altamira.
 
 ## Links
-Veja o <a href="https://gabrieszin.github.io/projeto-humanos-altamira/">projeto publicado</a> no GitHub Pages ou o 
+Veja o <a href="https://gabriersdev.github.io/projeto-humanos-altamira/">projeto publicado</a> no GitHub Pages ou o 
 <a href="https://www.behance.net/gallery/164149893/Projeto-Humanos-Altamira-%28Not-Official%29">protótipo do projeto</a> na Behance.
 
 ## Funcionalidades do Projeto
